@@ -1,0 +1,229 @@
+@prefix : <http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ontologies/2019/10/materials-design> .
+
+<http://www.semanticweb.org/ontologies/2019/10/materials-design> rdf:type owl:Ontology .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Base-centeredMonoclinic
+:Base-centeredMonoclinic rdf:type owl:Class ;
+                         rdfs:subClassOf :BravaisLattice ,
+                                         :Monoclinic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Base-centeredOrthorhombic
+:Base-centeredOrthorhombic rdf:type owl:Class ;
+                           rdfs:subClassOf :BravaisLattice ,
+                                           :Orthorhombic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Body-centeredCubic
+:Body-centeredCubic rdf:type owl:Class ;
+                    rdfs:subClassOf :BravaisLattice ,
+                                    :Cubic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Body-centeredOrthothombic
+:Body-centeredOrthothombic rdf:type owl:Class ;
+                           rdfs:subClassOf :BravaisLattice ,
+                                           :Orthorhombic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Body-centeredTetragonal
+:Body-centeredTetragonal rdf:type owl:Class ;
+                         rdfs:subClassOf :BravaisLattice ,
+                                         :Tetragonal .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#BravaisLattice
+:BravaisLattice rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Cubic
+:Cubic rdf:type owl:Class ;
+       rdfs:subClassOf :LatticeSystem .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Egap
+:Egap rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Face-centeredCubic
+:Face-centeredCubic rdf:type owl:Class ;
+                    rdfs:subClassOf :BravaisLattice ,
+                                    :Cubic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Face-centeredOrthothombic
+:Face-centeredOrthothombic rdf:type owl:Class ;
+                           rdfs:subClassOf :BravaisLattice ,
+                                           :Orthorhombic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Hexagonal
+:Hexagonal rdf:type owl:Class ;
+           rdfs:subClassOf :LatticeSystem .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#LatticeSystem
+:LatticeSystem rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#MCLC1
+:MCLC1 rdf:type owl:Class ;
+       rdfs:subClassOf :Base-centeredMonoclinic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#MCLC2
+:MCLC2 rdf:type owl:Class ;
+       rdfs:subClassOf :Base-centeredMonoclinic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#MCLC3
+:MCLC3 rdf:type owl:Class ;
+       rdfs:subClassOf :Base-centeredMonoclinic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#MCLC4
+:MCLC4 rdf:type owl:Class ;
+       rdfs:subClassOf :Base-centeredMonoclinic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Monoclinic
+:Monoclinic rdf:type owl:Class ;
+            rdfs:subClassOf :LatticeSystem .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#ORCF1
+:ORCF1 rdf:type owl:Class ;
+       rdfs:subClassOf :Face-centeredOrthothombic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#ORCF2
+:ORCF2 rdf:type owl:Class ;
+       rdfs:subClassOf :Face-centeredOrthothombic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#ORCF3
+:ORCF3 rdf:type owl:Class ;
+       rdfs:subClassOf :Face-centeredOrthothombic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#OriginalSpaceGroup
+:OriginalSpaceGroup rdf:type owl:Class ;
+                    rdfs:subClassOf :SpaceGroup .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Orthorhombic
+:Orthorhombic rdf:type owl:Class ;
+              rdfs:subClassOf :LatticeSystem .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PointGroup
+:PointGroup rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PrimitiveCubic
+:PrimitiveCubic rdf:type owl:Class ;
+                rdfs:subClassOf :BravaisLattice ,
+                                :Cubic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PrimitiveHexagonal
+:PrimitiveHexagonal rdf:type owl:Class ;
+                    rdfs:subClassOf :BravaisLattice ,
+                                    :Hexagonal .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PrimitiveMonoclinic
+:PrimitiveMonoclinic rdf:type owl:Class ;
+                     rdfs:subClassOf :BravaisLattice ,
+                                     :Monoclinic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PrimitiveOrthorhombic
+:PrimitiveOrthorhombic rdf:type owl:Class ;
+                       rdfs:subClassOf :BravaisLattice ,
+                                       :Orthorhombic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PrimitiveRhombohederal
+:PrimitiveRhombohederal rdf:type owl:Class ;
+                        rdfs:subClassOf :BravaisLattice ,
+                                        :Rhombohedral .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PrimitiveTetragonal
+:PrimitiveTetragonal rdf:type owl:Class ;
+                     rdfs:subClassOf :BravaisLattice ,
+                                     :Tetragonal .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PrimitiveTriclinic
+:PrimitiveTriclinic rdf:type owl:Class ;
+                    rdfs:subClassOf :BravaisLattice ,
+                                    :Triclinic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#RHL1
+:RHL1 rdf:type owl:Class ;
+      rdfs:subClassOf :PrimitiveRhombohederal .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#RHL2
+:RHL2 rdf:type owl:Class ;
+      rdfs:subClassOf :PrimitiveRhombohederal .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#RelaxSpaceGroup
+:RelaxSpaceGroup rdf:type owl:Class ;
+                 rdfs:subClassOf :SpaceGroup .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Rhombohedral
+:Rhombohedral rdf:type owl:Class ;
+              rdfs:subClassOf :LatticeSystem .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SpaceGroup
+:SpaceGroup rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#TRI1a
+:TRI1a rdf:type owl:Class ;
+       rdfs:subClassOf :PrimitiveTriclinic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#TRI1b
+:TRI1b rdf:type owl:Class ;
+       rdfs:subClassOf :PrimitiveTriclinic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#TRI2a
+:TRI2a rdf:type owl:Class ;
+       rdfs:subClassOf :PrimitiveTriclinic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#TRI2b
+:TRI2b rdf:type owl:Class ;
+       rdfs:subClassOf :PrimitiveTriclinic .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Tetragonal
+:Tetragonal rdf:type owl:Class ;
+            rdfs:subClassOf :LatticeSystem .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Triclinic
+:Triclinic rdf:type owl:Class ;
+           rdfs:subClassOf :LatticeSystem .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
