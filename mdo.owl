@@ -29,35 +29,43 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasCorrespondingPointGroup
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#hasCorrespondingPointGroup
 :hasCorrespondingPointGroup rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#belongtoCrystalSystem
+:belongtoCrystalSystem rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasCorrespondingSpaceGroup
+:hasCorrespondingSpaceGroup rdf:type owl:ObjectProperty .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasAngle_alpha
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#hasAngle_alpha
 :hasAngle_alpha rdf:type owl:DatatypeProperty .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasAngle_beta
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#hasAngle_beta
 :hasAngle_beta rdf:type owl:DatatypeProperty .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasAngle_gamma
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#hasAngle_gamma
 :hasAngle_gamma rdf:type owl:DatatypeProperty .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasAxe_a
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#hasAxe_a
 :hasAxe_a rdf:type owl:DatatypeProperty .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasAxe_b
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#hasAxe_b
 :hasAxe_b rdf:type owl:DatatypeProperty .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasAxe_c
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#hasAxe_c
 :hasAxe_c rdf:type owl:DatatypeProperty .
 
 
@@ -99,6 +107,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 :BravaisLattice rdf:type owl:Class .
 
 
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#CrystalSystem
+:CrystalSystem rdf:type owl:Class ;
+               owl:equivalentClass :LatticeSystem .
+
+
 ###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Cubic
 :Cubic rdf:type owl:Class ;
        rdfs:subClassOf :LatticeSystem .
@@ -128,7 +141,6 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#LatticeSystem
 :LatticeSystem rdf:type owl:Class ;
-               owl:equivalentClass :CrystalSystem ;
                rdfs:subClassOf [ rdf:type owl:Restriction ;
                                  owl:onProperty :hasAngle_alpha ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -226,6 +238,599 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                               ] .
 
 
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_1
+:PG_1 rdf:type owl:Class ;
+      rdfs:subClassOf :PointGroup ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCorrespondingSpaceGroup ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :SP_1
+                      ] ;
+      rdfs:comment "Pedial Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_-1
+:PG_-1 rdf:type owl:Class ;
+          rdfs:subClassOf :PointGroup ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCorrespondingSpaceGroup ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :SP_2
+                          ] ;
+          rdfs:comment "Pinacoidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_2
+:PG_2 rdf:type owl:Class ;
+      rdfs:subClassOf :PointGroup ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCorrespondingSpaceGroup ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( :SP_3
+                                                    :SP_4
+                                                    :SP_5
+                                                  )
+                                    ]
+                      ] ;
+      rdfs:comment "Sphenoidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_222
+:PG_222 rdf:type owl:Class ;
+        rdfs:subClassOf :PointGroup ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCorrespondingSpaceGroup ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( :SP_16
+                                                      :SP_17
+                                                      :SP_18
+                                                      :SP_19
+                                                      :SP_20
+                                                      :SP_21
+                                                      :SP_22
+                                                      :SP_23
+                                                      :SP_24
+                                                    )
+                                      ]
+                        ] ;
+        rdfs:comment "Rhombic-disphenoidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_23
+:PG_23 rdf:type owl:Class ;
+       rdfs:subClassOf :PointGroup ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasCorrespondingSpaceGroup ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass [ rdf:type owl:Class ;
+                                       owl:unionOf ( :SP_195
+                                                     :SP_196
+                                                     :SP_197
+                                                     :SP_198
+                                                     :SP_199
+                                                   )
+                                     ]
+                       ] ;
+       rdfs:comment "Tetartoidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_3
+:PG_3 rdf:type owl:Class ;
+      rdfs:subClassOf :PointGroup ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCorrespondingSpaceGroup ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( :SP_143
+                                                    :SP_144
+                                                    :SP_145
+                                                    :SP_146
+                                                  )
+                                    ]
+                      ] ;
+      rdfs:comment "Trigonal-pyramidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_312
+:PG_312 rdf:type owl:Class ;
+        owl:equivalentClass :PG_32 ,
+                            :PG_321 ;
+        rdfs:subClassOf :PointGroup ;
+        rdfs:comment "Trigonal-trapezohedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_31m
+:PG_31m rdf:type owl:Class ;
+        owl:equivalentClass :PG_3m ,
+                            :PG_3m1 ;
+        rdfs:subClassOf :PointGroup ;
+        rdfs:comment "Ditrigonal-pyramidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_32
+:PG_32 rdf:type owl:Class ;
+       owl:equivalentClass :PG_321 ;
+       rdfs:subClassOf :PointGroup ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasCorrespondingSpaceGroup ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass [ rdf:type owl:Class ;
+                                       owl:unionOf ( :SP_149
+                                                     :SP_150
+                                                     :SP_151
+                                                     :SP_152
+                                                     :SP_153
+                                                     :SP_154
+                                                     :SP_155
+                                                   )
+                                     ]
+                       ] ;
+       rdfs:comment "Trigonal-trapezohedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_321
+:PG_321 rdf:type owl:Class ;
+        rdfs:subClassOf :PointGroup ;
+        rdfs:comment "Trigonal-trapezohedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_3m
+:PG_3m rdf:type owl:Class ;
+       owl:equivalentClass :PG_3m1 ;
+       rdfs:subClassOf :PointGroup ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasCorrespondingSpaceGroup ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass [ rdf:type owl:Class ;
+                                       owl:unionOf ( :SP_156
+                                                     :SP_157
+                                                     :SP_158
+                                                     :SP_159
+                                                     :SP_160
+                                                     :SP_161
+                                                   )
+                                     ]
+                       ] ;
+       rdfs:comment "Ditrigonal-pyramidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_3m1
+:PG_3m1 rdf:type owl:Class ;
+        rdfs:subClassOf :PointGroup ;
+        rdfs:comment "Ditrigonal-pyramidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_-3
+:PG_-3 rdf:type owl:Class ;
+          rdfs:subClassOf :PointGroup ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCorrespondingSpaceGroup ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass [ rdf:type owl:Class ;
+                                          owl:unionOf ( :SP_147
+                                                        :SP_148
+                                                      )
+                                        ]
+                          ] ;
+          rdfs:comment "Rhombohedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_-31m
+:PG_-31m rdf:type owl:Class ;
+            owl:equivalentClass :PG_-3m ,
+                                :PG_-3m1 ;
+            rdfs:subClassOf :PointGroup ;
+            rdfs:comment "Ditrigonal-scalenohedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_-3m
+:PG_-3m rdf:type owl:Class ;
+           owl:equivalentClass :PG_-3m1 ;
+           rdfs:subClassOf :PointGroup ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasCorrespondingSpaceGroup ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass [ rdf:type owl:Class ;
+                                           owl:unionOf ( :SP_162
+                                                         :SP_163
+                                                         :SP_164
+                                                         :SP_165
+                                                         :SP_166
+                                                         :SP_167
+                                                       )
+                                         ]
+                           ] ;
+           rdfs:comment "Ditrigonal-scalenohedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_-3m1
+:PG_-3m1 rdf:type owl:Class ;
+            rdfs:subClassOf :PointGroup ;
+            rdfs:comment "Ditrigonal-scalenohedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_4
+:PG_4 rdf:type owl:Class ;
+      rdfs:subClassOf :PointGroup ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCorrespondingSpaceGroup ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( :SP_75
+                                                    :SP_76
+                                                    :SP_77
+                                                    :SP_78
+                                                    :SP_79
+                                                    :SP_80
+                                                  )
+                                    ]
+                      ] ;
+      rdfs:comment "Tetragonal-pyramidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_422
+:PG_422 rdf:type owl:Class ;
+        rdfs:subClassOf :PointGroup ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCorrespondingSpaceGroup ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( :SP_89
+                                                      :SP_90
+                                                      :SP_91
+                                                      :SP_92
+                                                      :SP_93
+                                                      :SP_94
+                                                      :SP_95
+                                                      :SP_96
+                                                      :SP_97
+                                                      :SP_98
+                                                    )
+                                      ]
+                        ] ;
+        rdfs:comment "Tetragonal-trapezohedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_432
+:PG_432 rdf:type owl:Class ;
+        rdfs:subClassOf :PointGroup ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCorrespondingSpaceGroup ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( :SP_207
+                                                      :SP_208
+                                                      :SP_209
+                                                      :SP_210
+                                                      :SP_211
+                                                      :SP_212
+                                                      :SP_213
+                                                      :SP_214
+                                                    )
+                                      ]
+                        ] ;
+        rdfs:comment "Gyroidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_-4
+:PG_-4 rdf:type owl:Class ;
+          rdfs:subClassOf :PointGroup ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCorrespondingSpaceGroup ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass [ rdf:type owl:Class ;
+                                          owl:unionOf ( :SP_81
+                                                        :SP_82
+                                                      )
+                                        ]
+                          ] ;
+          rdfs:comment "Tetragonal-disphenoidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_-42m
+:PG_-42m rdf:type owl:Class ;
+            owl:equivalentClass :PG_-4m2 ;
+            rdfs:subClassOf :PointGroup ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasCorrespondingSpaceGroup ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass [ rdf:type owl:Class ;
+                                            owl:unionOf ( :SP_111
+                                                          :SP_112
+                                                          :SP_113
+                                                          :SP_114
+                                                          :SP_115
+                                                          :SP_116
+                                                          :SP_117
+                                                          :SP_118
+                                                          :SP_119
+                                                          :SP_120
+                                                          :SP_121
+                                                          :SP_122
+                                                        )
+                                          ]
+                            ] ;
+            rdfs:comment "Tetragonal-scalenohedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_-43m
+:PG_-43m rdf:type owl:Class ;
+            rdfs:subClassOf :PointGroup ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasCorrespondingSpaceGroup ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass [ rdf:type owl:Class ;
+                                            owl:unionOf ( :SP_215
+                                                          :SP_216
+                                                          :SP_217
+                                                          :SP_218
+                                                          :SP_219
+                                                          :SP_220
+                                                        )
+                                          ]
+                            ] ;
+            rdfs:comment "Hextetrahedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_-4m2
+:PG_-4m2 rdf:type owl:Class ;
+            rdfs:subClassOf :PointGroup ;
+            rdfs:comment "Tetragonal-scalenohedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_4mm
+:PG_4mm rdf:type owl:Class ;
+        rdfs:subClassOf :PointGroup ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCorrespondingSpaceGroup ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( :SP_100
+                                                      :SP_101
+                                                      :SP_102
+                                                      :SP_103
+                                                      :SP_104
+                                                      :SP_105
+                                                      :SP_106
+                                                      :SP_107
+                                                      :SP_108
+                                                      :SP_109
+                                                      :SP_110
+                                                      :SP_99
+                                                    )
+                                      ]
+                        ] ;
+        rdfs:comment "Ditetragonal-pyramidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_6
+:PG_6 rdf:type owl:Class ;
+      rdfs:subClassOf :PointGroup ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCorrespondingSpaceGroup ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( :SP_168
+                                                    :SP_169
+                                                    :SP_170
+                                                    :SP_171
+                                                    :SP_172
+                                                    :SP_173
+                                                  )
+                                    ]
+                      ] ;
+      rdfs:comment "Hexagonal-pyramidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_622
+:PG_622 rdf:type owl:Class ;
+        rdfs:subClassOf :PointGroup ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCorrespondingSpaceGroup ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( :SP_177
+                                                      :SP_178
+                                                      :SP_179
+                                                      :SP_180
+                                                      :SP_181
+                                                      :SP_182
+                                                    )
+                                      ]
+                        ] ;
+        rdfs:comment "Hexagonal-trapezohedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_-6
+:PG_-6 rdf:type owl:Class ;
+          rdfs:subClassOf :PointGroup ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCorrespondingSpaceGroup ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :SP_174
+                          ] ;
+          rdfs:comment "Trigonal-dipyramidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_-62m
+:PG_-62m rdf:type owl:Class ;
+            owl:equivalentClass :PG_-6m2 ;
+            rdfs:subClassOf :PointGroup ;
+            rdfs:comment "Ditrigonal-dipyramidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_-6m2
+:PG_-6m2 rdf:type owl:Class ;
+            rdfs:subClassOf :PointGroup ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasCorrespondingSpaceGroup ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass [ rdf:type owl:Class ;
+                                            owl:unionOf ( :SP_187
+                                                          :SP_188
+                                                          :SP_189
+                                                          :SP_190
+                                                        )
+                                          ]
+                            ] ;
+            rdfs:comment "Ditrigonal-dipyramidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_6mm
+:PG_6mm rdf:type owl:Class ;
+        rdfs:subClassOf :PointGroup ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCorrespondingSpaceGroup ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( :SP_183
+                                                      :SP_184
+                                                      :SP_185
+                                                      :SP_186
+                                                    )
+                                      ]
+                        ] ;
+        rdfs:comment "Dihexagonal-pyramidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_m
+:PG_m rdf:type owl:Class ;
+      rdfs:subClassOf :PointGroup ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCorrespondingSpaceGroup ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( :SP_6
+                                                    :SP_7
+                                                    :SP_8
+                                                    :SP_9
+                                                  )
+                                    ]
+                      ] ;
+      rdfs:comment "Domatic Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_m-3
+:PG_m-3 rdf:type owl:Class ;
+           rdfs:subClassOf :PointGroup ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasCorrespondingSpaceGroup ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass [ rdf:type owl:Class ;
+                                           owl:unionOf ( :SP_200
+                                                         :SP_201
+                                                         :SP_202
+                                                         :SP_203
+                                                         :SP_204
+                                                         :SP_205
+                                                         :SP_206
+                                                       )
+                                         ]
+                           ] ;
+           rdfs:comment "Diplodial Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_m-3m
+:PG_m-3m rdf:type owl:Class ;
+            rdfs:subClassOf :PointGroup ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasCorrespondingSpaceGroup ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass [ rdf:type owl:Class ;
+                                            owl:unionOf ( :SP_221
+                                                          :SP_222
+                                                          :SP_223
+                                                          :SP_224
+                                                          :SP_225
+                                                          :SP_226
+                                                          :SP_227
+                                                          :SP_228
+                                                          :SP_229
+                                                          :SP_230
+                                                        )
+                                          ]
+                            ] ;
+            rdfs:comment "Hexoctahedral Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_mm2
+:PG_mm2 rdf:type owl:Class ;
+        rdfs:subClassOf :PointGroup ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCorrespondingSpaceGroup ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( :SP_25
+                                                      :SP_26
+                                                      :SP_27
+                                                      :SP_28
+                                                      :SP_29
+                                                      :SP_30
+                                                      :SP_31
+                                                      :SP_32
+                                                      :SP_33
+                                                      :SP_34
+                                                      :SP_35
+                                                      :SP_36
+                                                      :SP_37
+                                                      :SP_38
+                                                      :SP_39
+                                                      :SP_40
+                                                      :SP_41
+                                                      :SP_42
+                                                      :SP_43
+                                                      :SP_44
+                                                      :SP_45
+                                                      :SP_46
+                                                    )
+                                      ]
+                        ] ;
+        rdfs:comment "Rhombic-pyramidal Point Group"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PG_mmm
+:PG_mmm rdf:type owl:Class ;
+        rdfs:subClassOf :PointGroup ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCorrespondingSpaceGroup ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( :SP_47
+                                                      :SP_48
+                                                      :SP_49
+                                                      :SP_50
+                                                      :SP_51
+                                                      :SP_52
+                                                      :SP_53
+                                                      :SP_54
+                                                      :SP_55
+                                                      :SP_56
+                                                      :SP_57
+                                                      :SP_58
+                                                      :SP_59
+                                                      :SP_60
+                                                      :SP_61
+                                                      :SP_62
+                                                      :SP_63
+                                                      :SP_64
+                                                      :SP_65
+                                                      :SP_66
+                                                      :SP_67
+                                                      :SP_68
+                                                      :SP_69
+                                                      :SP_70
+                                                      :SP_71
+                                                      :SP_72
+                                                      :SP_73
+                                                      :SP_74
+                                                    )
+                                      ]
+                        ] ;
+        rdfs:comment "Rhombic-dipyramidal Point Group"^^xsd:string .
+
+
 ###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#PointGroup
 :PointGroup rdf:type owl:Class .
 
@@ -283,9 +888,1393 @@ dcterms:creator rdf:type owl:AnnotationProperty .
       rdfs:subClassOf :PrimitiveRhombohederal .
 
 
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#ReciprocalLattice
+:ReciprocalLattice rdf:type owl:Class .
+
+
 ###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Rhombohedral
 :Rhombohedral rdf:type owl:Class ;
               rdfs:subClassOf :Trigonal .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_1
+:SP_1 rdf:type owl:Class ;
+      rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "P1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_10
+:SP_10 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "P2/m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_100
+:SP_100 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4bm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_101
+:SP_101 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_2cm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_102
+:SP_102 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_2nm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_103
+:SP_103 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4cc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_104
+:SP_104 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4nc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_105
+:SP_105 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_2mc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_106
+:SP_106 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_2bc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_107
+:SP_107 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I4mm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_108
+:SP_108 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I4cm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_109
+:SP_109 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I4_1md"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_11
+:SP_11 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "P2_1/m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_110
+:SP_110 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I4_1cd"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_111
+:SP_111 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-42m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_112
+:SP_112 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-42c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_113
+:SP_113 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-42_1m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_114
+:SP_114 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-42_1c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_115
+:SP_115 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-4m2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_116
+:SP_116 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-4c2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_117
+:SP_117 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-4b2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_118
+:SP_118 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-4n2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_119
+:SP_119 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I-4m2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_12
+:SP_12 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "C2/m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_120
+:SP_120 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I-4c2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_121
+:SP_121 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I-42m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_122
+:SP_122 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I-42d"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_123
+:SP_123 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4/mmm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_124
+:SP_124 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4/mcc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_125
+:SP_125 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4/nbm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_126
+:SP_126 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4/nnc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_127
+:SP_127 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4/mbm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_128
+:SP_128 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4/mnc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_129
+:SP_129 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4/nmm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_13
+:SP_13 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "P2/c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_130
+:SP_130 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4/ncc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_131
+:SP_131 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_2/mmc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_132
+:SP_132 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_2/mcm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_133
+:SP_133 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_2/nbc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_134
+:SP_134 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_2/nnm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_135
+:SP_135 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_2/mbc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_136
+:SP_136 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_2/mnm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_137
+:SP_137 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_2/nmc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_138
+:SP_138 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_2/ncm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_139
+:SP_139 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I4/mmm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_14
+:SP_14 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P2_1/c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_140
+:SP_140 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I4/mcm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_141
+:SP_141 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I4_1/amd"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_142
+:SP_142 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I4_1/acd"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_143
+:SP_143 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_144
+:SP_144 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P3_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_145
+:SP_145 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P3_2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_146
+:SP_146 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "R3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_147
+:SP_147 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_148
+:SP_148 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "R-3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_149
+:SP_149 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P312"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_15
+:SP_15 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "C2/c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_150
+:SP_150 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P321"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_151
+:SP_151 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P3_112"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_152
+:SP_152 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P3_121"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_153
+:SP_153 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P3_212"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_154
+:SP_154 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P3_221"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_155
+:SP_155 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "R32"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_156
+:SP_156 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P3m1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_157
+:SP_157 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P31m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_158
+:SP_158 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P3c1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_159
+:SP_159 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P31c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_16
+:SP_16 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P222"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_160
+:SP_160 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "R3m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_161
+:SP_161 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "R3c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_162
+:SP_162 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-31m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_163
+:SP_163 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-31c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_164
+:SP_164 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-3m1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_165
+:SP_165 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-3c1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_166
+:SP_166 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "R-3m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_167
+:SP_167 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "R-3c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_168
+:SP_168 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_169
+:SP_169 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_17
+:SP_17 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P222_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_170
+:SP_170 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_5"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_171
+:SP_171 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_172
+:SP_172 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_4"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_173
+:SP_173 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_174
+:SP_174 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-6"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_175
+:SP_175 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6/m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_176
+:SP_176 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_3/m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_177
+:SP_177 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P622"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_178
+:SP_178 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_122"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_179
+:SP_179 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_522"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_18
+:SP_18 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P2_12_12"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_180
+:SP_180 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_222"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_181
+:SP_181 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_422"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_182
+:SP_182 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_322"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_183
+:SP_183 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6mm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_184
+:SP_184 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6cc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_185
+:SP_185 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_3cm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_186
+:SP_186 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_3mc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_187
+:SP_187 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-6m2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_188
+:SP_188 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-6c2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_189
+:SP_189 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-62m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_19
+:SP_19 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P2_12_12_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_190
+:SP_190 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-62c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_191
+:SP_191 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6/mmm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_192
+:SP_192 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6/mcc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_193
+:SP_193 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_3/mcm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_194
+:SP_194 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P6_3/mmc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_195
+:SP_195 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P23"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_196
+:SP_196 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "F23"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_197
+:SP_197 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I23"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_198
+:SP_198 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P2_13"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_199
+:SP_199 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I2_13"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_2
+:SP_2 rdf:type owl:Class ;
+      rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "P-1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_20
+:SP_20 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "C222_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_200
+:SP_200 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Pm-3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_201
+:SP_201 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Pn-3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_202
+:SP_202 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Fm-3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_203
+:SP_203 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Fd-3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_204
+:SP_204 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Im-3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_205
+:SP_205 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Pa-3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_206
+:SP_206 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Ia-3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_207
+:SP_207 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P432"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_208
+:SP_208 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_232"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_209
+:SP_209 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "F432"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_21
+:SP_21 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "C222"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_210
+:SP_210 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "F4_132"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_211
+:SP_211 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I432"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_212
+:SP_212 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_332"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_213
+:SP_213 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P4_132"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_214
+:SP_214 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I4_132"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_215
+:SP_215 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-43m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_216
+:SP_216 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "F-43m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_217
+:SP_217 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I-43m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_218
+:SP_218 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "P-43n"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_219
+:SP_219 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "F-43c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_22
+:SP_22 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "F222"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_220
+:SP_220 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "I-43d"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_221
+:SP_221 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Pm-3m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_222
+:SP_222 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Pn-3n"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_223
+:SP_223 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Pm-3n"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_224
+:SP_224 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Pn-3m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_225
+:SP_225 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Fm-3m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_226
+:SP_226 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Fm-3c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_227
+:SP_227 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Fd-3m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_228
+:SP_228 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Fd-3c"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_229
+:SP_229 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Im-3m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_23
+:SP_23 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "I222"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_230
+:SP_230 rdf:type owl:Class ;
+        rdfs:subClassOf :SpaceGroup ;
+        rdfs:label "Ia-3d"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_24
+:SP_24 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "I2_12_12_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_25
+:SP_25 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pmm2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_26
+:SP_26 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pmc2_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_27
+:SP_27 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pcc2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_28
+:SP_28 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pma2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_29
+:SP_29 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pca2_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_3
+:SP_3 rdf:type owl:Class ;
+      rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "P2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_30
+:SP_30 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pnc2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_31
+:SP_31 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pmn2_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_32
+:SP_32 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pba2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_33
+:SP_33 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pna2_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_34
+:SP_34 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pnn2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_35
+:SP_35 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Cmm2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_36
+:SP_36 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Cmc2_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_37
+:SP_37 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Ccc2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_38
+:SP_38 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Amm2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_39
+:SP_39 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Aem2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_4
+:SP_4 rdf:type owl:Class ;
+      rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "P2_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_40
+:SP_40 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Ama2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_41
+:SP_41 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Aea2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_42
+:SP_42 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Fmm2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_43
+:SP_43 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Fdd2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_44
+:SP_44 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Imm2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_45
+:SP_45 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Iba2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_46
+:SP_46 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Ima2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_47
+:SP_47 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pmmm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_48
+:SP_48 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pnnn"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_49
+:SP_49 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pccm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_5
+:SP_5 rdf:type owl:Class ;
+      rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "C2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_50
+:SP_50 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pban"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_51
+:SP_51 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pmma"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_52
+:SP_52 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pnna"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_53
+:SP_53 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pmna"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_54
+:SP_54 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pcca"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_55
+:SP_55 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pbam"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_56
+:SP_56 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pccn"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_57
+:SP_57 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pbcm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_58
+:SP_58 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pnnm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_59
+:SP_59 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pmmm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_6
+:SP_6 rdf:type owl:Class ;
+      rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "Pm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_60
+:SP_60 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pbcn"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_61
+:SP_61 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pbca"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_62
+:SP_62 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Pnma"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_63
+:SP_63 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Cmcm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_64
+:SP_64 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Cmce"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_65
+:SP_65 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Cmmm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_66
+:SP_66 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Cccm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_67
+:SP_67 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Cmme"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_68
+:SP_68 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Ccce"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_69
+:SP_69 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Fmmm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_7
+:SP_7 rdf:type owl:Class ;
+      rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "Pc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_70
+:SP_70 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Fddd"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_71
+:SP_71 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Immm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_72
+:SP_72 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Ibam"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_73
+:SP_73 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Ibca"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_74
+:SP_74 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "Imma"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_75
+:SP_75 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_76
+:SP_76 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_77
+:SP_77 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4_2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_78
+:SP_78 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4_3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_79
+:SP_79 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "I4"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_8
+:SP_8 rdf:type owl:Class ;
+      rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "Cm"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_80
+:SP_80 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "I4_1"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_81
+:SP_81 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P-4"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_82
+:SP_82 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "I-4"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_83
+:SP_83 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4/m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_84
+:SP_84 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4_2/m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_85
+:SP_85 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4/n"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_86
+:SP_86 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4_2/n"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_87
+:SP_87 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "I4/m"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_88
+:SP_88 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "I4_1/a"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_89
+:SP_89 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P422"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_9
+:SP_9 rdf:type owl:Class ;
+      rdfs:subClassOf :SpaceGroup ;
+      rdfs:label "Cc"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_90
+:SP_90 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P42_12"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_91
+:SP_91 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4_122"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_92
+:SP_92 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4_12_12"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_93
+:SP_93 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4_222"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_94
+:SP_94 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4_22_12"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_95
+:SP_95 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4_322"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_96
+:SP_96 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4_32_12"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_97
+:SP_97 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "I422"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_98
+:SP_98 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "I4_122"^^xsd:string .
+
+
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SP_99
+:SP_99 rdf:type owl:Class ;
+       rdfs:subClassOf :SpaceGroup ;
+       rdfs:label "P4mm"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#SpaceGroup
@@ -321,8 +2310,8 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                               owl:onClass [ rdf:type owl:Class ;
                                             owl:unionOf ( :PG_4
                                                           :PG_422
-                                                          :PG_4mean
-                                                          :PG_4mean2m
+                                                          :PG_-4
+                                                          :PG_-42m
                                                           :PG_4mm
                                                           <http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_4/m>
                                                           <http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_4/mmm>
@@ -339,273 +2328,117 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass [ rdf:type owl:Class ;
                                            owl:unionOf ( :PG_1
-                                                         :PG_1mean
+                                                         :PG_-1
                                                        )
                                          ]
                            ] .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#CrystalSystem
-:CrystalSystem rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_1
-:PG_1 rdf:type owl:Class ;
-      rdfs:subClassOf :PointGroup ;
-      rdfs:comment "Pedial Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_1mean
-:PG_1mean rdf:type owl:Class ;
-          rdfs:subClassOf :PointGroup ;
-          rdfs:comment "Pinacoidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_2
-:PG_2 rdf:type owl:Class ;
-      rdfs:subClassOf :PointGroup ;
-      rdfs:comment "Sphenoidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_222
-:PG_222 rdf:type owl:Class ;
-        rdfs:subClassOf :PointGroup ;
-        rdfs:comment "Rhombic-disphenoidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_23
-:PG_23 rdf:type owl:Class ;
-       rdfs:subClassOf :PointGroup ;
-       rdfs:comment "Tetartoidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_3
-:PG_3 rdf:type owl:Class ;
-      rdfs:subClassOf :PointGroup ;
-      rdfs:comment "Trigonal-pyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_312
-:PG_312 rdf:type owl:Class ;
-        owl:equivalentClass :PG_32 ,
-                            :PG_321 ;
-        rdfs:subClassOf :PointGroup ;
-        rdfs:comment "Trigonal-trapezohedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_31m
-:PG_31m rdf:type owl:Class ;
-        owl:equivalentClass :PG_3m ,
-                            :PG_3m1 ;
-        rdfs:subClassOf :PointGroup ;
-        rdfs:comment "Ditrigonal-pyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_32
-:PG_32 rdf:type owl:Class ;
-       owl:equivalentClass :PG_321 ;
-       rdfs:subClassOf :PointGroup ;
-       rdfs:comment "Trigonal-trapezohedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_321
-:PG_321 rdf:type owl:Class ;
-        rdfs:subClassOf :PointGroup ;
-        rdfs:comment "Trigonal-trapezohedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_3m
-:PG_3m rdf:type owl:Class ;
-       owl:equivalentClass :PG_3m1 ;
-       rdfs:subClassOf :PointGroup ;
-       rdfs:comment "Ditrigonal-pyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_3m1
-:PG_3m1 rdf:type owl:Class ;
-        rdfs:subClassOf :PointGroup ;
-        rdfs:comment "Ditrigonal-pyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_3mean
-:PG_3mean rdf:type owl:Class ;
-          rdfs:subClassOf :PointGroup ;
-          rdfs:comment "Rhombohedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_3mean1m
-:PG_3mean1m rdf:type owl:Class ;
-            owl:equivalentClass :PG_3meanm ,
-                                :PG_3meanm1 ;
-            rdfs:subClassOf :PointGroup ;
-            rdfs:comment "Ditrigonal-scalenohedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_3meanm
-:PG_3meanm rdf:type owl:Class ;
-           owl:equivalentClass :PG_3meanm1 ;
-           rdfs:subClassOf :PointGroup ;
-           rdfs:comment "Ditrigonal-scalenohedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_3meanm1
-:PG_3meanm1 rdf:type owl:Class ;
-            rdfs:subClassOf :PointGroup ;
-            rdfs:comment "Ditrigonal-scalenohedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_4
-:PG_4 rdf:type owl:Class ;
-      rdfs:subClassOf :PointGroup ;
-      rdfs:comment "Tetragonal-pyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_422
-:PG_422 rdf:type owl:Class ;
-        rdfs:subClassOf :PointGroup ;
-        rdfs:comment "Tetragonal-trapezohedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_432
-:PG_432 rdf:type owl:Class ;
-        rdfs:subClassOf :PointGroup ;
-        rdfs:comment "Gyroidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_4mean
-:PG_4mean rdf:type owl:Class ;
-          rdfs:subClassOf :PointGroup ;
-          rdfs:comment "Tetragonal-disphenoidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_4mean2m
-:PG_4mean2m rdf:type owl:Class ;
-            owl:equivalentClass :PG_4meanm2 ;
-            rdfs:subClassOf :PointGroup ;
-            rdfs:comment "Tetragonal-scalenohedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_4mean3m
-:PG_4mean3m rdf:type owl:Class ;
-            rdfs:subClassOf :PointGroup ;
-            rdfs:comment "Hextetrahedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_4meanm2
-:PG_4meanm2 rdf:type owl:Class ;
-            rdfs:subClassOf :PointGroup ;
-            rdfs:comment "Tetragonal-scalenohedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_4mm
-:PG_4mm rdf:type owl:Class ;
-        rdfs:subClassOf :PointGroup ;
-        rdfs:comment "Ditetragonal-pyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_6
-:PG_6 rdf:type owl:Class ;
-      rdfs:subClassOf :PointGroup ;
-      rdfs:comment "Hexagonal-pyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_622
-:PG_622 rdf:type owl:Class ;
-        rdfs:subClassOf :PointGroup ;
-        rdfs:comment "Hexagonal-trapezohedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_6mean
-:PG_6mean rdf:type owl:Class ;
-          rdfs:subClassOf :PointGroup ;
-          rdfs:comment "Trigonal-dipyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_6mean2m
-:PG_6mean2m rdf:type owl:Class ;
-            owl:equivalentClass :PG_6meanm2 ;
-            rdfs:subClassOf :PointGroup ;
-            rdfs:comment "Ditrigonal-dipyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_6meanm2
-:PG_6meanm2 rdf:type owl:Class ;
-            rdfs:subClassOf :PointGroup ;
-            rdfs:comment "Ditrigonal-dipyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_6mm
-:PG_6mm rdf:type owl:Class ;
-        rdfs:subClassOf :PointGroup ;
-        rdfs:comment "Dihexagonal-pyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_m
-:PG_m rdf:type owl:Class ;
-      rdfs:subClassOf :PointGroup ;
-      rdfs:comment "Domatic Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_m3mean
-:PG_m3mean rdf:type owl:Class ;
-           rdfs:subClassOf :PointGroup ;
-           rdfs:comment "Diplodial Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_m3meanm
-:PG_m3meanm rdf:type owl:Class ;
-            rdfs:subClassOf :PointGroup ;
-            rdfs:comment "Hexoctahedral Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_mm2
-:PG_mm2 rdf:type owl:Class ;
-        rdfs:subClassOf :PointGroup ;
-        rdfs:comment "Rhombic-pyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_mmm
-:PG_mmm rdf:type owl:Class ;
-        rdfs:subClassOf :PointGroup ;
-        rdfs:comment "Rhombic-dipyramidal Point Group"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ReciprocalLattice
-:ReciprocalLattice rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Trigonal
+###  http://www.semanticweb.org/anto/ontologies/2019/10/materials-design#Trigonal
 :Trigonal rdf:type owl:Class ;
           rdfs:subClassOf :LatticeSystem .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_2/m
 <http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_2/m> rdf:type owl:Class ;
-                                                                        rdfs:subClassOf :PointGroup ;
+                                                                        rdfs:subClassOf :PointGroup ,
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :hasCorrespondingSpaceGroup ;
+                                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                          owl:onClass [ rdf:type owl:Class ;
+                                                                                                        owl:unionOf ( :SP_10
+                                                                                                                      :SP_11
+                                                                                                                      :SP_12
+                                                                                                                      :SP_13
+                                                                                                                      :SP_14
+                                                                                                                      :SP_15
+                                                                                                                    )
+                                                                                                      ]
+                                                                                        ] ;
                                                                         rdfs:comment "Prismatic Point Group"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_4/m
 <http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_4/m> rdf:type owl:Class ;
-                                                                        rdfs:subClassOf :PointGroup ;
+                                                                        rdfs:subClassOf :PointGroup ,
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :hasCorrespondingSpaceGroup ;
+                                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                          owl:onClass [ rdf:type owl:Class ;
+                                                                                                        owl:unionOf ( :SP_83
+                                                                                                                      :SP_84
+                                                                                                                      :SP_85
+                                                                                                                      :SP_86
+                                                                                                                      :SP_87
+                                                                                                                      :SP_88
+                                                                                                                    )
+                                                                                                      ]
+                                                                                        ] ;
                                                                         rdfs:comment "Tetragonal-dipyramidal Point Group"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_4/mmm
 <http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_4/mmm> rdf:type owl:Class ;
-                                                                          rdfs:subClassOf :PointGroup ;
+                                                                          rdfs:subClassOf :PointGroup ,
+                                                                                          [ rdf:type owl:Restriction ;
+                                                                                            owl:onProperty :hasCorrespondingSpaceGroup ;
+                                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                            owl:onClass [ rdf:type owl:Class ;
+                                                                                                          owl:unionOf ( :SP_123
+                                                                                                                        :SP_124
+                                                                                                                        :SP_125
+                                                                                                                        :SP_126
+                                                                                                                        :SP_127
+                                                                                                                        :SP_128
+                                                                                                                        :SP_129
+                                                                                                                        :SP_130
+                                                                                                                        :SP_131
+                                                                                                                        :SP_132
+                                                                                                                        :SP_133
+                                                                                                                        :SP_134
+                                                                                                                        :SP_135
+                                                                                                                        :SP_136
+                                                                                                                        :SP_137
+                                                                                                                        :SP_138
+                                                                                                                        :SP_139
+                                                                                                                        :SP_140
+                                                                                                                        :SP_141
+                                                                                                                        :SP_142
+                                                                                                                      )
+                                                                                                        ]
+                                                                                          ] ;
                                                                           rdfs:comment "Ditetragonal-dipyramidal Point Group"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_6/m
 <http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_6/m> rdf:type owl:Class ;
-                                                                        rdfs:subClassOf :PointGroup ;
+                                                                        rdfs:subClassOf :PointGroup ,
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :hasCorrespondingSpaceGroup ;
+                                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                          owl:onClass [ rdf:type owl:Class ;
+                                                                                                        owl:unionOf ( :SP_175
+                                                                                                                      :SP_176
+                                                                                                                    )
+                                                                                                      ]
+                                                                                        ] ;
                                                                         rdfs:comment "Hexagonal-dipyramidal Point Group"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_6/mmm
 <http://www.semanticweb.org/ontologies/2019/10/materials-design#PG_6/mmm> rdf:type owl:Class ;
-                                                                          rdfs:subClassOf :PointGroup ;
+                                                                          rdfs:subClassOf :PointGroup ,
+                                                                                          [ rdf:type owl:Restriction ;
+                                                                                            owl:onProperty :hasCorrespondingSpaceGroup ;
+                                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                            owl:onClass [ rdf:type owl:Class ;
+                                                                                                          owl:unionOf ( :SP_191
+                                                                                                                        :SP_192
+                                                                                                                        :SP_193
+                                                                                                                        :SP_194
+                                                                                                                      )
+                                                                                                        ]
+                                                                                          ] ;
                                                                           rdfs:comment "Dihexagonal-dipyramidal Point Group"^^xsd:string .
 
 
