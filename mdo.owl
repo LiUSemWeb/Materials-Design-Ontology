@@ -107,6 +107,24 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 :hasFormationEnergy rdf:type owl:DatatypeProperty .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasFormula
+:hasFormula rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasFormulaAnonymous
+:hasFormulaAnonymous rdf:type owl:DatatypeProperty ;
+                     owl:equivalentProperty :hasFormulaGeneric .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasFormulaGeneric
+:hasFormulaGeneric rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasFormulaHill
+:hasFormulaHill rdf:type owl:DatatypeProperty .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasNatoms
 :hasNatoms rdf:type owl:DatatypeProperty ;
            owl:equivalentProperty :hasNsites .
@@ -118,6 +136,10 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasPrototypeICSD
 :hasPrototypeICSD rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasReducedFormula
+:hasReducedFormula rdf:type owl:DatatypeProperty .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasVolume
@@ -309,6 +331,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 :Face-centeredOrthothombic rdf:type owl:Class ;
                            rdfs:subClassOf :BravaisLattice ,
                                            :Orthorhombic .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#GW-PAW
+:GW-PAW rdf:type owl:Class ;
+        rdfs:subClassOf :ProjectorAugmentedWave .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#GeneralizedGradientApproximation
@@ -1172,6 +1199,10 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                         rdfs:subClassOf :ComputationalChemistryMethods .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Potentials
+:Potentials rdf:type owl:Class .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PrimitiveCell
 :PrimitiveCell rdf:type owl:Class ;
                owl:equivalentClass :UnitCell ;
@@ -1218,6 +1249,18 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 :PrimitiveTriclinic rdf:type owl:Class ;
                     rdfs:subClassOf :BravaisLattice ,
                                     :Triclinic .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ProjectorAugmentedWave
+:ProjectorAugmentedWave rdf:type owl:Class ;
+                        rdfs:subClassOf :Potentials ;
+                        rdfs:label "PAW"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PseudoPotentials
+:PseudoPotentials rdf:type owl:Class ;
+                  rdfs:subClassOf :Potentials ;
+                  rdfs:label "PP"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#RHL1
@@ -2937,6 +2980,12 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                           ] .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#UltrasoftPP
+:UltrasoftPP rdf:type owl:Class ;
+             rdfs:subClassOf :PseudoPotentials ;
+             rdfs:label "US-PP"^^xsd:string .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#UniformElectronGasMethod
 :UniformElectronGasMethod rdf:type owl:Class ;
                           rdfs:subClassOf :LocalDensityApproximation ;
@@ -2957,6 +3006,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Wigner-SeitzCell
 :Wigner-SeitzCell rdf:type owl:Class ;
                   rdfs:subClassOf :PrimitiveCell .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ab-initioMethod
+:ab-initioMethod rdf:type owl:Class ;
+                 rdfs:subClassOf :ComputationalChemistryMethods .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#meta-GeneralizedGradientApproximation
