@@ -4,10 +4,12 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix CHEBI: <http://purl.obolibrary.org/obo/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://www.semanticweb.org/ontologies/2019/10/materials-design> .
 
 <http://www.semanticweb.org/ontologies/2019/10/materials-design> rdf:type owl:Ontology ;
+                                                                  owl:imports CHEBI: ;
                                                                   dcterms:created "2019-11-07T09:00:00"^^xsd:dateTime ;
                                                                   rdfs:label "Materials Design Ontology"@en ;
                                                                   dcterms:creator "Huanyu Li"^^xsd:string ;
