@@ -11,7 +11,7 @@
 <http://www.semanticweb.org/ontologies/2019/10/materials-design> rdf:type owl:Ontology ;
                                                                   dcterms:created "2019-11-07T09:00:00"^^xsd:dateTime ;
                                                                   dcterms:creator "Huanyu Li"^^xsd:string ;
-                                                                  rdfs:label "Materials Design Ontology"@en ;
+                                                                  rdfs:label "Materials Design Ontology-Lite"@en ;
                                                                   rdfs:seeAlso "https://github.com/huanyu-li/Materials-Design-Ontology" .
 
 #################################################################
@@ -600,61 +600,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#BravaisLattice
-:BravaisLattice rdf:type owl:Class ;
-                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasAngle_alpha ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange xsd:float
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasAngle_beta ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange xsd:float
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasAngle_gamma ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange xsd:float
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasBasis_a ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange xsd:float
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasBasis_b ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange xsd:float
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasBasis_c ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange xsd:float
-                                ] .
+:BravaisLattice rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Calculation
-:Calculation rdf:type owl:Class ;
-             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty :belongtoCCM ;
-                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onClass :ComputationalMethods
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasInputStructure ;
-                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onClass :Structure
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasOutputStructure ;
-                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onClass :Structure
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasCalculationCode ;
-                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange xsd:string
-                             ] .
+:Calculation rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Carpley-AlderMethod
@@ -664,33 +614,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Composition
-:Composition rdf:type owl:Class ;
-             rdfs:subClassOf [ rdf:type owl:Class ;
-                               owl:unionOf ( [ rdf:type owl:Restriction ;
-                                               owl:onProperty :hasElement ;
-                                               owl:someValuesFrom :Element
-                                             ]
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty :hasSpecie ;
-                                               owl:someValuesFrom :Specie
-                                             ]
-                                           )
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasFormula ;
-                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange xsd:string
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasGenericFormula ;
-                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange xsd:string
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasReducedFormula ;
-                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange xsd:string
-                             ] .
+:Composition rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ComputationalMethods
@@ -722,112 +646,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Element
-:Element rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasElectronShell ;
-                           owl:someValuesFrom :ElectronShell
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasAtomicMass ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasAtomicNumber ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:integer
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasAtomicRadius ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasAtomicSymbol ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasBlock ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasBoilingPointCelsius ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasBoilingPointKelvins ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasFirstIonizationEnergy ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasFullAtomicName ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasMeltingPointCelsius ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasMeltingPointKelvins ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasMendeleevNumber ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:int
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasMolarVolume ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasPTGroup ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:integer
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasPTPeriod ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:integer
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasPaulingElectronrgativity ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasSTPDensity ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasSolidStateDensity ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasVanDerWaalsRadius ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasVolumePerAtom ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ;
-         rdfs:comment "To represent an element in the periodic table."^^xsd:string .
+:Element rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#FaceCenteredCubic
@@ -909,85 +728,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Lattice
-:Lattice rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasSite ;
-                           owl:someValuesFrom :Site
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :belongtoBravaisLattice ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass :BravaisLattice
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasAngle_alpha ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasAngle_beta ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasAngle_gamma ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasBasis_a ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasBasis_b ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasBasis_c ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasVolume ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:float
-                         ] .
+:Lattice rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#LatticeSystem
-:LatticeSystem rdf:type owl:Class ;
-               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                 owl:onProperty :hasAngle_alpha ;
-                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onDataRange xsd:float
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :hasAngle_beta ;
-                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onDataRange xsd:float
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :hasAngle_gamma ;
-                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onDataRange xsd:float
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :hasBasis_a ;
-                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onDataRange xsd:float
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :hasBasis_b ;
-                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onDataRange xsd:float
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :hasBasis_c ;
-                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onDataRange xsd:float
-                               ] .
+:LatticeSystem rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Lee-Yang-ParrMethod
@@ -1200,11 +945,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PointGroup
-:PointGroup rdf:type owl:Class ;
-            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty :hasCorrespondingSpaceGroup ;
-                              owl:someValuesFrom :SpaceGroup
-                            ] .
+:PointGroup rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PolycrystallineSolid
@@ -1265,14 +1006,12 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ProjectorAugmentedWave
 :ProjectorAugmentedWave rdf:type owl:Class ;
-                        rdfs:subClassOf :Potentials ;
-                        rdfs:label "PAW"^^xsd:string .
+                        rdfs:subClassOf :Potentials .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PseudoPotentials
 :PseudoPotentials rdf:type owl:Class ;
-                  rdfs:subClassOf :Potentials ;
-                  rdfs:label "PP"^^xsd:string .
+                  rdfs:subClassOf :Potentials .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#QShell
@@ -1327,99 +1066,23 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Site
-:Site rdf:type owl:Class ;
-      rdfs:subClassOf [ rdf:type owl:Restriction ;
-                        owl:onProperty :hasSpecie ;
-                        owl:someValuesFrom :Specie
-                      ] .
+:Site rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Solid
-:Solid rdf:type owl:Class ;
-       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasCalculation ;
-                         owl:someValuesFrom :Calculation
-                       ] ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasComposition ;
-                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                         owl:onClass :Composition
-                       ] .
+:Solid rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#SpaceGroup
-:SpaceGroup rdf:type owl:Class ;
-            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty :hasCorrespondingPointGroup ;
-                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass :PointGroup
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty :hasSpaceGroupId ;
-                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onDataRange xsd:integer
-                            ] .
+:SpaceGroup rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Specie
-:Specie rdf:type owl:Class ;
-        rdfs:subClassOf [ rdf:type owl:Restriction ;
-                          owl:onProperty :hasElectronShell ;
-                          owl:someValuesFrom :ElectronShell
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty :hasElement ;
-                          owl:someValuesFrom :Element
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty :hasOxidationState ;
-                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onDataRange xsd:float
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty :hasSpecieName ;
-                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onDataRange xsd:string
-                        ] .
+:Specie rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Structure
-:Structure rdf:type owl:Class ;
-           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasComposition ;
-                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass :Composition
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasCorrespondingPointGroup ;
-                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass :PointGroup
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasCorrespondingSpaceGroup ;
-                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass :SpaceGroup
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasLattice ;
-                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass :Lattice
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasBandgap ;
-                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onDataRange xsd:float
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasDensity ;
-                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onDataRange xsd:float
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasFormationEnergy ;
-                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onDataRange xsd:float
-                           ] .
+:Structure rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#TRI1a
@@ -1459,8 +1122,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#UltrasoftPP
 :UltrasoftPP rdf:type owl:Class ;
-             rdfs:subClassOf :PseudoPotentials ;
-             rdfs:label "US-PP"^^xsd:string .
+             rdfs:subClassOf :PseudoPotentials .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#UniformElectronGasMethod
