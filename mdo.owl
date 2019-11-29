@@ -47,23 +47,16 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#belongtoBravaisLattice
-:belongtoBravaisLattice rdf:type owl:ObjectProperty ;
-                        rdfs:domain :Lattice ;
-                        rdfs:range :BravaisLattice .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#belongtoCCM
-:belongtoCCM rdf:type owl:ObjectProperty ;
-             rdfs:domain :Calculation ;
-             rdfs:range :ComputationalMethods ;
-             rdfs:comment "A calculation belongs to a specific Computational Chemical Method."^^xsd:string .
-
-
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#belongtoLatticeSystem
 :belongtoLatticeSystem rdf:type owl:ObjectProperty ;
                        rdfs:domain :Lattice ;
                        rdfs:range :LatticeSystem .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasBravaisLattice
+:hasBravaisLattice rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Lattice ;
+                   rdfs:range :BravaisLattice .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasCalculation
@@ -79,18 +72,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                 rdfs:range :Composition .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasCorrespondingPointGroup
-:hasCorrespondingPointGroup rdf:type owl:ObjectProperty ;
-                            rdfs:domain :Lattice ,
-                                        :SpaceGroup ,
-                                        :Structure ;
-                            rdfs:range :PointGroup .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasCorrespondingSpaceGroup
-:hasCorrespondingSpaceGroup rdf:type owl:ObjectProperty ;
-                            rdfs:domain :Structure ;
-                            rdfs:range :SpaceGroup .
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasComputationalMethod
+:hasComputationalMethod rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Calculation ;
+                        rdfs:range :ComputationalMethod ;
+                        rdfs:comment "A calculation belongs to a specific Computational Chemical Method."^^xsd:string .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasElectronShell
@@ -124,10 +110,24 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                     rdfs:range :Structure .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasPointGroup
+:hasPointGroup rdf:type owl:ObjectProperty ;
+               rdfs:domain :Lattice ,
+                           :SpaceGroup ,
+                           :Structure ;
+               rdfs:range :PointGroup .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasSite
 :hasSite rdf:type owl:ObjectProperty ;
          rdfs:domain :Lattice ;
          rdfs:range :Site .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasSpaceGroup
+:hasSpaceGroup rdf:type owl:ObjectProperty ;
+               rdfs:domain :Structure ;
+               rdfs:range :SpaceGroup .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasSpecie
@@ -139,6 +139,12 @@ dcterms:creator rdf:type owl:AnnotationProperty .
            :hasX ""^^xsd:float ;
            :hasY ""^^xsd:float ;
            :hasZ ""^^xsd:float .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasXCFunction
+:hasXCFunction rdf:type owl:ObjectProperty ;
+               rdfs:domain :DensityFunctionalTheoryMethod ;
+               rdfs:range :ExchangeCorrelationEnergyFunctional .
 
 
 #################################################################
@@ -274,6 +280,24 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                     rdfs:domain :Calculation ;
                     rdfs:range xsd:string ;
                     rdfs:comment "The code that the compuatation applies. (e.g. VASP)" .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasCartesianCoordinateX
+:hasCartesianCoordinateX rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Lattice ;
+                         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasCartesianCoordinateY
+:hasCartesianCoordinateY rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Lattice ;
+                         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasCartesianCoordinateZ
+:hasCartesianCoordinateZ rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Lattice ;
+                         rdfs:range xsd:float .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasDSubShellElectronNumber
@@ -460,8 +484,8 @@ dcterms:creator rdf:type owl:AnnotationProperty .
              rdfs:comment "The period of an element in periodic table. (The row number in periodic table)"^^xsd:string .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasPaulingElectronrgativity
-:hasPaulingElectronrgativity rdf:type owl:DatatypeProperty ;
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasPaulingElectronegativity
+:hasPaulingElectronegativity rdf:type owl:DatatypeProperty ;
                              rdfs:domain :Element ;
                              rdfs:range xsd:float ;
                              rdfs:comment "The Pauling Electronrgativity of an element."^^xsd:string .
@@ -558,11 +582,6 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                 rdfs:subClassOf :Solid .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#B3LYP
-:B3LYP rdf:type owl:Class ;
-       rdfs:subClassOf :HybridGGA .
-
-
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#BaseCenteredMonoclinic
 :BaseCenteredMonoclinic rdf:type owl:Class ;
                         rdfs:subClassOf :BravaisLattice ,
@@ -573,12 +592,6 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 :BaseCenteredOrthorhombic rdf:type owl:Class ;
                           rdfs:subClassOf :BravaisLattice ,
                                           :Orthorhombic .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#BeckeMethod
-:BeckeMethod rdf:type owl:Class ;
-             rdfs:subClassOf :GeneralizedGradientApproximation ;
-             rdfs:label "Becke"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#BodyCenteredCubic
@@ -636,9 +649,9 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Calculation
 :Calculation rdf:type owl:Class ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty :belongtoCCM ;
+                               owl:onProperty :hasComputationalMethod ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onClass :ComputationalMethods
+                               owl:onClass :ComputationalMethod
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :hasInputStructure ;
@@ -655,12 +668,6 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Carpley-AlderMethod
-:Carpley-AlderMethod rdf:type owl:Class ;
-                     rdfs:subClassOf :LocalDensityApproximation ;
-                     rdfs:label "CA"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Composition
@@ -693,8 +700,8 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                              ] .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ComputationalMethods
-:ComputationalMethods rdf:type owl:Class .
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ComputationalMethod
+:ComputationalMethod rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#CovalentSolid
@@ -714,7 +721,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#DensityFunctionalTheoryMethod
 :DensityFunctionalTheoryMethod rdf:type owl:Class ;
-                               rdfs:subClassOf :ComputationalMethods .
+                               rdfs:subClassOf :ComputationalMethod ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasXCFunction ;
+                                                 owl:someValuesFrom :ExchangeCorrelationEnergyFunctional
+                                               ] .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ElectronShell
@@ -785,7 +796,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :hasMendeleevNumber ;
                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:int
+                           owl:onDataRange xsd:integer
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :hasMolarVolume ;
@@ -803,7 +814,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                            owl:onDataRange xsd:integer
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasPaulingElectronrgativity ;
+                           owl:onProperty :hasPaulingElectronegativity ;
                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onDataRange xsd:float
                          ] ,
@@ -830,6 +841,10 @@ dcterms:creator rdf:type owl:AnnotationProperty .
          rdfs:comment "To represent an element in the periodic table."^^xsd:string .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ExchangeCorrelationEnergyFunctional
+:ExchangeCorrelationEnergyFunctional rdf:type owl:Class .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#FaceCenteredCubic
 :FaceCenteredCubic rdf:type owl:Class ;
                    rdfs:subClassOf :BravaisLattice ,
@@ -849,12 +864,12 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#GeneralizedGradientApproximation
 :GeneralizedGradientApproximation rdf:type owl:Class ;
-                                  rdfs:subClassOf :DensityFunctionalTheoryMethod .
+                                  rdfs:subClassOf :ExchangeCorrelationEnergyFunctional .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Hartree-FockMethod
 :Hartree-FockMethod rdf:type owl:Class ;
-                    rdfs:subClassOf :ComputationalMethods .
+                    rdfs:subClassOf :ComputationalMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Hexagonal
@@ -865,7 +880,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#HybridFunctionals
 :HybridFunctionals rdf:type owl:Class ;
-                   rdfs:subClassOf :DensityFunctionalTheoryMethod .
+                   rdfs:subClassOf :ExchangeCorrelationEnergyFunctional .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#HybridGGA
@@ -873,9 +888,9 @@ dcterms:creator rdf:type owl:AnnotationProperty .
            rdfs:subClassOf :HybridFunctionals .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Hybridmeta-GGA
-:Hybridmeta-GGA rdf:type owl:Class ;
-                rdfs:subClassOf :HybridFunctionals .
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#HybridmGGA
+:HybridmGGA rdf:type owl:Class ;
+            rdfs:subClassOf :HybridFunctionals .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#IonicSolid
@@ -889,7 +904,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :hasSSubShellElectronNumber ;
                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onDataRange xsd:float
+                          owl:onDataRange xsd:integer
                         ] .
 
 
@@ -915,7 +930,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                            owl:someValuesFrom :Site
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty :belongtoBravaisLattice ;
+                           owl:onProperty :hasBravaisLattice ;
                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass :BravaisLattice
                          ] ,
@@ -947,6 +962,21 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :hasBasis_c ;
                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:float
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasCartesianCoordinateX ;
+                           owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:float
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasCartesianCoordinateY ;
+                           owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:float
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasCartesianCoordinateZ ;
+                           owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
                            owl:onDataRange xsd:float
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -990,25 +1020,9 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                                ] .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Lee-Yang-ParrMethod
-:Lee-Yang-ParrMethod rdf:type owl:Class ;
-                     rdfs:subClassOf :GeneralizedGradientApproximation ;
-                     rdfs:label "BLYP"^^xsd:string .
-
-
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#LocalDensityApproximation
 :LocalDensityApproximation rdf:type owl:Class ;
-                           rdfs:subClassOf :DensityFunctionalTheoryMethod .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#M06-2X
-:M06-2X rdf:type owl:Class ;
-        rdfs:subClassOf :Hybridmeta-GGA .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#M11
-:M11 rdf:type owl:Class ;
-     rdfs:subClassOf :Hybridmeta-GGA .
+                           rdfs:subClassOf :ExchangeCorrelationEnergyFunctional .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#MCLC1
@@ -1058,12 +1072,12 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#MolecularMechanicsMethod
 :MolecularMechanicsMethod rdf:type owl:Class ;
-                          rdfs:subClassOf :ComputationalMethods .
+                          rdfs:subClassOf :ComputationalMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#MolecularModelingGPU
 :MolecularModelingGPU rdf:type owl:Class ;
-                      rdfs:subClassOf :ComputationalMethods .
+                      rdfs:subClassOf :ComputationalMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#MolecularSolid
@@ -1181,29 +1195,16 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                         ] .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Perdew-Berke-ErnzerhofMethod
-:Perdew-Berke-ErnzerhofMethod rdf:type owl:Class ;
-                              rdfs:subClassOf :GeneralizedGradientApproximation ;
-                              rdfs:label "PBE"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Perdew-WangMethod
-:Perdew-WangMethod rdf:type owl:Class ;
-                   rdfs:subClassOf :LocalDensityApproximation ;
-                   rdfs:label "PW"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Perdew-ZungerMEthod
-:Perdew-ZungerMEthod rdf:type owl:Class ;
-                     rdfs:subClassOf :LocalDensityApproximation ;
-                     rdfs:label "PZ"^^xsd:string .
-
-
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PointGroup
 :PointGroup rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty :hasCorrespondingSpaceGroup ;
+                              owl:onProperty :hasSpaceGroup ;
                               owl:someValuesFrom :SpaceGroup
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasPointGroupHMName ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
                             ] .
 
 
@@ -1214,7 +1215,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PostHartree-FockMethod
 :PostHartree-FockMethod rdf:type owl:Class ;
-                        rdfs:subClassOf :ComputationalMethods .
+                        rdfs:subClassOf :ComputationalMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Potentials
@@ -1323,7 +1324,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Semi-EmpiricalQuantumChemistryMethod
 :Semi-EmpiricalQuantumChemistryMethod rdf:type owl:Class ;
-                                      rdfs:subClassOf :ComputationalMethods .
+                                      rdfs:subClassOf :ComputationalMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Site
@@ -1350,7 +1351,7 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#SpaceGroup
 :SpaceGroup rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty :hasCorrespondingPointGroup ;
+                              owl:onProperty :hasPointGroup ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass :PointGroup
                             ] ,
@@ -1358,6 +1359,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                               owl:onProperty :hasSpaceGroupId ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasSpaceGroupSymbol ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
                             ] .
 
 
@@ -1391,19 +1397,19 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                              owl:onClass :Composition
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasCorrespondingPointGroup ;
+                             owl:onProperty :hasLattice ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Lattice
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasPointGroup ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass :PointGroup
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasCorrespondingSpaceGroup ;
+                             owl:onProperty :hasSpaceGroup ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass :SpaceGroup
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasLattice ;
-                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass :Lattice
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasBandgap ;
@@ -1463,31 +1469,14 @@ dcterms:creator rdf:type owl:AnnotationProperty .
              rdfs:label "US-PP"^^xsd:string .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#UniformElectronGasMethod
-:UniformElectronGasMethod rdf:type owl:Class ;
-                          rdfs:subClassOf :LocalDensityApproximation ;
-                          rdfs:label "UEG"^^xsd:string .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Vosko-Wilk-NusairMethod
-:Vosko-Wilk-NusairMethod rdf:type owl:Class ;
-                         rdfs:subClassOf :LocalDensityApproximation ;
-                         rdfs:label "VWN"^^xsd:string .
-
-
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ab-initioMethod
 :ab-initioMethod rdf:type owl:Class ;
-                 rdfs:subClassOf :ComputationalMethods .
+                 rdfs:subClassOf :ComputationalMethod .
 
 
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#meta-GeneralizedGradientApproximation
-:meta-GeneralizedGradientApproximation rdf:type owl:Class ;
-                                       rdfs:subClassOf :DensityFunctionalTheoryMethod .
-
-
-###  http://www.semanticweb.org/ontologies/2019/10/materials-design#omegaB97X-V
-:omegaB97X-V rdf:type owl:Class ;
-             rdfs:subClassOf :HybridGGA .
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#metaGeneralizedGradientApproximation
+:metaGeneralizedGradientApproximation rdf:type owl:Class ;
+                                      rdfs:subClassOf :ExchangeCorrelationEnergyFunctional .
 
 
 #################################################################
