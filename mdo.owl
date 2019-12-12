@@ -79,6 +79,13 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                         rdfs:comment "A calculation belongs to a specific Computational Chemical Method."^^xsd:string .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasCrystalBinding
+:hasCrystalBinding rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Composition ,
+                               :Specie ;
+                   rdfs:range :CrystalBinding .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#hasElectronShell
 :hasElectronShell rdf:type owl:ObjectProperty ;
                   rdfs:domain :Element ,
@@ -670,6 +677,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                              ] .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ClassicalMechanicTheoryBasedPotential
+:ClassicalMechanicTheoryBasedPotential rdf:type owl:Class ;
+                                       rdfs:subClassOf :PotentialFunction .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Composition
 :Composition rdf:type owl:Class ;
              rdfs:subClassOf [ rdf:type owl:Class ;
@@ -704,9 +716,18 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 :ComputationalMethod rdf:type owl:Class .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#CovalentBond
+:CovalentBond rdf:type owl:Class ;
+              rdfs:subClassOf :CrystalBinding .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#CovalentSolid
 :CovalentSolid rdf:type owl:Class ;
                rdfs:subClassOf :CrystallineSolid .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#CrystalBinding
+:CrystalBinding rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#CrystallineSolid
@@ -717,6 +738,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Cubic
 :Cubic rdf:type owl:Class ;
        rdfs:subClassOf :LatticeSystem .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#DFT-Potential
+:DFT-Potential rdf:type owl:Class ;
+               rdfs:subClassOf :TheoreticalPotential .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#DensityFunctionalTheoryMethod
@@ -730,6 +756,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ElectronShell
 :ElectronShell rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ElectronTheoryBasedPotential
+:ElectronTheoryBasedPotential rdf:type owl:Class ;
+                              rdfs:subClassOf :PotentialFunction .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Element
@@ -841,6 +872,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
          rdfs:comment "To represent an element in the periodic table."^^xsd:string .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#EmpiricalPotential
+:EmpiricalPotential rdf:type owl:Class ;
+                    rdfs:subClassOf :ElectronTheoryBasedPotential .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ExchangeCorrelationEnergyFunctional
 :ExchangeCorrelationEnergyFunctional rdf:type owl:Class .
 
@@ -891,6 +927,21 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#HybridmGGA
 :HybridmGGA rdf:type owl:Class ;
             rdfs:subClassOf :HybridFunctionals .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#HydrogenBond
+:HydrogenBond rdf:type owl:Class ;
+              rdfs:subClassOf :CrystalBinding .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#InteratomicPotential
+:InteratomicPotential rdf:type owl:Class ;
+                      rdfs:subClassOf :ClassicalMechanicTheoryBasedPotential .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#IonicBond
+:IonicBond rdf:type owl:Class ;
+           rdfs:subClassOf :CrystalBinding .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#IonicSolid
@@ -1020,6 +1071,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                                ] .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Lennard-JonesPotential
+:Lennard-JonesPotential rdf:type owl:Class ;
+                        rdfs:subClassOf :PairPotential .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#LocalDensityApproximation
 :LocalDensityApproximation rdf:type owl:Class ;
                            rdfs:subClassOf :ExchangeCorrelationEnergyFunctional .
@@ -1065,6 +1121,16 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                         ] .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Many-bodyPotential
+:Many-bodyPotential rdf:type owl:Class ;
+                    rdfs:subClassOf :InteratomicPotential .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#MetalInteraction
+:MetalInteraction rdf:type owl:Class ;
+                  rdfs:subClassOf :CrystalBinding .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#MetallicSolid
 :MetallicSolid rdf:type owl:Class ;
                rdfs:subClassOf :CrystallineSolid .
@@ -1088,6 +1154,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Monoclinic
 :Monoclinic rdf:type owl:Class ;
             rdfs:subClassOf :LatticeSystem .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#MorsePotential
+:MorsePotential rdf:type owl:Class ;
+                rdfs:subClassOf :PairPotential .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#NShell
@@ -1195,6 +1266,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
                         ] .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PairPotential
+:PairPotential rdf:type owl:Class ;
+               rdfs:subClassOf :InteratomicPotential .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PointGroup
 :PointGroup rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -1216,6 +1292,10 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PostHartree-FockMethod
 :PostHartree-FockMethod rdf:type owl:Class ;
                         rdfs:subClassOf :ComputationalMethod .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PotentialFunction
+:PotentialFunction rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Potentials
@@ -1268,6 +1348,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 :ProjectorAugmentedWave rdf:type owl:Class ;
                         rdfs:subClassOf :Potentials ;
                         rdfs:label "PAW"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PseudoPotential
+:PseudoPotential rdf:type owl:Class ;
+                 rdfs:subClassOf :EmpiricalPotential .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#PseudoPotentials
@@ -1325,6 +1410,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Semi-EmpiricalQuantumChemistryMethod
 :Semi-EmpiricalQuantumChemistryMethod rdf:type owl:Class ;
                                       rdfs:subClassOf :ComputationalMethod .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#SemiEmpiricalPotential
+:SemiEmpiricalPotential rdf:type owl:Class ;
+                        rdfs:subClassOf :EmpiricalPotential .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Site
@@ -1453,6 +1543,16 @@ dcterms:creator rdf:type owl:AnnotationProperty .
             rdfs:subClassOf :LatticeSystem .
 
 
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#TheoreticalPotential
+:TheoreticalPotential rdf:type owl:Class ;
+                      rdfs:subClassOf :ElectronTheoryBasedPotential .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#TightBinding-Potential
+:TightBinding-Potential rdf:type owl:Class ;
+                        rdfs:subClassOf :TheoreticalPotential .
+
+
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#Triclinic
 :Triclinic rdf:type owl:Class ;
            rdfs:subClassOf :LatticeSystem .
@@ -1467,6 +1567,11 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 :UltrasoftPP rdf:type owl:Class ;
              rdfs:subClassOf :PseudoPotentials ;
              rdfs:label "US-PP"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2019/10/materials-design#VanderWaalsLondonInteraction
+:VanderWaalsLondonInteraction rdf:type owl:Class ;
+                              rdfs:subClassOf :CrystalBinding .
 
 
 ###  http://www.semanticweb.org/ontologies/2019/10/materials-design#ab-initioMethod
