@@ -203,6 +203,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/Calculation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/Calculation"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //

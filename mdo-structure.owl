@@ -889,6 +889,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/Structure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/Structure"/>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2019/10/md/structure/BaseCenteredMonoclinic -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/structure/BaseCenteredMonoclinic">
