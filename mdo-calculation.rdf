@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2019/10/md/calculation/"
+     xml:base="http://www.semanticweb.org/ontologies/2019/10/md/calculation/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:core="http://www.semanticweb.org/ontologies/2019/10/md/core/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:CHEBI="http://purl.obolibrary.org/obo/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:calculation="http://www.semanticweb.org/ontologies/2019/10/md/calculation/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/0.9"/>
+        <owl:imports rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/0.9"/>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-07T09:00:00</dcterms:created>
+        <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:creator>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Materials Design Ontology-Calculation Module</rdfs:label>
+        <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/hasOccupancy -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/hasOccupancy">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/hasX -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/hasX"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/hasY -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/hasY"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/hasZ -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/hasZ"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/hasComputationalMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/hasComputationalMethod">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/Calculation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/ComputationalMethod"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A calculation belongs to a specific Computational Chemical Method.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/hasXCFunction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/hasXCFunction">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/DensityFunctionalTheoryMethod"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/ExchangeCorrelationEnergyFunctional"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/ComputationalMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/ComputationalMethod"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/DensityFunctionalTheoryMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/DensityFunctionalTheoryMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/ComputationalMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/ExchangeCorrelationEnergyFunctional -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/ExchangeCorrelationEnergyFunctional"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/GeneralizedGradientApproximation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/GeneralizedGradientApproximation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/ExchangeCorrelationEnergyFunctional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/Hartree-FockMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/Hartree-FockMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/ComputationalMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/HybridFunctionals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/HybridFunctionals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/ExchangeCorrelationEnergyFunctional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/HybridGGA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/HybridGGA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/HybridFunctionals"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/HybridmGGA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/HybridmGGA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/HybridFunctionals"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/LocalDensityApproximation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/LocalDensityApproximation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/ExchangeCorrelationEnergyFunctional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/PostHartree-FockMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/PostHartree-FockMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/ComputationalMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/Semi-EmpiricalQuantumChemistryMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/Semi-EmpiricalQuantumChemistryMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/ComputationalMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/metaGeneralizedGradientApproximation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/metaGeneralizedGradientApproximation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/calculation/ExchangeCorrelationEnergyFunctional"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/test1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/test1"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/calculation/test2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/calculation/test2"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

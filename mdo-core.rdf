@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2019/10/md/core/"
+     xml:base="http://www.semanticweb.org/ontologies/2019/10/md/core/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:CHEBI="http://purl.obolibrary.org/obo/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/0.9"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Materials Design Ontology-Core Module</rdfs:label>
+        <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/approximateBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/approximateBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/MaterialsData"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/Structure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/hasInputComputableProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/hasInputComputableProperty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/Calculation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/ComputableProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/hasInputStructure -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/hasInputStructure">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/Calculation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/Structure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/hasOutputComputableProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/hasOutputComputableProperty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/Calculation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/ComputableProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/hasOutputStructure -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/hasOutputStructure">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/Calculation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/Structure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/Calculation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/Calculation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/ComputableProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/ComputableProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/MaterialsData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/MaterialsData"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/PhysicalProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/PhysicalProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2019/10/md/core/Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/Property"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/Structure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/Structure"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/test1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/test1"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2019/10/md/core/test2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2019/10/md/core/test2"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
