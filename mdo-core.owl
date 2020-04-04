@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/mdo/core/"
      xml:base="https://w3id.org/mdo/core/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:emmo="http://emmo.info/domains/emmo-material.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:CHEBI="http://purl.obolibrary.org/obo/"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/mdo/core/">
         <owl:versionIRI rdf:resource="https://w3id.org/mdo/core/0.9"/>
@@ -52,6 +53,15 @@
     
 
 
+    <!-- https://w3id.org/mdo/core/PartOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/PartOf">
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Structure"/>
+        <rdfs:range rdf:resource="http://emmo.info/domains/emmo-material.owl#EMMO_4207e895_8b83_4318_996a_72cfb32acd94"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/mdo/core/approximateBy -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/approximateBy">
@@ -61,11 +71,36 @@
     
 
 
-    <!-- https://w3id.org/mdo/core/hasInputComputableProperty -->
+    <!-- https://w3id.org/mdo/core/decomposeTo -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/hasInputComputableProperty">
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
-        <rdfs:range rdf:resource="https://w3id.org/mdo/core/ComputableProperty"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/decomposeTo">
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/MaterialsData"/>
+        <rdfs:range rdf:resource="https://w3id.org/mdo/core/MaterialsData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mdo/core/describedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/describedBy">
+        <rdfs:domain rdf:resource="http://emmo.info/domains/emmo-material.owl#EMMO_4207e895_8b83_4318_996a_72cfb32acd94"/>
+        <rdfs:range rdf:resource="https://w3id.org/mdo/core/MaterialsData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mdo/core/hasCalculatedProperty -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/hasCalculatedProperty">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/mdo/core/Calculation"/>
+                    <rdf:Description rdf:about="https://w3id.org/mdo/core/Structure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/mdo/core/CalculatedProperty"/>
     </owl:ObjectProperty>
     
 
@@ -79,21 +114,58 @@
     
 
 
-    <!-- https://w3id.org/mdo/core/hasOutputComputableProperty -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/hasOutputComputableProperty">
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
-        <rdfs:range rdf:resource="https://w3id.org/mdo/core/ComputableProperty"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/mdo/core/hasOutputStructure -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/hasOutputStructure">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/core/Structure"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mdo/core/hasPhysicalProperty -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/hasPhysicalProperty">
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Structure"/>
+        <rdfs:range rdf:resource="https://w3id.org/mdo/core/PhysicalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mdo/core/hasUnit -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/hasUnit">
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Property"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/mdo/core/hasID -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/core/hasID">
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/MaterialsData"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/mdo/core/hasPropertyValue -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/core/hasPropertyValue">
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Property"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -108,23 +180,78 @@
     
 
 
-    <!-- https://w3id.org/mdo/core/Calculation -->
+    <!-- http://emmo.info/domains/emmo-material.owl#EMMO_4207e895_8b83_4318_996a_72cfb32acd94 -->
 
-    <owl:Class rdf:about="https://w3id.org/mdo/core/Calculation"/>
+    <owl:Class rdf:about="http://emmo.info/domains/emmo-material.owl#EMMO_4207e895_8b83_4318_996a_72cfb32acd94">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/core/describedBy"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/core/MaterialsData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material</rdfs:label>
+    </owl:Class>
     
 
 
-    <!-- https://w3id.org/mdo/core/ComputableProperty -->
+    <!-- http://purl.obolibrary.org/obo/Unit -->
 
-    <owl:Class rdf:about="https://w3id.org/mdo/core/ComputableProperty">
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/Unit"/>
+    
+
+
+    <!-- https://w3id.org/mdo/core/CalculatedProperty -->
+
+    <owl:Class rdf:about="https://w3id.org/mdo/core/CalculatedProperty">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/core/Property"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mdo/core/Calculation -->
+
+    <owl:Class rdf:about="https://w3id.org/mdo/core/Calculation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/core/hasCalculatedProperty"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/core/CalculatedProperty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/core/hasInputStructure"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/mdo/core/Structure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/core/hasOutputStructure"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/mdo/core/Structure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
     <!-- https://w3id.org/mdo/core/MaterialsData -->
 
-    <owl:Class rdf:about="https://w3id.org/mdo/core/MaterialsData"/>
+    <owl:Class rdf:about="https://w3id.org/mdo/core/MaterialsData">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/core/decomposeTo"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/core/MaterialsData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/core/approximateBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/mdo/core/Calculation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
@@ -138,13 +265,47 @@
 
     <!-- https://w3id.org/mdo/core/Property -->
 
-    <owl:Class rdf:about="https://w3id.org/mdo/core/Property"/>
+    <owl:Class rdf:about="https://w3id.org/mdo/core/Property">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/core/hasUnit"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/Unit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/core/hasPropertyValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/mdo/core/Structure -->
 
-    <owl:Class rdf:about="https://w3id.org/mdo/core/Structure"/>
+    <owl:Class rdf:about="https://w3id.org/mdo/core/Structure">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/core/PartOf"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/domains/emmo-material.owl#EMMO_4207e895_8b83_4318_996a_72cfb32acd94"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/core/hasCalculatedProperty"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/core/CalculatedProperty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/core/hasPhysicalProperty"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/core/PhysicalProperty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 

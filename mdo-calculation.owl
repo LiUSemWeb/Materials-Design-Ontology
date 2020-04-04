@@ -65,6 +65,15 @@
     
 
 
+    <!-- https://w3id.org/mdo/calculation/hasPotentialFunction -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/calculation/hasPotentialFunction">
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/DensityFunctionalTheoryMethod"/>
+        <rdfs:range rdf:resource="https://w3id.org/mdo/calculation/PotentialFunction"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/mdo/calculation/hasXCFunction -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/calculation/hasXCFunction">
@@ -95,6 +104,20 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/DensityFunctionalTheoryMethod">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/calculation/hasPotentialFunction"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/mdo/calculation/PotentialFunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/calculation/hasXCFunction"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -161,6 +184,12 @@
     
 
 
+    <!-- https://w3id.org/mdo/calculation/PotentialFunction -->
+
+    <owl:Class rdf:about="https://w3id.org/mdo/calculation/PotentialFunction"/>
+    
+
+
     <!-- https://w3id.org/mdo/calculation/Semi-EmpiricalQuantumChemistryMethod -->
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/Semi-EmpiricalQuantumChemistryMethod">
@@ -179,7 +208,15 @@
 
     <!-- https://w3id.org/mdo/core/Calculation -->
 
-    <owl:Class rdf:about="https://w3id.org/mdo/core/Calculation"/>
+    <owl:Class rdf:about="https://w3id.org/mdo/core/Calculation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/calculation/hasComputationalMethod"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
