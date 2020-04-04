@@ -11,17 +11,17 @@
     <owl:Ontology rdf:about="https://w3id.org/mdo/provenance/">
         <owl:versionIRI rdf:resource="https://w3id.org/mdo/provenance/0.9"/>
         <owl:imports rdf:resource="https://w3id.org/mdo/core/0.9"/>
-        <dcterms:contributor>Patrick Lambrix</dcterms:contributor>
-        <dcterms:contributor>Rickard Armiento</dcterms:contributor>
+        <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patrick Lambrix</dcterms:contributor>
+        <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rickard Armiento</dcterms:contributor>
         <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-04-02T12:00:00</dcterms:created>
-        <dcterms:creator xml:lang="en">Huanyu Li</dcterms:creator>
-        <dcterms:license>LICENSETOADD</dcterms:license>
+        <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:creator>
+        <dcterms:license>https://github.com/huanyu-li/Materials-Design-Ontology/blob/master/LICENSE</dcterms:license>
         <vann:preferredNamespacePrefix>provenance</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://w3id.org/mdo/provenance/0.9</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the provenance module of Materials Design Ontology.</rdfs:comment>
         <rdfs:label xml:lang="en">Materials Design Ontology-Provenance Module</rdfs:label>
         <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.9</owl:versionInfo>
     </owl:Ontology>
     
 
