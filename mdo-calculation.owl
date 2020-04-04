@@ -7,16 +7,23 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:core="https://w3id.org/mdo/core/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:CHEBI="http://purl.obolibrary.org/obo/"
+     xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:calculation="https://w3id.org/mdo/calculation/">
     <owl:Ontology rdf:about="https://w3id.org/mdo/calculation/">
         <owl:versionIRI rdf:resource="https://w3id.org/mdo/calculation/0.9"/>
         <owl:imports rdf:resource="https://w3id.org/mdo/core/0.9"/>
+        <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patrick Lambrix</dcterms:contributor>
+        <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rickard Armiento</dcterms:contributor>
         <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-07T09:00:00</dcterms:created>
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:creator>
+        <dcterms:license>LICENSETOADD</dcterms:license>
+        <vann:preferredNamespacePrefix>calculation</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://w3id.org/mdo/calculation/0.9</vann:preferredNamespaceUri>
+        <rdfs:comment xml:lang="en">This is the calculation module of Materials Design Ontology.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Materials Design Ontology-Calculation Module</rdfs:label>
         <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -32,6 +39,12 @@
     
 
 
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
     <!-- http://purl.org/dc/terms/created -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
@@ -41,6 +54,24 @@
     <!-- http://purl.org/dc/terms/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
     
 
 

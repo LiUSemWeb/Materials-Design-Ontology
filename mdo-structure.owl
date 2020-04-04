@@ -8,15 +8,23 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:core="https://w3id.org/mdo/core/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:structure="https://w3id.org/mdo/structure/">
     <owl:Ontology rdf:about="https://w3id.org/mdo/structure/">
         <owl:versionIRI rdf:resource="https://w3id.org/mdo/structure/0.9"/>
         <owl:imports rdf:resource="https://w3id.org/mdo/core/0.9"/>
+        <dcterms:contributor>Patrick Lambrix</dcterms:contributor>
+        <dcterms:contributor>Rickard Armiento</dcterms:contributor>
         <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-07T09:00:00</dcterms:created>
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:creator>
+        <dcterms:license>LICENSE TO ADD</dcterms:license>
+        <vann:preferredNamespacePrefix>structure</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://w3id.org/mdo/structure/0.9</vann:preferredNamespaceUri>
+        <rdfs:comment xml:lang="en">This is the structure module in Materials Design Ontology.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Materials Design Ontology-Structure Module</rdfs:label>
         <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -32,6 +40,12 @@
     
 
 
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
     <!-- http://purl.org/dc/terms/created -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
@@ -41,6 +55,24 @@
     <!-- http://purl.org/dc/terms/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
     
 
 
