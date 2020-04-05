@@ -16,7 +16,7 @@
         <owl:imports rdf:resource="https://w3id.org/mdo/core/0.9"/>
         <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patrick Lambrix</dcterms:contributor>
         <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rickard Armiento</dcterms:contributor>
-        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-07T09:00:00</dcterms:created>
+        <dcterms:created>2019-11-07</dcterms:created>
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:creator>
         <dcterms:license>https://github.com/huanyu-li/Materials-Design-Ontology/blob/master/LICENSE</dcterms:license>
         <vann:preferredNamespacePrefix>structure</vann:preferredNamespacePrefix>

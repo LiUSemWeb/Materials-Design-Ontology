@@ -16,17 +16,17 @@
         <owl:imports rdf:resource="https://w3id.org/mdo/core/0.9"/>
         <owl:imports rdf:resource="https://w3id.org/mdo/provenance/0.9"/>
         <owl:imports rdf:resource="https://w3id.org/mdo/structure/0.9"/>
-        <terms:contributor>Patrick Lambrix</terms:contributor>
-        <terms:contributor>Rickard Armiento</terms:contributor>
-        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-07T09:00:00</terms:created>
-        <terms:creator xml:lang="en">Huanyu Li</terms:creator>
-        <terms:license>LICENSETOADD</terms:license>
+        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patrick Lambrix</terms:contributor>
+        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rickard Armiento</terms:contributor>
+        <terms:created>2019-11-07</terms:created>
+        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</terms:creator>
+        <terms:license>https://github.com/huanyu-li/Materials-Design-Ontology/blob/master/LICENSE</terms:license>
         <vann:preferredNamespacePrefix>mdo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://w3id.org/mdo/full/0.9</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the Materials Design Ontology.</rdfs:comment>
-        <rdfs:label xml:lang="en">Materials Design Ontology</rdfs:label>
-        <rdfs:seeAlso xml:lang="en">https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</owl:versionInfo>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Materials Design Ontology</rdfs:label>
+        <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.9</owl:versionInfo>
     </owl:Ontology>
     
 
