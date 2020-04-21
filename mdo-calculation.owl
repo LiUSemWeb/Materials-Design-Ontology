@@ -96,21 +96,31 @@
     
 
 
-    <!-- https://w3id.org/mdo/calculation/hasPotentialFunction -->
+    <!-- https://w3id.org/mdo/calculation/hasXCFunctional -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/calculation/hasPotentialFunction">
+    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/calculation/hasXCFunctional">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/DensityFunctionalTheoryMethod"/>
-        <rdfs:range rdf:resource="https://w3id.org/mdo/calculation/PotentialFunction"/>
+        <rdfs:range rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/mdo/calculation/hasXCFunction -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/calculation/hasXCFunction">
+    
+
+
+    <!-- https://w3id.org/mdo/calculation/hasPotentialFunction -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/calculation/hasPotentialFunction">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/DensityFunctionalTheoryMethod"/>
-        <rdfs:range rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
-    </owl:ObjectProperty>
+    </owl:DatatypeProperty>
     
 
 
@@ -137,16 +147,16 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/calculation/hasPotentialFunction"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/calculation/hasXCFunctional"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://w3id.org/mdo/calculation/PotentialFunction"/>
+                <owl:onClass rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/calculation/hasXCFunction"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/calculation/hasPotentialFunction"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -203,28 +213,6 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/LocalDensityApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/mdo/calculation/PostHartree-FockMethod -->
-
-    <owl:Class rdf:about="https://w3id.org/mdo/calculation/PostHartree-FockMethod">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/mdo/calculation/PotentialFunction -->
-
-    <owl:Class rdf:about="https://w3id.org/mdo/calculation/PotentialFunction"/>
-    
-
-
-    <!-- https://w3id.org/mdo/calculation/Semi-EmpiricalQuantumChemistryMethod -->
-
-    <owl:Class rdf:about="https://w3id.org/mdo/calculation/Semi-EmpiricalQuantumChemistryMethod">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
     </owl:Class>
     
 

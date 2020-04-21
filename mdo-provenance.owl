@@ -102,46 +102,6 @@
     
 
 
-    <!-- https://w3id.org/mdo/provenance/achievedBy -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/provenance/achievedBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
-        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Person"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/mdo/provenance/hasSoftware -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/provenance/hasSoftware">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
-        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/mdo/provenance/publishedBy -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/provenance/publishedBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAttributedTo"/>
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/MaterialsData"/>
-        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Person"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/mdo/provenance/publishedTo -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/mdo/provenance/publishedTo">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAttributedTo"/>
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/MaterialsData"/>
-        <rdfs:range rdf:resource="https://w3id.org/mdo/provenance/DatabaseAgent"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -179,6 +139,14 @@
     
 
 
+    <!-- http://www.w3.org/ns/prov#Organization -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Organization">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.w3.org/ns/prov#Person -->
 
     <owl:Class rdf:about="http://www.w3.org/ns/prov#Person">
@@ -195,52 +163,10 @@
     
 
 
-    <!-- https://w3id.org/mdo/core/Calculation -->
-
-    <rdf:Description rdf:about="https://w3id.org/mdo/core/Calculation">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/provenance/achievedBy"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/ns/prov#Person"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/provenance/hasSoftware"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </rdf:Description>
-    
-
-
-    <!-- https://w3id.org/mdo/core/MaterialsData -->
-
-    <rdf:Description rdf:about="https://w3id.org/mdo/core/MaterialsData">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/provenance/publishedBy"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/ns/prov#Person"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/provenance/publishedTo"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://w3id.org/mdo/provenance/DatabaseAgent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </rdf:Description>
-    
-
-
     <!-- https://w3id.org/mdo/provenance/DatabaseAgent -->
 
     <owl:Class rdf:about="https://w3id.org/mdo/provenance/DatabaseAgent">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Organization"/>
     </owl:Class>
 </rdf:RDF>
 
