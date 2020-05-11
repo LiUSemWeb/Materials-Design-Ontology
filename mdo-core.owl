@@ -18,7 +18,7 @@
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:creator>
         <dcterms:license>https://github.com/huanyu-li/Materials-Design-Ontology/blob/master/LICENSE</dcterms:license>
         <vann:preferredNamespacePrefix>core</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri>https://w3id.org/mdo/core/0.9</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri>https://w3id.org/mdo/core/1.0</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the core module in Materials Design Ontology.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Materials Design Ontology-Core Module</rdfs:label>
         <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
