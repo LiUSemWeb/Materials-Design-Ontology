@@ -11,19 +11,19 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:calculation="https://w3id.org/mdo/calculation/">
     <owl:Ontology rdf:about="https://w3id.org/mdo/calculation/">
-        <owl:versionIRI rdf:resource="https://w3id.org/mdo/calculation/0.9"/>
-        <owl:imports rdf:resource="https://w3id.org/mdo/core/0.9"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/mdo/calculation/1.0"/>
+        <owl:imports rdf:resource="https://w3id.org/mdo/core/1.0"/>
         <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patrick Lambrix</dcterms:contributor>
         <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rickard Armiento</dcterms:contributor>
         <dcterms:created>2019-11-07</dcterms:created>
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:creator>
         <dcterms:license>https://github.com/huanyu-li/Materials-Design-Ontology/blob/master/LICENSE</dcterms:license>
         <vann:preferredNamespacePrefix>calculation</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri>https://w3id.org/mdo/calculation/0.9</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/mdo/calculation/1.0</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the calculation module of Materials Design Ontology.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Materials Design Ontology-Calculation Module</rdfs:label>
         <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.9</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -159,6 +159,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/Hartree-FockMethod"/>
     </owl:Class>
     
 
@@ -173,6 +174,9 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/GeneralizedGradientApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/HybridFunctionals"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/LocalDensityApproximation"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/metaGeneralizedGradientApproximation"/>
     </owl:Class>
     
 
@@ -189,6 +193,8 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/HybridFunctionals">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/LocalDensityApproximation"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/metaGeneralizedGradientApproximation"/>
     </owl:Class>
     
 
@@ -197,6 +203,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/HybridGGA">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/HybridFunctionals"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/HybridmGGA"/>
     </owl:Class>
     
 
@@ -213,6 +220,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/LocalDensityApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/metaGeneralizedGradientApproximation"/>
     </owl:Class>
     
 
