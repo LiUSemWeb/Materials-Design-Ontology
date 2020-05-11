@@ -11,22 +11,22 @@
      xmlns:structure="https://w3id.org/mdo/structure/"
      xmlns:calculation="https://w3id.org/mdo/calculation/">
     <owl:Ontology rdf:about="https://w3id.org/mdo/full/">
-        <owl:versionIRI rdf:resource="https://w3id.org/mdo/full/0.9"/>
-        <owl:imports rdf:resource="https://w3id.org/mdo/calculation/0.9"/>
-        <owl:imports rdf:resource="https://w3id.org/mdo/core/0.9"/>
-        <owl:imports rdf:resource="https://w3id.org/mdo/provenance/0.9"/>
-        <owl:imports rdf:resource="https://w3id.org/mdo/structure/0.9"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/mdo/full/1.0"/>
+        <owl:imports rdf:resource="https://w3id.org/mdo/calculation/1.0"/>
+        <owl:imports rdf:resource="https://w3id.org/mdo/core/1.0"/>
+        <owl:imports rdf:resource="https://w3id.org/mdo/provenance/1.0"/>
+        <owl:imports rdf:resource="https://w3id.org/mdo/structure/1.0"/>
         <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patrick Lambrix</terms:contributor>
         <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rickard Armiento</terms:contributor>
         <terms:created>2019-11-07</terms:created>
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</terms:creator>
         <terms:license>https://github.com/huanyu-li/Materials-Design-Ontology/blob/master/LICENSE</terms:license>
         <vann:preferredNamespacePrefix>mdo</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri>https://w3id.org/mdo/full/0.9</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/mdo/full/1.0</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the Materials Design Ontology.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Materials Design Ontology</rdfs:label>
         <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.9</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -45,6 +45,18 @@
     <!-- http://purl.org/dc/terms/contributor -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
     
 
 
