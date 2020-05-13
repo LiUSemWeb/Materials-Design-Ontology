@@ -1,37 +1,23 @@
-## Welcome to GitHub Pages
+### What is Materials Design Ontology?
 
-You can use the [editor on GitHub](https://github.com/huanyu-li/Materials-Design-Ontology/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+MDO is the first ontology in materials design field, representing the domain knowledge specifically related to solid-state physics and computational materials science.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### What does Materials Design Ontology consist of?
 
-### Markdown
+Materials Design Ontology consists of 4 modules which are:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+* [Core](https://w3id.org/mdo/core/1.0): This module consists of the top-level concepts and relationships of the materials design ontology, which are also reused in other modules.
 
-```markdown
-Syntax highlighted code block
+* [Structure](https://w3id.org/mdo/structure/1.0): The structure module is intended to represent the structural information of materials. Such structural information is also the basis of materials calculations.
 
-# Header 1
-## Header 2
-### Header 3
+* [Calculation](https://w3id.org/mdo/calculation/1.0): This module is intended to represent the classification of different computational methods.
 
-- Bulleted
-- List
+* [Provenance](https://w3id.org/mdo/provenance/1.0): This module is intended to represent the provenance information of materials data and calculation.
 
-1. Numbered
-2. List
+* A full MDO importing all the above modules is avaliable at [MDO Full](https://w3id.org/mdo/full/1.0).
 
-**Bold** and _Italic_ and `Code` text
+### Contact
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/huanyu-li/Materials-Design-Ontology/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+* Huanyu Li (huanyu.li@liu.se / huanyu.li9206@gmail.com)
+* Patrick Lambrix (patrick.lambrix@liu.se)
+* Rickard Armiento (rickard.armiento@liu.se)
