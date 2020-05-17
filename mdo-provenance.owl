@@ -16,10 +16,10 @@
         <dcterms:created>2020-04-02</dcterms:created>
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:creator>
         <dcterms:license>https://github.com/huanyu-li/Materials-Design-Ontology/blob/master/LICENSE</dcterms:license>
+        <dcterms:title xml:lang="en">Materials Design Ontology - Provenance Module</dcterms:title>
         <vann:preferredNamespacePrefix>provenance</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/mdo/provenance/1.0</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the provenance module of Materials Design Ontology.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Materials Design Ontology-Provenance Module</rdfs:label>
         <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
     </owl:Ontology>
@@ -61,6 +61,12 @@
     
 
 
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
     <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
@@ -70,6 +76,12 @@
     <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 
@@ -139,12 +151,12 @@
     
 
 
-    <!-- https://w3id.org/mdo/provenance/hasAuthor -->
+    <!-- https://w3id.org/mdo/provenance/hasAuthorName -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasAuthor">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasAuthorName">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">To represent the authors of the reference.</rdfs:comment>
+        <rdfs:comment xml:lang="en">To represent the author&apos;s name of the reference.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -173,7 +185,7 @@
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasPublicationDate">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <rdfs:comment xml:lang="en">To represent the publication date of the reference.</rdfs:comment>
     </owl:DatatypeProperty>
     
@@ -236,7 +248,7 @@
 
     <owl:Class rdf:about="http://www.w3.org/ns/prov#SoftwareAgent">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SoftwareAgent represents which software produces the result of a material calculation.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A software agent is the representation of the software that produces the result of a material calculation.</rdfs:comment>
     </owl:Class>
     
 
@@ -247,7 +259,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -261,14 +273,14 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasAttributedTo"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onClass rdf:resource="https://w3id.org/mdo/provenance/DatabaseAgent"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasAttributedTo"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onClass rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -280,7 +292,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/provenance/DatabaseAgent">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Organization"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DatabaseAgent represents which databases stores the material data.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A database agent is the representation of the database that stores the material data.</rdfs:comment>
     </owl:Class>
     
 
@@ -289,7 +301,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/provenance/ReferenceAgent">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ReferenceAgent is used to represent the reference of materials data.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A reference agent is the representation of the reference that the material data refers to.</rdfs:comment>
     </owl:Class>
 </rdf:RDF>
 

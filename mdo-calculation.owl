@@ -18,10 +18,10 @@
         <dcterms:created>2019-11-07</dcterms:created>
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:creator>
         <dcterms:license>https://github.com/huanyu-li/Materials-Design-Ontology/blob/master/LICENSE</dcterms:license>
+        <dcterms:title xml:lang="en">Materials Design Ontology - Calculation Module</dcterms:title>
         <vann:preferredNamespacePrefix>calculation</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/mdo/calculation/1.0</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the calculation module of Materials Design Ontology.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Materials Design Ontology-Calculation Module</rdfs:label>
         <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
     </owl:Ontology>
@@ -63,6 +63,12 @@
     
 
 
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
     <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
@@ -91,7 +97,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/calculation/hasComputationalMethod">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A calculation belongs to a specific Computational Chemical Method.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A calculation belongs to a specific Computational Method.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -101,6 +107,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/calculation/hasXCFunctional">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/DensityFunctionalTheoryMethod"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
+        <rdfs:comment xml:lang="en">A density functional theory method uses a specific functional to calculate exchange correlation energy.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -120,6 +127,8 @@
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/calculation/hasPotentialFunction">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/DensityFunctionalTheoryMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The potential function used in the density functional theory method.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -137,7 +146,9 @@
 
     <!-- https://w3id.org/mdo/calculation/ComputationalMethod -->
 
-    <owl:Class rdf:about="https://w3id.org/mdo/calculation/ComputationalMethod"/>
+    <owl:Class rdf:about="https://w3id.org/mdo/calculation/ComputationalMethod">
+        <rdfs:comment xml:lang="en">A computational method is a way to process structures and/or properties into output structures and/or calculated properties.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -148,25 +159,27 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/mdo/calculation/hasXCFunctional"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/mdo/calculation/hasPotentialFunction"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/Hartree-FockMethod"/>
+        <rdfs:comment xml:lang="en">The density functional theory is a computational quantum mechanical modelling method to investigate the electronic structure.</rdfs:comment>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Density_functional_theory</rdfs:seeAlso>
     </owl:Class>
     
 
 
     <!-- https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional -->
 
-    <owl:Class rdf:about="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
+    <owl:Class rdf:about="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional">
+        <rdfs:seeAlso xml:lang="en">An ExchangeCorrelationEnergyFunctional is the function to compute Exchange Correlation Energy.</rdfs:seeAlso>
+    </owl:Class>
     
 
 
@@ -176,7 +189,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
         <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/HybridFunctionals"/>
         <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/LocalDensityApproximation"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/metaGeneralizedGradientApproximation"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/metaGGA"/>
     </owl:Class>
     
 
@@ -185,6 +198,8 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/Hartree-FockMethod">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
+        <rdfs:comment xml:lang="en">Hartree-Fock method is a method to get the approximation of the determination of the wave functiona and the energy of system in a stationary state.</rdfs:comment>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Density_functional_theory</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -194,7 +209,7 @@
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/HybridFunctionals">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
         <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/LocalDensityApproximation"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/metaGeneralizedGradientApproximation"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/metaGGA"/>
     </owl:Class>
     
 
@@ -220,14 +235,14 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/LocalDensityApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/metaGeneralizedGradientApproximation"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/mdo/calculation/metaGGA"/>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/mdo/calculation/metaGeneralizedGradientApproximation -->
+    <!-- https://w3id.org/mdo/calculation/metaGGA -->
 
-    <owl:Class rdf:about="https://w3id.org/mdo/calculation/metaGeneralizedGradientApproximation">
+    <owl:Class rdf:about="https://w3id.org/mdo/calculation/metaGGA">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
     </owl:Class>
     

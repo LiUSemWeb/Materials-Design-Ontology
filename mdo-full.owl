@@ -21,10 +21,10 @@
         <terms:created>2019-11-07</terms:created>
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</terms:creator>
         <terms:license>https://github.com/huanyu-li/Materials-Design-Ontology/blob/master/LICENSE</terms:license>
+        <terms:title xml:lang="en">Materials Design Ontology - Full</terms:title>
         <vann:preferredNamespacePrefix>mdo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/mdo/full/1.0</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the Materials Design Ontology.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Materials Design Ontology</rdfs:label>
         <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
     </owl:Ontology>
@@ -63,6 +63,12 @@
     <!-- http://purl.org/dc/terms/license -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
     
 
 
