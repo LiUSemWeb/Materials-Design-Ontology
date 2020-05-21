@@ -295,29 +295,6 @@
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- https://w3id.org/mdo/calculation/test1 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/mdo/calculation/test1"/>
-    
-
-
-    <!-- https://w3id.org/mdo/calculation/test2 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/mdo/calculation/test2"/>
 </rdf:RDF>
 
 
