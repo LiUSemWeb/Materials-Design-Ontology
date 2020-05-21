@@ -958,29 +958,6 @@
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A species is the combination of atoms on each site.</rdfs:comment>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- https://w3id.org/mdo/structure/test1 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/mdo/structure/test1"/>
-    
-
-
-    <!-- https://w3id.org/mdo/structure/test2 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/mdo/structure/test2"/>
 </rdf:RDF>
 
 
