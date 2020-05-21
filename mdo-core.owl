@@ -336,29 +336,6 @@
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A structure is the information of the sites and their occupancies in a material or materials system.</rdfs:comment>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- https://w3id.org/mdo/core/test1 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/mdo/core/test1"/>
-    
-
-
-    <!-- https://w3id.org/mdo/core/test2 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/mdo/core/test2"/>
 </rdf:RDF>
 
 
