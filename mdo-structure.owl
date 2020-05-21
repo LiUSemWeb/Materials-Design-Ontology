@@ -850,6 +850,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An occupancy ties a specific species to a site.</rdfs:comment>
     </owl:Class>
     
 
