@@ -22,7 +22,7 @@
 * [CQ11] Which software produced the result of a calculation?
 * [CQ12] Who are the authors of the calculation?
 * [CQ13] Which software or code does the calculation run with?
-* [CQ14] CQ14: When was the calculation data published to the database?
+* [CQ14] When was the calculation data published to the database?
 
 
 ## Additional Restrictions
