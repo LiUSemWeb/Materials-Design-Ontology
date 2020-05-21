@@ -241,14 +241,7 @@
     <!-- https://w3id.org/mdo/structure/hasPointGroup -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasPointGroup">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/mdo/structure/Lattice"/>
-                    <rdf:Description rdf:about="https://w3id.org/mdo/structure/SpaceGroup"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/SpaceGroup"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/PointGroup"/>
         <rdfs:comment xml:lang="en">To represent a lattice or a spacegroup can have corresponding point group.</rdfs:comment>
     </owl:ObjectProperty>
@@ -258,7 +251,7 @@
     <!-- https://w3id.org/mdo/structure/hasSite -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasSite">
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Structure"/>
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Occupancy"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/Site"/>
         <rdfs:comment xml:lang="en">To represent a structure has sites.</rdfs:comment>
     </owl:ObjectProperty>
@@ -293,6 +286,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/chebi/formula -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/chebi/formula">
+        <rdfs:comment xml:lang="en">To represent the formula of an atom.</rdfs:comment>
+    </owl:DatatypeProperty>
     
 
 
@@ -336,48 +337,6 @@
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasAtomicMass -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasAtomicMass">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33250"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="en">The atomic mass of an element.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/mdo/structure/hasAtomicNumber -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasAtomicNumber">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33250"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</xsd:minInclusive>
-                    </rdf:Description>
-                    <rdf:Description>
-                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">118</xsd:maxInclusive>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <rdfs:comment xml:lang="en">The atomic number of an element.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/mdo/structure/hasAtomicSymbol -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasAtomicSymbol">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33250"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The atomic symbol of an element.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://w3id.org/mdo/structure/hasDescriptiveFormula -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasDescriptiveFormula">
@@ -388,22 +347,12 @@
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasElementOccupancy -->
+    <!-- https://w3id.org/mdo/structure/hasElementRatio -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasElementOccupancy">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasElementRatio">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Species"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:comment xml:lang="en">To reoresent the occupancy of a element from a species.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/mdo/structure/hasFullAtomicName -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasFullAtomicName">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33250"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The full atomic name of an element.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -600,34 +549,13 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33250">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasAtomicMass"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasAtomicNumber"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasAtomicSymbol"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasFullAtomicName"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi/formula"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">To represent an element in the periodic table.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">atom</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atom</rdfs:label>
     </owl:Class>
     
 
@@ -636,47 +564,66 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/core/Structure">
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasBasis"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/Basis"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasBasis"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/Basis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasBasis"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/structure/Basis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasLattice"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/structure/Lattice"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasLattice"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/Lattice"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasOccupancy"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/Occupancy"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasOccupancy"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/structure/Occupancy"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasOccupancy"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/Occupancy"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasComposition"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/structure/Composition"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasComposition"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/mdo/structure/Composition"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasPointGroup"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/PointGroup"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasSite"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/Site"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasSpaceGroup"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/SpaceGroup"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasComposition"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://w3id.org/mdo/structure/Composition"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasSpaceGroup"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/structure/SpaceGroup"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasSpaceGroup"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/mdo/structure/SpaceGroup"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
     </owl:Class>
     
@@ -876,10 +823,32 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/structure/Occupancy">
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasSpecies"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/Species"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasSite"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/Site"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasSite"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/structure/Site"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasSpecies"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/Species"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasSpecies"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/structure/Species"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
     </owl:Class>
     
@@ -905,18 +874,34 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/structure/Site">
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasCartesianCoordinates"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasCartesianCoordinates"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasCartesianCoordinates"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasFractionalCoordinates"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasFractionalCoordinates"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasFractionalCoordinates"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A site is a point in a lattice.</rdfs:comment>
     </owl:Class>
@@ -927,9 +912,24 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/structure/SpaceGroup">
         <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasPointGroup"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/PointGroup"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasPointGroup"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/structure/PointGroup"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasPointGroup"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/structure/PointGroup"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasSpaceGroupID"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -953,20 +953,6 @@
                 <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasElement"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33250"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasElementOccupancy"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasOxidationState"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A species is the combination of atoms on each site.</rdfs:comment>

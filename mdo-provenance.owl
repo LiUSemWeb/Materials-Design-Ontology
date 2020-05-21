@@ -115,19 +115,13 @@
 
     <!-- http://www.w3.org/ns/prov#wasAssociatedWith -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith">
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
-        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith"/>
     
 
 
     <!-- http://www.w3.org/ns/prov#wasAttributedTo -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAttributedTo">
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/MaterialsData"/>
-        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAttributedTo"/>
     
 
 
@@ -139,15 +133,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.w3.org/ns/prov#generatedAtTime -->
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#generatedAtTime">
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/MaterialsData"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
     
 
 
@@ -174,7 +159,7 @@
     <!-- https://w3id.org/mdo/provenance/hasDatabaseName -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasDatabaseName">
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/provenance/DatabaseAgent"/>
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">To represent the database&apos;s name.</rdfs:comment>
     </owl:DatatypeProperty>
@@ -211,6 +196,16 @@
     
 
 
+    <!-- https://w3id.org/mdo/provenance/hasURL -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasURL">
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">To represent the URL of a reference.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -228,26 +223,17 @@
     
 
 
-    <!-- http://www.w3.org/ns/prov#Organization -->
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#Organization">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#Person -->
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#Person">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.w3.org/ns/prov#SoftwareAgent -->
 
     <owl:Class rdf:about="http://www.w3.org/ns/prov#SoftwareAgent">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/provenance/hasSoftwareName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A software agent is the representation of the software that produces the result of a material calculation.</rdfs:comment>
     </owl:Class>
     
@@ -259,41 +245,54 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/mdo/core/MaterialsData -->
+    <!-- https://w3id.org/mdo/core/Property -->
 
-    <owl:Class rdf:about="https://w3id.org/mdo/core/MaterialsData">
+    <rdf:Description rdf:about="https://w3id.org/mdo/core/Property">
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasAttributedTo"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://w3id.org/mdo/provenance/DatabaseAgent"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasAttributedTo"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasAttributedTo"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasAttributedTo"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
+    </rdf:Description>
     
 
 
-    <!-- https://w3id.org/mdo/provenance/DatabaseAgent -->
+    <!-- https://w3id.org/mdo/core/Structure -->
 
-    <owl:Class rdf:about="https://w3id.org/mdo/provenance/DatabaseAgent">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Organization"/>
-        <rdfs:comment xml:lang="en">A database agent is the representation of the database that stores the material data.</rdfs:comment>
-    </owl:Class>
+    <rdf:Description rdf:about="https://w3id.org/mdo/core/Structure">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasAttributedTo"/>
+                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasAttributedTo"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </rdf:Description>
     
 
 
