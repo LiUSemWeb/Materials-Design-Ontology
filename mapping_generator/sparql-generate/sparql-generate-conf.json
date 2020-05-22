@@ -1,0 +1,14 @@
+{
+  "documentset": [
+    {
+      "mediatype": "application/json",
+      "path": "documentset/intermediate.json",
+      "uri": "http://example.com/intermediate.json"
+    }
+  ],
+  "query": "test.rqg",
+  "namedqueries": [],
+  "graph": "dataset/default.ttl",
+  "namedgraphs": [],
+  "loglevel": 5
+}
