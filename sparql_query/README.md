@@ -1,5 +1,7 @@
 ### SPARQL Query examples to answer Competency Questions
 
+[SPARQL Documentation](https://www.w3.org/TR/rdf-sparql-query/).
+
 CQ1:
 ```
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -140,28 +142,3 @@ SELECT ?OutputStructure ?value ?type WHERE {
   FILTER (?name="band_gap" && ?type="cubic")
 } 
 ```
-
-CQ9:
-```
-```
-
-CQ10:
-```
-```
-
-CQ11:
-```
-```
-
-CQ12:
-```
-```
-
-CQ13:
-```
-```
-
-CQ14:
-```
-```
-[SPARQL Documentation](https://www.w3.org/TR/sparql11-query/).
