@@ -1,8 +1,4 @@
-import subprocess
-import shlex
 import os
-import shutil
-
 
 rdf_filenames = os.listdir('./RDF-output')
 input_parameter_str = ''

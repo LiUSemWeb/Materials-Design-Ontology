@@ -6,7 +6,7 @@
       "uri": "http://example.com/intermediate.json"
     }
   ],
-  "query": "test.rqg",
+  "query": "mp-mappings.rqg",
   "namedqueries": [],
   "graph": "dataset/default.ttl",
   "namedgraphs": [],

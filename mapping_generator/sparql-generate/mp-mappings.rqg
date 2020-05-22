@@ -3,14 +3,12 @@ PREFIX iter: <http://w3id.org/sparql-generate/iter/>
 PREFIX fun: <http://w3id.org/sparql-generate/fn/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 PREFIX core: <https://w3id.org/mdo/core/>
 PREFIX structure: <https://w3id.org/mdo/structure/>
 PREFIX calculation: <https://w3id.org/mdo/calculation/>
-PREFIX PROV: <http://www.w3.org/ns/prov#>
-PREFIX prov: <https://w3id.org/mdo/provenance/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX provenance: <https://w3id.org/mdo/provenance/>
 PREFIX emmo: <http://emmo.info/domains/emmo-material.owl#>
-PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX CHEBI-atom: <http://purl.obolibrary.org/obo/CHEBI_33250>
 PREFIX CHEBI-formula: <http://purl.obolibrary.org/obo/chebi/formula>
@@ -21,47 +19,46 @@ GENERATE {
 	core:hasID ?TASK_ID;
 	core:hasInputStructure ?input_structure;
 	core:hasOutputStructure ?output_structure;
-	PROV:wasAssociatedWith ?BN_softwareagent;
-	core:hasOutputCalculatedProperty ?N_density;
-	core:hasOutputCalculatedProperty ?N_band_gap;
-	core:hasOutputCalculatedProperty ?N_final_energy;
-	core:hasOutputCalculatedProperty ?N_final_energy_per_atom;
-	core:hasOutputCalculatedProperty ?N_formation_energy_per_atom;
+	prov:wasAssociatedWith ?NODE_softwareagent;
+	core:hasOutputCalculatedProperty ?NODE_density;
+	core:hasOutputCalculatedProperty ?NODE_band_gap;
+	core:hasOutputCalculatedProperty ?NODE_final_energy;
+	core:hasOutputCalculatedProperty ?NODE_final_energy_per_atom;
+	core:hasOutputCalculatedProperty ?NODE_formation_energy_per_atom;
 	GENERATE{
-	  	?material a emmo:Material;
-	  		structure:hasComposition ?BN_composition
-	  		GENERATE{
-	  			?BN_composition a structure:Composition;
-	  			structure:hasDescriptiveFormula ?full_formula;
-	  			structure:hasAnonymous_formula ?anonymous_formula;
-	  			}.
+	  	?material a emmo:Material	  		
 	  	}.
+	GENERATE{
+	  	?NODE_composition a structure:Composition;
+	  	structure:hasDescriptiveFormula ?full_formula;
+	  	structure:hasAnonymous_formula ?anonymous_formula;
+	  	}. 
 	GENERATE {
 	  	?input_structure a core:Structure;
-	  	core:PartOf ?material;
-	  	structure:hasLattice ?BN_inputlattice;
+	  	core:relatesToMaterial ?material;
+	  	structure:hasLattice ?NODE_inputlattice;
 	  	structure:hasOccupancy ?input_occupancy;
-	  	structure:hasComposition ?BN_composition;
+	  	structure:hasComposition ?NODE_composition;
 	  	GENERATE{
-	  		?BN_inputlattice a structure:Lattice;
+	  		?NODE_inputlattice a structure:Lattice;
 	  		structure:hasLatticeVolume ?input_lattice_volume;
-	  		structure:hasAxisVectors ?BN_inputlattice_axisvector;
-	  		structure:hasAngleVector ?BN_inputlattice_anglevector;
-	  		structure:hasLengthVector ?BN_inputlattice_lengthvector
+	  		structure:hasAxisVectors ?NODE_inputlattice_axisvector;
+	  		structure:hasAngleTriple ?NODE_inputlattice_angletriple;
+	  		structure:hasLengthTriple ?NODE_inputlattice_lengthtriple
 	  		GENERATE{
-	  			?BN_inputlattice_axisvector a structure:AxisVectors;
+	  			?NODE_inputlattice_axisvector a structure:AxisVectors;
 	  			structure:hasX_axisVector ?input_lattice_x_axisvector;
 	  			structure:hasY_axisVector ?input_lattice_y_axisvector;
 	  			structure:hasZ_axisVector ?input_lattice_z_axisvector
 	  		} .
 	  		GENERATE{
-	  			?BN_inputlattice_anglevector a structure:AngleTriple;
+	  			?NODE_inputlattice_angletriple a structure:AngleTriple;
 	  			structure:hasAngle_alpha ?input_lattice_angle_alpha;
 	  			structure:hasAngle_beta ?input_lattice_angle_beta;
 	  			structure:hasAngle_gamma ?input_lattice_angle_gamma
 	  		} .
 	  		GENERATE{
-	  			?BN_inputlattice_lengthvector a structure:LengthTriple;
+	  			?NODE_inputlattice_lengthtriple a structure:LengthTriple;
 	  			structure:hasLength_a ?input_lattice_length_A;
 	  			structure:hasLength_b ?input_lattice_length_B;
 	  			structure:hasLength_c ?input_lattice_length_C
@@ -70,37 +67,37 @@ GENERATE {
 
 	  	GENERATE{
 	  		?input_occupancy a structure:Occupancy;
-	  		structure:hasSite ?BN_site;
-	  		structure:hasSpecies ?BN_species;
+	  		structure:hasSite ?NODE_site;
+	  		structure:hasSpecies ?NODE_species;
 	  		GENERATE {
-	  			?BN_site a structure:Site;
-	  			structure:hasFractionalCoordinates ?BN_site_fractional_coordinates;
-	  			structure:hasCartesianCoordinates ?BN_site_cartesian_coordinates
+	  			?NODE_site a structure:Site;
+	  			structure:hasFractionalCoordinates ?NODE_site_fractional_coordinates;
+	  			structure:hasCartesianCoordinates ?NODE_site_cartesian_coordinates
 	  			GENERATE{
-	  				?BN_site_fractional_coordinates a structure:CoordinateVector;
+	  				?NODE_site_fractional_coordinates a structure:CoordinateVector;
 	  				structure:hasX_axisCoordinate ?fractional_coordinate_x;
 	  				structure:hasY_axisCoordinate ?fractional_coordinate_y;
 	  				structure:hasZ_axisCoordinate ?fractional_coordinate_z;
 	  			}.
 	  			GENERATE{
-	  				?BN_site_cartesian_coordinates a structure:CoordinateVector;
+	  				?NODE_site_cartesian_coordinates a structure:CoordinateVector;
 	  				structure:hasX_axisCoordinate ?cartesian_coordinate_x;
 	  				structure:hasY_axisCoordinate ?cartesian_coordinate_y;
 	  				structure:hasZ_axisCoordinate ?cartesian_coordinate_z;
 	  			}.
 	  		}.
 	  		GENERATE{
-	  			?BN_species a structure:species;
-	  			structure:hasElement ?BN_atom;
+	  			?NODE_species a structure:species;
+	  			structure:hasElement ?NODE_atom;
 	  			structure:hasElementRatio ?species_element_ratio;
 	  			GENERATE{
-	  				?BN_atom a CHEBI-atom:;
+	  				?NODE_atom a CHEBI-atom:;
 	  				CHEBI-formula: ?species_element;
 	  				}.
 	  		}
 	  		ITERATOR iter:JSONPath(?species, "$[*]") AS ?elements
 	  		WHERE{
-	  			BIND(BNODE() AS ?BN_atom)
+	  			BIND(BNODE() AS ?NODE_atom)
 	  			BIND(fun:JSONPath(?elements, "$.element") AS ?species_element)
 	  			BIND(fun:JSONPath(?elements, "$.occu") AS ?species_element_ratio)
 	  		}
@@ -108,11 +105,11 @@ GENERATE {
 	  	}
 	  	ITERATOR iter:JSONPath(?input_sites, "$[*]") AS ?site
 			WHERE {
-	    		#BIND(<{?TASK_ID}_input_structure_occupancy_sites> AS ?BN_site)
-	    		BIND(BNODE() AS ?BN_site)
-	    		BIND(BNODE() AS ?BN_species)
-	    		BIND(BNODE() AS ?BN_site_fractional_coordinates)
-	    		BIND(BNODE() AS ?BN_site_cartesian_coordinates)
+	    		#BIND(<{?TASK_ID}_input_structure_occupancy_sites> AS ?NODE_site)
+	    		BIND(BNODE() AS ?NODE_site)
+	    		BIND(BNODE() AS ?NODE_species)
+	    		BIND(BNODE() AS ?NODE_site_fractional_coordinates)
+	    		BIND(BNODE() AS ?NODE_site_cartesian_coordinates)
 	    		BIND(fun:JSONPath(?site, "$.species") AS ?species)
 	    		BIND(fun:JSONPath(?site, "$.abc") AS ?abc)
 	    		BIND(fun:JSONPath(?site, "$.abc[0]") AS ?fractional_coordinate_x)
@@ -127,98 +124,104 @@ GENERATE {
 	}.
 
 	GENERATE{
-	  	?reference a prov:ReferenceAgent;
-	  	prov:hasDatabaseName "Materials Project";
-	  	prov:hasAuthorName ?author_name;
+	  	?reference a provenance:ReferenceAgent;
+	  	provenance:hasDatabaseName "Materials Project";
+	  	provenance:hasDOI ?doi;
+	  	provenance:hasAuthorName ?author_name;
+	  	provenance:hasPublicationDateTime ?datetime;
 	  	}
 	  	ITERATOR iter:JSONPath(?authors_list, "$[*]") AS ?author
 	  	WHERE{
 	  		BIND(fun:JSONPath(?author, ".name") AS ?author_name)
 	  	}.
-
-
 	GENERATE{
-		?N_band_gap a core:CalculatedProperty;
+		?NODE_band_gap a core:CalculatedProperty;
 		core:hasPropertyValue ?band_gap;
 		core:hasPropertyName "band_gap";
 		core:hasUnit "eV";
-		prov:wasAttributed ?reference
+		prov:wasAttributedTo ?reference;
+		core:relatedToStructure ?output_structure
 		}.
 	GENERATE{
-		?N_final_energy a core:CalculatedProperty;
+		?NODE_final_energy a core:CalculatedProperty;
 		core:hasPropertyValue ?final_energy;
 		core:hasPropertyName "final_energy";
 		core:hasUnit "eV"; 
-		prov:wasAttributed ?reference
+		prov:wasAttributedTo ?reference;
+		core:relatedToStructure ?output_structure
 		}.
 	GENERATE{
-		?N_final_energy_per_atom a core:CalculatedProperty;
+		?NODE_final_energy_per_atom a core:CalculatedProperty;
 		core:hasPropertyValue ?final_energy_per_atom;
 		core:hasPropertyName "final_energy_per_atom";
 		core:hasUnit "eV"; 
-		prov:wasAttributed ?reference
+		prov:wasAttributedTo ?reference;
+		core:relatedToStructure ?output_structure
 		}.
 	GENERATE{
-		?N_formation_energy_per_atom a core:CalculatedProperty;
+		?NODE_formation_energy_per_atom a core:CalculatedProperty;
 		core:hasPropertyValue ?formation_energy_per_atom;
 		core:hasPropertyName "formation_energy_per_atom";
 		core:hasUnit "eV"; 
-		prov:wasAttributed ?reference
+		prov:wasAttributedTo ?reference;
+		core:relatedToStructure ?output_structure
 		}.
 	GENERATE{
-		?N_density a core:CalculatedProperty;
+		?NODE_density a core:CalculatedProperty;
 		core:hasPropertyValue ?density;
 		core:hasPropertyName "density";
 		core:hasUnit "g/cc"; 
-		prov:wasAttributed ?reference
+		prov:wasAttributedTo ?reference;
+		core:relatedToStructure ?output_structure
 		}.
+
 
 # Following is output structure:
 
 	GENERATE {
 	  	?output_structure a core:Structure;
-	  	core:PartOf ?material;
-	  	structure:hasLattice ?BN_outputlattice;
+	  	core:relatesToMaterial ?material;
+	  	structure:hasLattice ?NODE_outputlattice;
 	  	structure:hasOccupancy ?output_occupancy;
-	  	structure:hasComposition ?BN_composition;
-	  	PROV:wasAttributed ?reference;
-		core:hasOutputCalculatedProperty ?N_density;
-		core:hasOutputCalculatedProperty ?N_band_gap;
-		core:hasOutputCalculatedProperty ?N_final_energy;
-		core:hasOutputCalculatedProperty ?N_final_energy_per_atom;
-		core:hasOutputCalculatedProperty ?N_formation_energy_per_atom;
-		structure:hasSpaceGroup ?BN_output_sg
+	  	structure:hasComposition ?NODE_composition;
+	  	prov:wasAttributedTo ?reference;
+		core:hasOutputCalculatedProperty ?NODE_density;
+		core:hasOutputCalculatedProperty ?NODE_band_gap;
+		core:hasOutputCalculatedProperty ?NODE_final_energy;
+		core:hasOutputCalculatedProperty ?NODE_final_energy_per_atom;
+		core:hasOutputCalculatedProperty ?NODE_formation_energy_per_atom;
+		structure:hasSpaceGroup ?NODE_output_sg
 	  	GENERATE{
-	  		?BN_output_sg a structure:SpaceGroup;
+	  		?NODE_output_sg a structure:SpaceGroup;
 	  		structure:hasSpaceGroupID ?output_sg_id;
 	  		structure:hasSpaceGroupSymbol ?output_sg_symbol;
-	  		structure:hasPointGroup ?BN_output_pg
+	  		structure:hasPointGroup ?NODE_output_pg
 	  		GENERATE{
-	  			?BN_output_pg a structure:PointGroup;
+	  			?NODE_output_pg a structure:PointGroup;
 	  			structure:hasPointGroupHMName ?output_pg_name
 	  			}.
 	  		}.
 	  	GENERATE{
-	  		?BN_outputlattice a structure:Lattice;
+	  		?NODE_outputlattice a structure:Lattice;
 	  		structure:hasLatticeVolume ?output_lattice_volume;
 	  		structure:hasLatticeType ?output_lattice_type;
-	  		structure:hasAxisVectors ?BN_outputlattice_axisvector;
-	  		structure:hasAngleVector ?BN_outputlattice_anglevector;
-	  		structure:hasLengthVector ?BN_outputlattice_lengthvector;
+	  		structure:hasAxisVectors ?NODE_outputlattice_axisvector;
+	  		structure:hasAngleTriple ?NODE_outputlattice_angletriple;
+	  		structure:hasLengthTriple ?NODE_outputlattice_lengthTriple;
 	  		GENERATE{
-	  			?BN_outputlattice_axisvector a structure:AxisVectors;
+	  			?NODE_outputlattice_axisvector a structure:AxisVectors;
 	  			structure:hasX_axisVector ?output_lattice_x_axisvector;
 	  			structure:hasY_axisVector ?output_lattice_y_axisvector;
 	  			structure:hasZ_axisVector ?output_lattice_z_axisvector
 	  		} .
 	  		GENERATE{
-	  			?BN_outputlattice_anglevector a structure:AngleTriple;
+	  			?NODE_outputlattice_angletriple a structure:AngleTriple;
 	  			structure:hasAngle_alpha ?output_lattice_angle_alpha;
 	  			structure:hasAngle_beta ?output_lattice_angle_beta;
 	  			structure:hasAngle_gamma ?output_lattice_angle_gamma
 	  		} .
 	  		GENERATE{
-	  			?BN_outputlattice_lengthvector a structure:LengthTriple;
+	  			?NODE_outputlattice_lengthtriple a structure:LengthTriple;
 	  			structure:hasLength_a ?output_lattice_length_A;
 	  			structure:hasLength_b ?output_lattice_length_B;
 	  			structure:hasLength_c ?output_lattice_length_C
@@ -227,37 +230,37 @@ GENERATE {
 
 	  	GENERATE{
 	  		?output_occupancy a structure:Occupancy;
-	  		structure:hasSite ?BN_site;
-	  		structure:hasSpecies ?BN_species;
+	  		structure:hasSite ?NODE_site;
+	  		structure:hasSpecies ?NODE_species;
 	  		GENERATE {
-	  			?BN_site a structure:Site;
-	  			structure:hasFractionalCoordinates ?BN_site_fractional_coordinates;
-	  			structure:hasCartesianCoordinates ?BN_site_cartesian_coordinates
+	  			?NODE_site a structure:Site;
+	  			structure:hasFractionalCoordinates ?NODE_site_fractional_coordinates;
+	  			structure:hasCartesianCoordinates ?NODE_site_cartesian_coordinates
 	  			GENERATE{
-	  				?BN_site_fractional_coordinates a structure:CoordinateVector;
+	  				?NODE_site_fractional_coordinates a structure:CoordinateVector;
 	  				structure:hasX_axisCoordinate ?fractional_coordinate_x;
 	  				structure:hasY_axisCoordinate ?fractional_coordinate_y;
 	  				structure:hasZ_axisCoordinate ?fractional_coordinate_z;
 	  			}.
 	  			GENERATE{
-	  				?BN_site_cartesian_coordinates a structure:CoordinateVector;
+	  				?NODE_site_cartesian_coordinates a structure:CoordinateVector;
 	  				structure:hasX_axisCoordinate ?cartesian_coordinate_x;
 	  				structure:hasY_axisCoordinate ?cartesian_coordinate_y;
 	  				structure:hasZ_axisCoordinate ?cartesian_coordinate_z;
 	  			}.
 	  		}.
 	  		GENERATE{
-	  			?BN_species a structure:species;
-	  			structure:hasElement ?BN_atom;
+	  			?NODE_species a structure:species;
+	  			structure:hasElement ?NODE_atom;
 	  			structure:hasElementRatio ?species_element_ratio;
 	  			GENERATE{
-	  				?BN_atom a CHEBI-atom:;
+	  				?NODE_atom a CHEBI-atom:;
 	  				CHEBI-formula: ?species_element;
 	  				}.
 	  		}
 	  		ITERATOR iter:JSONPath(?species, "$[*]") AS ?elements
 	  		WHERE{
-	  			BIND(BNODE() AS ?BN_atom)
+	  			BIND(BNODE() AS ?NODE_atom)
 	  			BIND(fun:JSONPath(?elements, "$.element") AS ?species_element)
 	  			BIND(fun:JSONPath(?elements, "$.occu") AS ?species_element_ratio)
 	  		}
@@ -265,11 +268,11 @@ GENERATE {
 	  	}
 	  	ITERATOR iter:JSONPath(?output_sites, "$[*]") AS ?site
 			WHERE {
-	    		#BIND(<{?TASK_ID}_input_structure_occupancy_sites> AS ?BN_site)
-	    		BIND(BNODE() AS ?BN_site)
-	    		BIND(BNODE() AS ?BN_species)
-	    		BIND(BNODE() AS ?BN_site_fractional_coordinates)
-	    		BIND(BNODE() AS ?BN_site_cartesian_coordinates)
+	    		#BIND(<{?TASK_ID}_input_structure_occupancy_sites> AS ?NODE_site)
+	    		BIND(BNODE() AS ?NODE_site)
+	    		BIND(BNODE() AS ?NODE_species)
+	    		BIND(BNODE() AS ?NODE_site_fractional_coordinates)
+	    		BIND(BNODE() AS ?NODE_site_cartesian_coordinates)
 	    		BIND(fun:JSONPath(?site, "$.species") AS ?species)
 	    		BIND(fun:JSONPath(?site, "$.abc") AS ?abc)
 	    		BIND(fun:JSONPath(?site, "$.abc[0]") AS ?fractional_coordinate_x)
@@ -287,34 +290,35 @@ SOURCE <http://example.com/intermediate.json> AS ?source
 WHERE {
   BIND(fun:JSONPath(?source,"$.original_task_id") AS ?TASK_ID)
   BIND(fun:JSONPath(?source,"$._id") AS ?ID)
-
   BIND(fun:JSONPath(?source,"$.band_gap") AS ?band_gap)
   BIND(fun:JSONPath(?source,"$.final_energy") AS ?final_energy)
   BIND(fun:JSONPath(?source,"$.final_energy_per_atom") AS ?final_energy_per_atom)
   BIND(fun:JSONPath(?source,"$.formation_energy_per_atom") AS ?formation_energy_per_atom)
   BIND(fun:JSONPath(?source,"$.density") AS ?density)
-  BIND(<{?TASK_ID}_band_gap> AS ?N_band_gap)
-  BIND(<{?TASK_ID}_final_energy> AS ?N_final_energy)
-  BIND(<{?TASK_ID}_final_energy_per_atom> AS ?N_final_energy_per_atom)
-  BIND(<{?TASK_ID}_formation_energy_per_atom> AS ?N_formation_energy_per_atom)
-  BIND(<{?TASK_ID}_density> AS ?N_density)
-  BIND(<{?TASK_ID}_composition> AS ?BN_composition)
+  BIND(<{?TASK_ID}_band_gap> AS ?NODE_band_gap)
+  BIND(<{?TASK_ID}_final_energy> AS ?NODE_final_energy)
+  BIND(<{?TASK_ID}_final_energy_per_atom> AS ?NODE_final_energy_per_atom)
+  BIND(<{?TASK_ID}_formation_energy_per_atom> AS ?NODE_formation_energy_per_atom)
+  BIND(<{?TASK_ID}_density> AS ?NODE_density)
+  BIND(<{?TASK_ID}_composition> AS ?NODE_composition)
   BIND(fun:JSONPath(?source,"$.full_formula") AS ?full_formula)
   BIND(fun:JSONPath(?source,"$.anonymous_formula") AS ?anonymous_formula)
   #BIND(<{?TASK_ID}_{?full_formula}> as ?iri)
   BIND(<{?TASK_ID}_calculation> as ?calculation)
   BIND(<{?TASK_ID}_reference> as ?reference)
   BIND(fun:JSONPath(?source,"$.snl_final.about.authors") AS ?authors_list)
-  BIND(<{?TASK_ID}_inputstructure> as ?input_structure)
-  BIND(<{?TASK_ID}_outputstructure> as ?output_structure)
-  BIND(<{?TASK_ID}_inputoccupancy> as ?input_occupancy)
-  BIND(<{?TASK_ID}_outputoccupancy> as ?output_occupancy)
+  BIND(fun:JSONPath(?source,"$.doi") AS ?doi)
+  BIND(fun:JSONPath(?source,"$.created_at") AS ?datetime)
+  BIND(<{?TASK_ID}_input_structure> as ?input_structure)
+  BIND(<{?TASK_ID}_output_structure> as ?output_structure)
+  BIND(<{?TASK_ID}_input_occupancy> as ?input_occupancy)
+  BIND(<{?TASK_ID}_output_occupancy> as ?output_occupancy)
   BIND(fun:JSONPath(?source,"$.initial_structure.sites")  AS ?input_sites)
   BIND(fun:JSONPath(?source, "$.initial_structure.lattice") AS ?input_lattice)
-  BIND(<{?TASK_ID}_inputlattice>  AS ?BN_inputlattice)
-  BIND(<{?TASK_ID}_inputlattice_axisvector>  AS ?BN_inputlattice_axisvector)
-  BIND(<{?TASK_ID}_inputlattice_anglevector> AS ?BN_inputlattice_anglevector)
-  BIND(<{?TASK_ID}_inputlattice_lengthvector> AS ?BN_inputlattice_lengthvector)
+  BIND(<{?TASK_ID}_input_lattice>  AS ?NODE_inputlattice)
+  BIND(<{?TASK_ID}_input_lattice_axisvector>  AS ?NODE_inputlattice_axisvector)
+  BIND(<{?TASK_ID}_input_lattice_angletriple> AS ?NODE_inputlattice_angletriple)
+  BIND(<{?TASK_ID}_input_lattice_lengthtriple> AS ?NODE_inputlattice_lengthtriple)
   BIND(fun:JSONPath(?input_lattice, "$.matrix[0]") AS ?input_lattice_x_axisvector)
   BIND(fun:JSONPath(?input_lattice, "$.matrix[1]") AS ?input_lattice_y_axisvector)
   BIND(fun:JSONPath(?input_lattice, "$.matrix[2]") AS ?input_lattice_z_axisvector)
@@ -327,10 +331,10 @@ WHERE {
   BIND(fun:JSONPath(?input_lattice, "$.volume") AS ?input_lattice_volume)
   BIND(fun:JSONPath(?source,"$.snl_final.sites")  AS ?output_sites)
   BIND(fun:JSONPath(?source, "$.snl_final.lattice") AS ?output_lattice)
-  BIND(<{?TASK_ID}_outputlattice> AS ?BN_outputlattice)
-  BIND(<{?TASK_ID}_outputlattice_axisvector> AS ?BN_outputlattice_axisvector)
-  BIND(<{?TASK_ID}_outputlattice_anglevector> AS ?BN_outputlattice_anglevector)
-  BIND(<{?TASK_ID}_outputlattice_lengthvector> AS ?BN_outputlattice_lengthvector)
+  BIND(<{?TASK_ID}_output_lattice> AS ?NODE_outputlattice)
+  BIND(<{?TASK_ID}_output_lattice_axisvector> AS ?NODE_outputlattice_axisvector)
+  BIND(<{?TASK_ID}_output_lattice_angletriple> AS ?NODE_outputlattice_angletriple)
+  BIND(<{?TASK_ID}_output_lattice_lengthtriple> AS ?NODE_outputlattice_lengthtriple)
   BIND(fun:JSONPath(?output_lattice, "$.matrix") AS ?output_matrix)
   BIND(fun:JSONPath(?output_lattice, "$.matrix[0]") AS ?output_lattice_x_axisvector)
   BIND(fun:JSONPath(?output_lattice, "$.matrix[1]") AS ?output_lattice_y_axisvector)
@@ -343,8 +347,8 @@ WHERE {
   BIND(fun:JSONPath(?output_lattice, "$.gamma") AS ?output_lattice_angle_gamma)
   BIND(fun:JSONPath(?output_lattice, "$.volume") AS ?output_lattice_volume)
   BIND(<{?TASK_ID}_material> as ?material)
-  BIND(<{?TASK_ID}_output_pg> AS ?BN_output_pg)
-  BIND(<{?TASK_ID}_output_sg> AS ?BN_output_sg)
+  BIND(<{?TASK_ID}_output_pg> AS ?NODE_output_pg)
+  BIND(<{?TASK_ID}_output_sg> AS ?NODE_output_sg)
   BIND(fun:JSONPath(?source, "$.spacegroup") AS ?output_sg)
   BIND(fun:JSONPath(?output_sg, "$.symbol") AS ?output_sg_symbol)
   BIND(fun:JSONPath(?output_sg, "$.number") AS ?output_sg_id)
