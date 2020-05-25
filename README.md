@@ -1,6 +1,6 @@
 ### What is Materials Design Ontology?
 
-MDO is the first ontology in materials design field, representing the domain knowledge specifically related to solid-state physics and computational materials science.
+MDO is an ontology for materials design field, representing the domain knowledge specifically related to solid-state physics and computational materials science.
 
 ### What does Materials Design Ontology consist of?
 
@@ -15,6 +15,9 @@ Materials Design Ontology consists of 4 modules which are:
 * [Provenance](https://w3id.org/mdo/provenance/1.0): This module is intended to represent the provenance information of materials data and calculation.
 
 * A full MDO importing all the above modules is avaliable at [MDO Full](https://w3id.org/mdo/full/1.0).
+
+### MDO Entities
+![entities](https://huanyu-li.github.io/figures/mdo/MDO.png "MDO entities")
 
 ### Contact
 
