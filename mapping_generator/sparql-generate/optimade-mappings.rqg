@@ -1,0 +1,170 @@
+BASE <https://w3id.org/mdo/data/1.0/>
+PREFIX iter: <http://w3id.org/sparql-generate/iter/>
+PREFIX fun: <http://w3id.org/sparql-generate/fn/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX core: <https://w3id.org/mdo/core/>
+PREFIX structure: <https://w3id.org/mdo/structure/>
+PREFIX calculation: <https://w3id.org/mdo/calculation/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX provenance: <https://w3id.org/mdo/provenance/>
+PREFIX emmo: <http://emmo.info/domains/emmo-material.owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX CHEBI-atom: <http://purl.obolibrary.org/obo/CHEBI_33250>
+PREFIX CHEBI-formula: <http://purl.obolibrary.org/obo/chebi/formula>
+
+
+GENERATE {
+	?calculation a core:Calculation;
+	core:hasID ?TASK_ID;
+	core:hasInputStructure ?input_structure;
+	core:hasOutputStructure ?output_structure;
+	GENERATE{
+	  	?material a emmo:Material	  		
+	  	}.
+	GENERATE{
+	  	?NODE_composition a structure:Composition;
+	  	structure:hasDescriptiveFormula ?full_formula
+	  	}. 
+	GENERATE {
+	  	?input_structure a core:Structure;
+	  	core:relatesToMaterial ?material
+	}.
+
+	GENERATE{
+	  	?reference a provenance:ReferenceAgent;
+	  	provenance:hasDatabaseName "Crystallography Open Database";
+	  	provenance:hasDOI ?doi;
+	  	provenance:hasAuthorName ?author_name;
+	  	provenance:hasPublicationDateTime ?datetime;
+	  	}
+	  	ITERATOR iter:JSONPath(?authors_list, "$[*]") AS ?author
+	  	WHERE{
+	  		BIND(fun:JSONPath(?author, ".name") AS ?author_name)
+	  	}.
+
+
+
+# Following is output structure:
+
+	GENERATE {
+	  	?output_structure a core:Structure;
+	  	core:relatesToMaterial ?material;
+	  	structure:hasLattice ?NODE_outputlattice;
+	  	structure:hasOccupancy ?output_occupancy;
+	  	structure:hasComposition ?NODE_composition;
+	  	prov:wasAttributedTo ?reference;
+		structure:hasSpaceGroup ?NODE_output_sg
+	  	# output sg
+	  	GENERATE{
+	  		?NODE_output_sg a structure:SpaceGroup;
+	  		structure:hasSpaceGroupSymbol ?output_sg_symbol;
+	  		}.
+	  	# output lattice
+	  	GENERATE{
+	  		?NODE_outputlattice a structure:Lattice;
+	  		#structure:hasLatticeVolume ?output_lattice_volume;
+	  		#structure:hasLatticeType ?output_lattice_type;
+	  		structure:hasAxisVectors ?NODE_outputlattice_axisvector;
+	  		structure:hasAngleTriple ?NODE_outputlattice_angletriple;
+	  		structure:hasLengthTriple ?NODE_outputlattice_lengthtriple;
+	  		GENERATE{
+	  			?NODE_outputlattice_axisvector a structure:AxisVectors;
+	  			structure:hasX_axisVector ?output_lattice_x_axisvector;
+	  			structure:hasY_axisVector ?output_lattice_y_axisvector;
+	  			structure:hasZ_axisVector ?output_lattice_z_axisvector
+	  		} .
+	  		GENERATE{
+	  			?NODE_outputlattice_angletriple a structure:AngleTriple;
+	  			structure:hasAngle_alpha ?output_lattice_angle_alpha;
+	  			structure:hasAngle_beta ?output_lattice_angle_beta;
+	  			structure:hasAngle_gamma ?output_lattice_angle_gamma
+	  		} .
+	  		GENERATE{
+	  			?NODE_outputlattice_lengthtriple a structure:LengthTriple;
+	  			structure:hasLength_a ?output_lattice_length_A;
+	  			structure:hasLength_b ?output_lattice_length_B;
+	  			structure:hasLength_c ?output_lattice_length_C
+	  		} .
+	  	}.
+	  	# output occupancy
+	  	GENERATE{
+	  		?output_occupancy a structure:Occupancy;
+	  		structure:hasSite ?NODE_site;
+	  		structure:hasSpecies ?NODE_species
+	  		GENERATE{
+	  			?NODE_site a structure:Site;
+	  			structure:hasCartesianCoordinates ?NODE_site_cartesian_coordinates;
+	  			#structure:hasSiteOrder ?index
+	  			GENERATE{
+	  				?NODE_site_cartesian_coordinates a structure:CoordinateVector;
+	  				structure:hasX_axisCoordinate ?cartesian_coordinate_x;
+	  				structure:hasY_axisCoordinate ?cartesian_coordinate_y;
+	  				structure:hasZ_axisCoordinate ?cartesian_coordinate_z;
+	  			}.
+
+	  		}.
+	  		GENERATE{
+	  			?NODE_species a structure:Species;
+	  			structure:hasElement ?NODE_atom;
+	  			#structure:hasSpeciesOrder ?index
+	  			GENERATE{
+	  				?NODE_atom a CHEBI-atom:;
+	  				CHEBI-formula: ?species_element;
+	  			}.
+	  		}
+	  		ITERATOR iter:JSONPath(?species, "$.chemical_symbols[*]") AS ?species_element
+	  		WHERE{
+	  			BIND(BNODE() AS ?NODE_atom)
+	  		}.
+	  	}
+	  	ITERATOR iter:for(0,1,?output_nsites) AS ?index
+	  		WHERE{
+	  			BIND(BNODE() AS ?NODE_site)
+	  			BIND(BNODE() AS ?NODE_species)
+	  			BIND(BNODE() AS ?NODE_site_cartesian_coordinates)
+	  			BIND(fun:JSONPath(?output_sites, "$.[{?index}]") AS ?site)
+	  			BIND(fun:JSONPath(?output_species, "$.[{?index}]") AS ?species)
+	  			BIND(fun:JSONPath(?site, "$.[0]") AS ?cartesian_coordinate_x)
+	    		BIND(fun:JSONPath(?site, "$.[1]") AS ?cartesian_coordinate_y)
+	    		BIND(fun:JSONPath(?site, "$.[2]") AS ?cartesian_coordinate_z)
+	  		}.
+	}.
+}
+SOURCE <http://example.com/1000000-1.json> AS ?source
+WHERE {
+  BIND(fun:JSONPath(?source, "$.meta.last_id") AS ?TASK_ID)
+  BIND(fun:JSONPath(?source, "$.data[0].attributes") AS ?attributes)
+  BIND(<{?TASK_ID}_material> as ?material)
+  BIND(<{?TASK_ID}_calculation> as ?calculation)
+  BIND(<{?TASK_ID}_input_structure> as ?input_structure)
+  BIND(<{?TASK_ID}_output_structure> as ?output_structure)
+  BIND(<{?TASK_ID}_composition> AS ?NODE_composition)
+  BIND(<{?TASK_ID}_output_occupancy> as ?output_occupancy)
+  BIND(<{?TASK_ID}_output_pg> AS ?NODE_output_pg)
+  BIND(<{?TASK_ID}_output_sg> AS ?NODE_output_sg)
+  BIND(<{?TASK_ID}_reference> as ?reference)
+  BIND(<{?TASK_ID}_output_lattice> AS ?NODE_outputlattice)
+  BIND(<{?TASK_ID}_output_lattice_axisvector> AS ?NODE_outputlattice_axisvector)
+  BIND(<{?TASK_ID}_output_lattice_angletriple> AS ?NODE_outputlattice_angletriple)
+  BIND(<{?TASK_ID}_output_lattice_lengthtriple> AS ?NODE_outputlattice_lengthtriple)
+  BIND(xsd:integer(fun:JSONPath(?attributes,"$.nsites")) AS ?output_nsites)
+  BIND(fun:JSONPath(?attributes, "$.cartesian_site_positions")  AS ?output_sites)
+  BIND(fun:JSONPath(?attributes, "$.species")  AS ?output_species)
+  BIND(fun:JSONPath(?source, "$.time_stamp") AS ?datetime)
+  BIND(fun:JSONPath(?attributes, "$._cod_title") AS ?publication_title)
+  BIND(fun:JSONPath(?attributes, "$._cod_authors") AS ?authors_list)
+  BIND(fun:JSONPath(?attributes, "$._cod_a") AS ?output_lattice_length_A)
+  BIND(fun:JSONPath(?attributes, "$._cod_b") AS ?output_lattice_length_B)
+  BIND(fun:JSONPath(?attributes, "$._cod_c") AS ?output_lattice_length_C)
+  BIND(fun:JSONPath(?attributes, "$._cod_alpha") AS ?output_lattice_angle_alpha)
+  BIND(fun:JSONPath(?attributes, "$._cod_beta") AS ?output_lattice_angle_beta)
+  BIND(fun:JSONPath(?attributes, "$._cod_gamma") AS ?output_lattice_angle_gamma)
+  BIND(fun:JSONPath(?attributes, "$._cod_doi") AS ?doi)
+  BIND(fun:JSONPath(?attributes, "$.chemical_formula_hill") AS ?full_formula)
+  BIND(fun:JSONPath(?attributes, "$._cod_sg") AS ?output_sg_symbol)
+  BIND(fun:JSONPath(?attributes, "$.lattice_vectors[0]") AS ?output_lattice_x_axisvector)
+  BIND(fun:JSONPath(?attributes, "$.lattice_vectors[1]") AS ?output_lattice_y_axisvector)
+  BIND(fun:JSONPath(?attributes, "$.lattice_vectors[2]") AS ?output_lattice_z_axisvector)
+
+}
