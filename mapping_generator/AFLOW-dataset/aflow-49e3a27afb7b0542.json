@@ -1,0 +1,743 @@
+{
+  "aurl": "aflowlib.duke.edu:AFLOWDATA/LIB2_RAW/AgFe_pv/255",
+  "auid": "aflow:49e3a27afb7b0542",
+  "data_api": "aapi1.2",
+  "data_source": "aflowlib",
+  "loop": [
+    "lock",
+    "thermodynamics"
+  ],
+  "code": "vasp.4.6.35",
+  "compound": "Ag10Fe6",
+  "prototype": "255",
+  "nspecies": 2,
+  "natoms": 16,
+  "natoms_orig": 16,
+  "composition": [
+    10,
+    6
+  ],
+  "density": 8.99256,
+  "density_orig": -7.66474E+30,
+  "scintillation_attenuation_length": 1.29102,
+  "stoichiometry": [
+    0.625,
+    0.375
+  ],
+  "species": [
+    "Ag",
+    "Fe"
+  ],
+  "species_pp": [
+    "Ag",
+    "Fe_pv"
+  ],
+  "dft_type": [
+    "PAW_PBE"
+  ],
+  "species_pp_version": [
+    "Ag:PAW_PBE:06Sep2000",
+    "Fe_pv:PAW_PBE:06Sep2000"
+  ],
+  "species_pp_ZVAL": [
+    11,
+    14
+  ],
+  "species_pp_AUID": [
+    "eca65d7d992efb48",
+    "15e65f5e50047695"
+  ],
+  "valence_cell_iupac": 76,
+  "valence_cell_std": 158,
+  "volume_cell": 261.062,
+  "volume_atom": 16.3164,
+  "volume_cell_orig": 257.712,
+  "volume_atom_orig": 16.107,
+  "pressure": 0,
+  "stress_tensor": [
+    1.03,
+    0.41,
+    0.27,
+    0.41,
+    1.03,
+    0.27,
+    0.27,
+    0.27,
+    1.86
+  ],
+  "pressure_residual": 1.31,
+  "Pulay_stress": 0,
+  "geometry": [
+    7.622603,
+    7.622603,
+    7.674304,
+    96.03659,
+    96.03659,
+    141.8095
+  ],
+  "geometry_orig": [
+    7.526472,
+    7.526472,
+    7.526472,
+    96.73071,
+    96.73071,
+    139.9598
+  ],
+  "energy_cell": -70.9425,
+  "energy_atom": -4.43391,
+  "energy_cutoff": 381.2,
+  "delta_electronic_energy_convergence": 0.0000662176,
+  "delta_electronic_energy_threshold": 0.0001,
+  "kpoints_relax": [
+    9,
+    9,
+    5
+  ],
+  "kpoints": [
+    [
+      9,
+      9,
+      5
+    ]
+  ],
+  "enthalpy_cell": -70.9425,
+  "enthalpy_atom": -4.43391,
+  "eentropy_cell": -0.00346916,
+  "eentropy_atom": -0.000216823,
+  "enthalpy_formation_cell": 8.0645,
+  "enthalpy_formation_atom": 0.504032,
+  "entropic_temperature": -8841.24,
+  "PV_cell": 0,
+  "PV_atom": 0,
+  "spin_cell": 17.9916,
+  "spin_atom": 1.12448,
+  "spinD": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "calculation_time": 357803,
+  "calculation_memory": 1886.16,
+  "calculation_cores": 1,
+  "nbondxx": [
+    2.49230836,
+    2.62769926,
+    2.49365232
+  ],
+  "sg": [
+    "I4/mcm #140",
+    "I4/mcm #140",
+    "I4/mcm #140"
+  ],
+  "sg2": [
+    "Fmm2 #42",
+    "Cm #8",
+    "Cm #8"
+  ],
+  "spacegroup_orig": 8,
+  "spacegroup_relax": 8,
+  "forces": [
+    [
+      -0.006586,
+      -0.014307,
+      -0.011164
+    ],
+    [
+      -0.001626,
+      -0.00761,
+      -0.001876
+    ],
+    [
+      -0.001998,
+      -0.001998,
+      -0.012379
+    ],
+    [
+      -0.014307,
+      -0.006586,
+      -0.011164
+    ],
+    [
+      -0.000332,
+      0.006862,
+      0.000589
+    ],
+    [
+      -0.00761,
+      -0.001626,
+      -0.001876
+    ],
+    [
+      0.020579,
+      -0.000437,
+      0.009736
+    ],
+    [
+      -0.005167,
+      -0.005167,
+      0.009998
+    ],
+    [
+      0.006862,
+      -0.000332,
+      0.000589
+    ],
+    [
+      -0.000437,
+      0.020579,
+      0.009736
+    ],
+    [
+      -0.011242,
+      0.017527,
+      0.002781
+    ],
+    [
+      -0.005117,
+      -0.001273,
+      0.000644
+    ],
+    [
+      -0.016586,
+      -0.016586,
+      0.026445
+    ],
+    [
+      0.027313,
+      0.027313,
+      -0.025481
+    ],
+    [
+      -0.001273,
+      -0.005117,
+      0.000644
+    ],
+    [
+      0.017527,
+      -0.011242,
+      0.002781
+    ]
+  ],
+  "positions_cartesian": [
+    [
+      7.84705,
+      0.7189,
+      0.01041
+    ],
+    [
+      0.7002,
+      2.38522,
+      0.00347
+    ],
+    [
+      5.12183,
+      0.02841,
+      1.25576
+    ],
+    [
+      5.81232,
+      2.75364,
+      0.01041
+    ],
+    [
+      2.74415,
+      4.44478,
+      0.01205
+    ],
+    [
+      2.38845,
+      0.70343,
+      2.49711
+    ],
+    [
+      -0.66076,
+      2.39337,
+      2.49905
+    ],
+    [
+      0.02472,
+      5.11814,
+      1.25442
+    ],
+    [
+      4.44801,
+      2.74738,
+      2.5057
+    ],
+    [
+      -2.70005,
+      4.43266,
+      2.49905
+    ],
+    [
+      3.28059,
+      1.87242,
+      0.0066
+    ],
+    [
+      5.13368,
+      5.13384,
+      -1.23218
+    ],
+    [
+      3.25686,
+      -1.83655,
+      2.50116
+    ],
+    [
+      1.89403,
+      6.98744,
+      0.00737
+    ],
+    [
+      5.13707,
+      5.13691,
+      1.26147
+    ],
+    [
+      1.87566,
+      3.28382,
+      2.50025
+    ]
+  ],
+  "positions_fractional": [
+    [
+      0.066740311,
+      0.76648205,
+      0.83350032
+    ],
+    [
+      0.23271033,
+      0.067299342,
+      0.30022292
+    ],
+    [
+      0.25086662,
+      0.75086662,
+      0.50082273
+    ],
+    [
+      0.26648205,
+      0.56674031,
+      0.83350032
+    ],
+    [
+      0.43377445,
+      0.26683069,
+      0.6995093
+    ],
+    [
+      0.56729934,
+      0.73271033,
+      0.30022292
+    ],
+    [
+      0.73452126,
+      0.43470965,
+      0.16795988
+    ],
+    [
+      0.75024111,
+      0.25024111,
+      0.50010518
+    ],
+    [
+      0.76683069,
+      0.93377445,
+      0.6995093
+    ],
+    [
+      0.93470965,
+      0.23452126,
+      0.16795988
+    ],
+    [
+      0.18157185,
+      0.31980562,
+      0.50140757
+    ],
+    [
+      0.24996731,
+      0.24995107,
+      0.99938281
+    ],
+    [
+      0.31992418,
+      0.81992418,
+      0.13757123
+    ],
+    [
+      0.68127081,
+      0.18127081,
+      0.86420193
+    ],
+    [
+      0.74995107,
+      0.74996731,
+      0.99938281
+    ],
+    [
+      0.81980562,
+      0.68157185,
+      0.50140757
+    ]
+  ],
+  "Bravais_lattice_orig": "MCLC",
+  "lattice_variation_orig": "MCLC3",
+  "lattice_system_orig": "monoclinic",
+  "Pearson_symbol_orig": "mS32",
+  "Bravais_lattice_relax": "MCLC",
+  "lattice_variation_relax": "MCLC3",
+  "lattice_system_relax": "monoclinic",
+  "Pearson_symbol_relax": "mS32",
+  "crystal_family_orig": "monoclinic",
+  "crystal_system_orig": "monoclinic",
+  "crystal_class_orig": "monoclinic-domatic",
+  "point_group_Hermann_Mauguin_orig": "m",
+  "point_group_Schoenflies_orig": "C_S",
+  "point_group_orbifold_orig": "1*",
+  "point_group_type_orig": "polar",
+  "point_group_order_orig": 2,
+  "point_group_structure_orig": "cyclic",
+  "Bravais_lattice_lattice_type_orig": "BCT",
+  "Bravais_lattice_lattice_variation_type_orig": "BCT1",
+  "Bravais_lattice_lattice_system_orig": "tetragonal",
+  "Bravais_superlattice_lattice_type_orig": "MCLC",
+  "Bravais_superlattice_lattice_variation_type_orig": "MCLC3",
+  "Bravais_superlattice_lattice_system_orig": "monoclinic",
+  "Pearson_symbol_superlattice_orig": "mS32",
+  "reciprocal_geometry_orig": [
+    1.3716,
+    1.3716,
+    0.8885,
+    71.101,
+    71.101,
+    37.797
+  ],
+  "reciprocal_volume_cell_orig": 0.962509,
+  "reciprocal_lattice_type_orig": "BCT",
+  "reciprocal_lattice_variation_type_orig": "BCT2",
+  "Wyckoff_letters_orig": [
+    [
+      "b",
+      "b",
+      "a",
+      "b",
+      "b",
+      "a"
+    ],
+    [
+      "b",
+      "b",
+      "a",
+      "a"
+    ]
+  ],
+  "Wyckoff_multiplicities_orig": [
+    [
+      4,
+      4,
+      2,
+      4,
+      4,
+      2
+    ],
+    [
+      4,
+      4,
+      2,
+      2
+    ]
+  ],
+  "Wyckoff_site_symmetries_orig": [
+    [
+      "1",
+      "1",
+      "m",
+      "1",
+      "1",
+      "m"
+    ],
+    [
+      "1",
+      "1",
+      "m",
+      "m"
+    ]
+  ],
+  "crystal_family": "monoclinic",
+  "crystal_system": "monoclinic",
+  "crystal_class": "monoclinic-domatic",
+  "point_group_Hermann_Mauguin": "m",
+  "point_group_Schoenflies": "C_S",
+  "point_group_orbifold": "1*",
+  "point_group_type": "polar",
+  "point_group_order": 2,
+  "point_group_structure": "cyclic",
+  "Bravais_lattice_lattice_type": "MCLC",
+  "Bravais_lattice_lattice_variation_type": "MCLC3",
+  "Bravais_lattice_lattice_system": "monoclinic",
+  "Bravais_superlattice_lattice_type": "MCLC",
+  "Bravais_superlattice_lattice_variation_type": "MCLC3",
+  "Bravais_superlattice_lattice_system": "monoclinic",
+  "Pearson_symbol_superlattice": "mS32",
+  "reciprocal_geometry": [
+    1.4001,
+    1.4001,
+    0.86462,
+    72.214,
+    72.214,
+    36.3
+  ],
+  "reciprocal_volume_cell": 0.95016,
+  "Wyckoff_letters": [
+    [
+      "b",
+      "b",
+      "a",
+      "b",
+      "b",
+      "a"
+    ],
+    [
+      "b",
+      "b",
+      "a",
+      "a"
+    ]
+  ],
+  "Wyckoff_multiplicities": [
+    [
+      4,
+      4,
+      2,
+      4,
+      4,
+      2
+    ],
+    [
+      4,
+      4,
+      2,
+      2
+    ]
+  ],
+  "Wyckoff_site_symmetries": [
+    [
+      "1",
+      "1",
+      "m",
+      "1",
+      "1",
+      "m"
+    ],
+    [
+      "1",
+      "1",
+      "m",
+      "m"
+    ]
+  ],
+  "anrl_label_orig": "A5B3_mC32_8_2a4b_2a2b",
+  "anrl_parameter_list_orig": [
+    "a",
+    "b/a",
+    "c/a",
+    "beta",
+    "x1",
+    "z1",
+    "x2",
+    "z2",
+    "x3",
+    "z3",
+    "x4",
+    "z4",
+    "x5",
+    "y5",
+    "z5",
+    "x6",
+    "y6",
+    "z6",
+    "x7",
+    "y7",
+    "z7",
+    "x8",
+    "y8",
+    "z8",
+    "x9",
+    "y9",
+    "z9",
+    "x10",
+    "y10",
+    "z10"
+  ],
+  "anrl_parameter_values_orig": [
+    5.1534,
+    2.74446,
+    1.46049,
+    110.02,
+    0.5,
+    0.5,
+    -1.11022E-15,
+    0.5,
+    0.416667,
+    0.833333,
+    0.08,
+    0.16,
+    0.0745,
+    0.6015,
+    0.149,
+    0.8515,
+    0.6755,
+    0.703,
+    0.6485,
+    0.6755,
+    0.297,
+    0.4255,
+    0.6015,
+    0.851,
+    0.248333,
+    0.331667,
+    0.5,
+    0.25,
+    0.25,
+    -2.29437E-15
+  ],
+  "anrl_label_relax": "A5B3_mC32_8_2a4b_2a2b",
+  "anrl_parameter_list_relax": [
+    "a",
+    "b/a",
+    "c/a",
+    "beta",
+    "x1",
+    "z1",
+    "x2",
+    "z2",
+    "x3",
+    "z3",
+    "x4",
+    "z4",
+    "x5",
+    "y5",
+    "z5",
+    "x6",
+    "y6",
+    "z6",
+    "x7",
+    "y7",
+    "z7",
+    "x8",
+    "y8",
+    "z8",
+    "x9",
+    "y9",
+    "z9",
+    "x10",
+    "y10",
+    "z10"
+  ],
+  "anrl_parameter_values_relax": [
+    4.9873,
+    2.88862,
+    1.53877,
+    108.751,
+    0.499133,
+    0.499177,
+    0.999759,
+    0.499895,
+    0.430076,
+    0.862429,
+    0.0687292,
+    0.135798,
+    0.0833888,
+    0.599871,
+    0.1665,
+    0.849995,
+    0.667295,
+    0.699777,
+    0.649697,
+    0.666528,
+    0.300491,
+    0.415385,
+    0.600094,
+    0.83204,
+    0.249311,
+    0.319117,
+    0.498592,
+    0.750041,
+    0.749992,
+    0.000617188
+  ],
+  "files": [
+    "AgFe_pv.255.cif",
+    "AgFe_pv.255_corner.cif",
+    "AgFe_pv.255_sconv.cif",
+    "AgFe_pv.255_sconv_corner.cif",
+    "AgFe_pv.255_sprim.cif",
+    "AgFe_pv.255_sprim_corner.cif",
+    "AgFe_pv.255_structure_relax.json",
+    "AgFe_pv.255_structure_relax1.json",
+    "CONTCAR.relax",
+    "CONTCAR.relax.abinit",
+    "CONTCAR.relax.aims",
+    "CONTCAR.relax.qe",
+    "CONTCAR.relax.vasp",
+    "CONTCAR.relax1",
+    "CONTCAR.relax2",
+    "KPOINTS.relax",
+    "LOCK",
+    "OUTCAR.relax.xz",
+    "POSCAR.orig",
+    "POSCAR.relax2",
+    "aflow.agroup.orig.json.xz",
+    "aflow.agroup.orig.out.xz",
+    "aflow.agroup.relax.json.xz",
+    "aflow.agroup.relax.out.xz",
+    "aflow.fgroup.orig.json.xz",
+    "aflow.fgroup.orig.out.xz",
+    "aflow.fgroup.relax.json.xz",
+    "aflow.fgroup.relax.out.xz",
+    "aflow.iatoms.orig.json.xz",
+    "aflow.iatoms.orig.out.xz",
+    "aflow.iatoms.relax.json.xz",
+    "aflow.iatoms.relax.out.xz",
+    "aflow.in",
+    "aflow.pgroup.orig.json.xz",
+    "aflow.pgroup.orig.out.xz",
+    "aflow.pgroup.relax.json.xz",
+    "aflow.pgroup.relax.out.xz",
+    "aflow.pgroup_xtal.orig.json.xz",
+    "aflow.pgroup_xtal.orig.out.xz",
+    "aflow.pgroup_xtal.relax.json.xz",
+    "aflow.pgroup_xtal.relax.out.xz",
+    "aflow.pgroupk.orig.json.xz",
+    "aflow.pgroupk.orig.out.xz",
+    "aflow.pgroupk.relax.json.xz",
+    "aflow.pgroupk.relax.out.xz",
+    "aflow.pgroupk_xtal.orig.json.xz",
+    "aflow.pgroupk_xtal.orig.out.xz",
+    "aflow.pgroupk_xtal.relax.json.xz",
+    "aflow.pgroupk_xtal.relax.out.xz",
+    "aflow.qmvasp.out",
+    "edata.orig.json",
+    "edata.orig.out",
+    "edata.relax.json",
+    "edata.relax.out"
+  ],
+  "catalog": "LIB2",
+  "aflowlib_version": "3.2.2l",
+  "aflowlib_date": "20200423_13:17:50_GMT-5"
+}

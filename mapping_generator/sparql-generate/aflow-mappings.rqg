@@ -1,0 +1,211 @@
+BASE <https://w3id.org/mdo/data/1.0/>
+PREFIX iter: <http://w3id.org/sparql-generate/iter/>
+PREFIX fun: <http://w3id.org/sparql-generate/fn/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX core: <https://w3id.org/mdo/core/>
+PREFIX structure: <https://w3id.org/mdo/structure/>
+PREFIX calculation: <https://w3id.org/mdo/calculation/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX provenance: <https://w3id.org/mdo/provenance/>
+PREFIX emmo: <http://emmo.info/domains/emmo-material.owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX CHEBI-atom: <http://purl.obolibrary.org/obo/CHEBI_33250>
+PREFIX CHEBI-formula: <http://purl.obolibrary.org/obo/chebi/formula>
+
+
+GENERATE {
+	?calculation a core:Calculation;
+	core:hasID ?TASK_ID;
+	core:hasInputStructure ?input_structure;
+	core:hasOutputStructure ?output_structure;
+	core:hasOutputCalculatedProperty ?NODE_density;
+	core:hasOutputCalculatedProperty ?NODE_final_energy;
+	core:hasOutputCalculatedProperty ?NODE_final_energy_per_atom;
+	GENERATE{
+	  	?material a emmo:Material	  		
+	  	}.
+	GENERATE{
+	  	?NODE_composition a structure:Composition;
+	  	structure:hasFullFormula ?full_formula
+	  	}. 
+	GENERATE {
+	  	?input_structure a core:Structure;
+	  	core:relatesToMaterial ?material
+	}.
+
+	GENERATE{
+	  	?reference a provenance:ReferenceAgent;
+	  	provenance:hasDatabaseName "AFLOW";
+	  	provenance:hasPublicationDateTime ?datetime;
+	  	}.
+
+	GENERATE{
+		?NODE_density a core:CalculatedProperty;
+		core:hasPropertyValue ?density;
+		core:hasPropertyName "density";
+		core:hasUnit "g/cc"; 
+		prov:wasAttributedTo ?reference;
+		core:relatedToStructure ?output_structure
+		}.
+	GENERATE{
+		?NODE_final_energy a core:CalculatedProperty;
+		core:hasPropertyValue ?final_energy;
+		core:hasPropertyName "final_energy";
+		core:hasUnit "eV"; 
+		prov:wasAttributedTo ?reference;
+		core:relatedToStructure ?output_structure
+		}.
+	GENERATE{
+		?NODE_final_energy_per_atom a core:CalculatedProperty;
+		core:hasPropertyValue ?final_energy_per_atom;
+		core:hasPropertyName "final_energy_per_atom";
+		core:hasUnit "eV"; 
+		prov:wasAttributedTo ?reference;
+		core:relatedToStructure ?output_structure
+		}.
+
+# Following is output structure:
+
+	GENERATE {
+	  	?output_structure a core:Structure;
+	  	core:relatesToMaterial ?material;
+	  	structure:hasLattice ?NODE_outputlattice;
+	  	structure:hasOccupancy ?output_occupancy;
+	  	structure:hasComposition ?NODE_composition;
+	  	prov:wasAttributedTo ?reference;
+		structure:hasSpaceGroup ?NODE_output_sg;
+		core:hasOutputCalculatedProperty ?NODE_density;
+	  	# output sg
+	  	GENERATE{
+	  		?NODE_output_sg a structure:SpaceGroup;
+	  		structure:hasSpaceGroupSymbol ?output_sg_symbol;
+	  		structure:hasSpaceGroupID ?output_sg_id;
+	  		structure:hasPointGroup ?NODE_output_pg
+	  		GENERATE{
+	  			?NODE_output_pg a structure:PointGroup;
+	  			structure:hasPointGroupHMName ?output_pg_name
+	  			}.
+	  		}.
+	  	# output lattice
+	  	GENERATE{
+	  		?NODE_outputlattice a structure:Lattice;
+	  		structure:hasLatticeVolume ?output_lattice_volume;
+	  		structure:hasLatticeType ?output_lattice_type;
+	  		#structure:hasAxisVectors ?NODE_outputlattice_axisvector;
+	  		structure:hasAngleTriple ?NODE_outputlattice_angletriple;
+	  		structure:hasLengthTriple ?NODE_outputlattice_lengthtriple;
+	  		#GENERATE{
+	  		#	?NODE_outputlattice_axisvector a structure:AxisVectors;
+	  		#	structure:hasX_axisVector ?output_lattice_x_axisvector;
+	  		#	structure:hasY_axisVector ?output_lattice_y_axisvector;
+	  		#	structure:hasZ_axisVector ?output_lattice_z_axisvector
+	  		#} .
+	  		GENERATE{
+	  			?NODE_outputlattice_angletriple a structure:AngleTriple;
+	  			structure:hasAngle_alpha ?output_lattice_angle_alpha;
+	  			structure:hasAngle_beta ?output_lattice_angle_beta;
+	  			structure:hasAngle_gamma ?output_lattice_angle_gamma
+	  		} .
+	  		GENERATE{
+	  			?NODE_outputlattice_lengthtriple a structure:LengthTriple;
+	  			structure:hasLength_a ?output_lattice_length_A;
+	  			structure:hasLength_b ?output_lattice_length_B;
+	  			structure:hasLength_c ?output_lattice_length_C
+	  		} .
+	  	}.
+	  	# output occupancy
+
+	  	GENERATE{
+	  		?output_occupancy a structure:Occupancy;
+	  		structure:hasSite ?NODE_site;
+	  		#structure:hasSpecies ?NODE_species
+	  		GENERATE{
+	  			?NODE_site a structure:Site;
+	  			structure:hasCartesianCoordinates ?NODE_site_cartesian_coordinates;
+	  			#structure:hasSiteOrder ?index
+	  			GENERATE{
+	  				?NODE_site_cartesian_coordinates a structure:CoordinateVector;
+	  				structure:hasX_axisCoordinate ?cartesian_coordinate_x;
+	  				structure:hasY_axisCoordinate ?cartesian_coordinate_y;
+	  				structure:hasZ_axisCoordinate ?cartesian_coordinate_z;
+	  			}.
+
+	  		}.
+	  		#GENERATE{
+	  		#	?NODE_species a structure:Species;
+	  		#	structure:hasElement ?NODE_atom;
+	  			#structure:hasSpeciesOrder ?index
+	  		#	GENERATE{
+	  		#		?NODE_atom a CHEBI-atom:;
+	  		#		CHEBI-formula: ?species_element;
+	  		#	}.
+	  		#}
+	  		#ITERATOR iter:JSONPath(?species, "$.chemical_symbols[*]") AS ?species_element
+	  		#WHERE{
+	  		#	BIND(BNODE() AS ?NODE_atom)
+	  		#}.
+	  	}
+	  	ITERATOR iter:for(0,1,?output_nsites) AS ?index
+	  		WHERE{
+	  			BIND(BNODE() AS ?NODE_site)
+	  			#BIND(BNODE() AS ?NODE_species)
+	  			BIND(BNODE() AS ?NODE_site_cartesian_coordinates)
+	  			BIND(BNODE() AS ?NODE_site_fractional_coordinates)
+	  			BIND(fun:JSONPath(?output_sites_positions_cartesian, "$.[{?index}]") AS ?cartesian_site)
+	  			BIND(fun:JSONPath(?output_sites_positions_fractional, "$.[{?index}]") AS ?fractional_site)
+	  			#BIND(fun:JSONPath(?output_species, "$.[{?index}]") AS ?species)
+	  			BIND(fun:JSONPath(?cartesian_site, "$.[0]") AS ?cartesian_coordinate_x)
+	    		BIND(fun:JSONPath(?cartesian_site, "$.[1]") AS ?cartesian_coordinate_y)
+	    		BIND(fun:JSONPath(?cartesian_site, "$.[2]") AS ?cartesian_coordinate_z)
+	  			BIND(fun:JSONPath(?fractional_site, "$.[0]") AS ?fractional_coordinate_x)
+	    		BIND(fun:JSONPath(?fractional_site, "$.[1]") AS ?fractional_coordinate_y)
+	    		BIND(fun:JSONPath(?fractional_site, "$.[2]") AS ?fractional_coordinate_z)
+
+	  		}.
+	}.
+}
+SOURCE <http://example.com/aflow-49e3a27afb7b0542.json> AS ?source
+WHERE {
+  BIND(fun:JSONPath(?source, "$.auid") AS ?TASK_ID)
+  BIND(<{?TASK_ID}_material> as ?material)
+  BIND(<{?TASK_ID}_calculation> as ?calculation)
+  BIND(<{?TASK_ID}_input_structure> as ?input_structure)
+  BIND(<{?TASK_ID}_output_structure> as ?output_structure)
+  BIND(<{?TASK_ID}_composition> AS ?NODE_composition)
+  BIND(<{?TASK_ID}_output_occupancy> as ?output_occupancy)
+  BIND(<{?TASK_ID}_output_pg> AS ?NODE_output_pg)
+  BIND(<{?TASK_ID}_output_sg> AS ?NODE_output_sg)
+  BIND(<{?TASK_ID}_reference> as ?reference)
+  BIND(<{?TASK_ID}_output_lattice> AS ?NODE_outputlattice)
+  #BIND(<{?TASK_ID}_output_lattice_axisvector> AS ?NODE_outputlattice_axisvector)
+  BIND(<{?TASK_ID}_output_lattice_angletriple> AS ?NODE_outputlattice_angletriple)
+  BIND(<{?TASK_ID}_output_lattice_lengthtriple> AS ?NODE_outputlattice_lengthtriple)
+  BIND(fun:JSONPath(?source, "$.positions_cartesian")  AS ?output_sites_positions_cartesian)
+  BIND(fun:JSONPath(?source, "$.positions_fractional")  AS ?output_sites_positions_fractional)
+  BIND(fun:JSONPath(?source, "$.compound") AS ?full_formula)
+  #BIND(fun:JSONPath(?source, "$.geometry") AS ?geometry)
+  BIND(fun:JSONPath(?source, "$.aflowlib_date") AS ?datetime)
+  BIND(fun:JSONPath(?source, "$.spacegroup_orig") AS ?output_sg_id)
+  BIND(fun:JSONPath(?source, "$.sg[0]") AS ?output_sg_symbol)
+  BIND(fun:JSONPath(?source, "$.geometry[0]") AS ?output_lattice_length_A)
+  BIND(fun:JSONPath(?source, "$.geometry[1]") AS ?output_lattice_length_B)
+  BIND(fun:JSONPath(?source, "$.geometry[2]") AS ?output_lattice_length_C)
+  BIND(fun:JSONPath(?source, "$.geometry[3]") AS ?output_lattice_angle_alpha)
+  BIND(fun:JSONPath(?source, "$.geometry[4]") AS ?output_lattice_angle_beta)
+  BIND(fun:JSONPath(?source, "$.geometry[5]") AS ?output_lattice_angle_gamma)
+  BIND(xsd:integer(fun:JSONPath(?source,"$.natoms")) AS ?output_nsites)
+  BIND(<{?TASK_ID}_density> AS ?NODE_density)
+  BIND(<{?TASK_ID}_final_energy> AS ?NODE_final_energy)
+  BIND(<{?TASK_ID}_final_energy_per_atom> AS ?NODE_final_energy_per_atom)
+  BIND(fun:JSONPath(?source,"$.density") AS ?density)
+  BIND(fun:JSONPath(?source,"$.energy_cell") AS ?final_energy)
+  BIND(fun:JSONPath(?source,"$.energy_atom") AS ?final_energy_per_atom)
+
+  BIND(fun:JSONPath(?source,"$.code") AS ?code)
+  BIND(fun:JSONPath(?source, "$.volume_cell") AS ?output_lattice_volume)
+
+  BIND(fun:JSONPath(?source, "$.crystal_family") AS ?output_lattice_type)
+  BIND(fun:JSONPath(?source, "$.point_group_Hermann_Mauguin") AS ?output_pg_name)
+  
+}
