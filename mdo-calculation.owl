@@ -8,8 +8,7 @@
      xmlns:core="https://w3id.org/mdo/core/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:dcterms="http://purl.org/dc/terms/"
-     xmlns:calculation="https://w3id.org/mdo/calculation/">
+     xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/mdo/calculation/">
         <owl:versionIRI rdf:resource="https://w3id.org/mdo/calculation/1.0"/>
         <owl:imports rdf:resource="https://w3id.org/mdo/core/1.0"/>

@@ -166,12 +166,12 @@
     
 
 
-    <!-- https://w3id.org/mdo/provenance/hasPublicationDate -->
+    <!-- https://w3id.org/mdo/provenance/hasPublicationDateTime -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasPublicationDate">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasPublicationDateTime">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <rdfs:comment xml:lang="en">To represent the publication date of the reference.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">To represent the publication datetime of the reference.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
