@@ -142,3 +142,110 @@ SELECT ?OutputStructure ?value ?type WHERE {
   FILTER (?name="band_gap" && ?type="cubic")
 } 
 ```
+
+CQ9:
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX core: <https://w3id.org/mdo/core/>
+PREFIX structure: <https://w3id.org/mdo/structure/>
+PREFIX calculation: <https://w3id.org/mdo/calculation/>
+PREFIX provenance: <https://w3id.org/mdo/provenance/>
+
+
+SELECT ?calculation ?method WHERE {
+	?calculation rdf:type core:Calculation;
+	calculation:hascomputationalMethod ?method .
+}
+```
+
+CQ10:
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX core: <https://w3id.org/mdo/core/>
+PREFIX structure: <https://w3id.org/mdo/structure/>
+PREFIX calculation: <https://w3id.org/mdo/calculation/>
+PREFIX provenance: <https://w3id.org/mdo/provenance/>
+
+
+SELECT ?calculation ?method ?name ?value WHERE {
+	?calculation rdf:type core:Calculation;
+                 calculation:hascomputationalMethod ?method .
+  	?method calculation:hasParameter ?parameter;
+            calculation:hasParameterValue ?value;
+            calculation:hasParameterName ?name .
+  FILTER (?name="cutoff_energy")
+            
+}
+```
+
+CQ11:
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX core: <https://w3id.org/mdo/core/>
+PREFIX structure: <https://w3id.org/mdo/structure/>
+PREFIX calculation: <https://w3id.org/mdo/calculation/>
+PREFIX provenance: <https://w3id.org/mdo/provenance/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+
+SELECT ?calculation ?software WHERE {
+	?calculation rdf:type core:Calculation;
+	prov:wasAssociatedWith ?software .
+}
+```
+
+CQ12:
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX core: <https://w3id.org/mdo/core/>
+PREFIX structure: <https://w3id.org/mdo/structure/>
+PREFIX calculation: <https://w3id.org/mdo/calculation/>
+PREFIX provenance: <https://w3id.org/mdo/provenance/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+
+SELECT ?calculation ?author_name WHERE {
+  ?calculation rdf:type core:Calculation ;
+               core:hasOutputStructure ?output_structure .
+  ?output_structure rdf:type core:Structure ;
+                    prov:wasAttributedTo ?reference .
+  ?reference rdf:type provenance:ReferenceAgent ;
+             provenance:hasAuthorName ?author_name .       
+}
+```
+
+CQ13:
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX core: <https://w3id.org/mdo/core/>
+PREFIX structure: <https://w3id.org/mdo/structure/>
+PREFIX calculation: <https://w3id.org/mdo/calculation/>
+PREFIX provenance: <https://w3id.org/mdo/provenance/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+
+SELECT ?calculation ?software WHERE {
+	?calculation rdf:type core:Calculation;
+	prov:wasAssociatedWith ?software .
+}
+```
+
+CQ14:
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX core: <https://w3id.org/mdo/core/>
+PREFIX structure: <https://w3id.org/mdo/structure/>
+PREFIX calculation: <https://w3id.org/mdo/calculation/>
+PREFIX provenance: <https://w3id.org/mdo/provenance/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+
+SELECT ?calculation ?date WHERE {
+  ?calculation rdf:type core:Calculation ;
+               core:hasOutputStructure ?output_structure .
+  ?output_structure rdf:type core:Structure ;
+                    prov:wasAttributedTo ?reference .
+  ?reference rdf:type provenance:ReferenceAgent ;
+             provenance:hasPublicationDateTime ?datetime .
+}
+```
