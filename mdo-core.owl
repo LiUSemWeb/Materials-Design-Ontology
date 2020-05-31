@@ -183,7 +183,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/core/hasID">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasID represents a calculation has a unique ID in string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasID represents that a calculation has the unique ID in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -193,7 +193,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/core/hasPropertyName">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Property"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasPropertyName represents a property has a name in string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasPropertyName represents that a property has the name in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -203,7 +203,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/core/hasPropertyValue">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Property"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">hasPropertyValue represent a property has a value in double.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasPropertyValue represent that a property has the value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -213,7 +213,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/core/hasUnit">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Property"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasUnit represent a property has a name of the unit in string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasUnit represents that a property has the name of the unit in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 

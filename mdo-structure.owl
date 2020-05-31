@@ -121,7 +121,7 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/AngleTriple"/>
-        <rdfs:comment xml:lang="en">To represent a basis or a lattice can have a angle vector.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasAngleVector represents the relationship between a basis or a lattice and an angle triple it has.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -138,7 +138,7 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/AxisVectors"/>
-        <rdfs:comment xml:lang="en">To represent a basis or a lattice can have an axis-vectors.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasAxisVectors represents the relationship between a basis or a lattice and a axis-vectors it has.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -148,7 +148,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasBasis">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Structure"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/Basis"/>
-        <rdfs:comment xml:lang="en">To represent a structure has a basis.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasBasis represents the relationship between a structure and the bases it has.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -158,7 +158,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasCartesianCoordinates">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Site"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
-        <rdfs:comment xml:lang="en">To represent cartesian coordinates of a site.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasCartesianCoordinates represents the relationship between a site and coordinates in cartesian format it has.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -166,16 +166,9 @@
     <!-- https://w3id.org/mdo/structure/hasComposition -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasComposition">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://emmo.info/domains/emmo-material.owl#EMMO_4207e895_8b83_4318_996a_72cfb32acd94"/>
-                    <rdf:Description rdf:about="https://w3id.org/mdo/core/Structure"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Structure"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/Composition"/>
-        <rdfs:comment xml:lang="en">To represent a material or a structure can have a composition.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasComposition represents the relationship between a structure and a a composition it has.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -185,7 +178,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasElement">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Species"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33250"/>
-        <rdfs:comment xml:lang="en">To represent a specie has related atoms.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasElement represents the relationship between a species and atoms it has.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -195,7 +188,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasFractionalCoordinates">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Site"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
-        <rdfs:comment xml:lang="en">To represent fractional coordinates of a site.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasFractionalCoordinates represents the relationship between a site and coordinates in fractional format it has.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -205,7 +198,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasLattice">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Structure"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/Lattice"/>
-        <rdfs:comment xml:lang="en">To represent a structure has a lattice.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasLattice represents the relationship between a structure and lattices in it has.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -222,7 +215,7 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/LengthTriple"/>
-        <rdfs:comment xml:lang="en">To represent a basis or a lattice can have a length vector.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasLengthVector represents the relationship between a basis or a lattice and a length triple it has.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -232,7 +225,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasOccupancy">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Structure"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/Occupancy"/>
-        <rdfs:comment xml:lang="en">To represent a structure have an occupancy.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasOccupancy represents the relationship between a structure and occupancies it has.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -242,7 +235,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasPointGroup">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/SpaceGroup"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/PointGroup"/>
-        <rdfs:comment xml:lang="en">To represent a lattice or a spacegroup can have corresponding point group.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasPointGroup represents the relationship between a space group and point groups it corresponds to.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -252,7 +245,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasSite">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Occupancy"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/Site"/>
-        <rdfs:comment xml:lang="en">To represent a structure has sites.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasSite represents the relationship between an occupancy and sites it ties.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -262,7 +255,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasSpaceGroup">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Structure"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/SpaceGroup"/>
-        <rdfs:comment xml:lang="en">To represent a structure has a corresponding space group.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasSpacegroup represents the relationship between a structure and a space group it corresponds to.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -272,7 +265,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/structure/hasSpecies">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Occupancy"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/structure/Species"/>
-        <rdfs:comment xml:lang="en">To represent a site has corresponding species.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasSpecies represents the relationship between an occupancy and species it ties.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -290,9 +283,7 @@
 
     <!-- http://purl.obolibrary.org/obo/chebi/formula -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/chebi/formula">
-        <rdfs:comment xml:lang="en">To represent the formula of an atom.</rdfs:comment>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/chebi/formula"/>
     
 
 
@@ -301,7 +292,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasAngle_alpha">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/AngleTriple"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">To represent angle alpha of the cell.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasAngle_alpha represents that an angle triple has the alpha angle&apos;s value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -311,7 +302,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasAngle_beta">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/AngleTriple"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">To represent angle beta of the cell.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasAngle_beta represents that an angle triple has the beta angle&apos;s value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -321,7 +312,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasAngle_gamma">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/AngleTriple"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">To represent angle gamma of the cell.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasAngle_gamma represents that an angle triple has the gamma angle&apos;s value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -331,7 +322,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasAnonymousFormula">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Composition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">To represent the anonymous formula of a composition.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasAnonymousFormula represents that a composition has the anonymous formula in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -341,7 +332,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasDescriptiveFormula">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Composition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">To represent the descriptive formula of a composition.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasDescriptiveFormula represents that a composition has the descriptive formula in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -351,7 +342,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasElementRatio">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Species"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">To reoresent the occupancy of a element from a species.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasElementRatio represents that a species has the ratio in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -361,7 +352,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasHillFormula">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Composition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">To represent the hill formula of a composition.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasHillFormula represents that a composition has the hill formula in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -371,7 +362,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasLatticeType">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Lattice"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">To represent the type of a lattice.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasLatticeType represents that a lattice has the type in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -381,7 +372,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasLatticeVolume">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Lattice"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">To represent the volume of a lattice.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasLatticeVolume represents that a lattice has the volume in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -391,7 +382,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasLength_a">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/LengthTriple"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">To represent cell length &apos;a&apos;.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasLength_a represents that a length triple has the &apos;a&apos; value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -401,7 +392,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasLength_b">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/LengthTriple"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">To represent cell length &apos;b&apos;.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasLength_b represents that a length triple has the &apos;b&apos; value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -411,17 +402,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasLength_c">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/LengthTriple"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">To represent cell length &apos;c&apos;.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/mdo/structure/hasOxidationState -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasOxidationState">
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Species"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">The oxidation state of a specie.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasLength_c represents that a length triple has the &apos;c&apos; value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -431,7 +412,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasPointGroupHMName">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/PointGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The Hermann-Mauguin notation of an point group.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasPointGroupHMName represents that a point group has the Hermann-Mauguin in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -441,7 +422,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasReducedFormula">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Composition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">To represent the reduced formula of a conposition</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasReducedFormula represents that a composition has the reduced formula in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -451,7 +432,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasSpaceGroupID">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/SpaceGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">The ID of a space group ([1, 230]).</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasSpaceGroupID represents that a space group has the unique ID in an integer.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -461,7 +442,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasSpaceGroupSymbol">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/SpaceGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The international short symbol of a space group. (e.g. P1, P1-, P2, P2_1)</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasSpaceGroupSymbol represents that a space group has the symbol in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -471,7 +452,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasX_axisCoordinate">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">To represent the coordinate in X axis.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasX_axisCoordinate represents that a coordinate vector has the value of a coordinate in a double in X axis.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -481,7 +462,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasX_axisVector">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/AxisVectors"/>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <rdfs:comment xml:lang="en">To represent the first vector in the AxisVectors.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasX_axisVector represents that an axis-vectors has the first vector in a list.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -491,7 +472,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasY_axisCoordinate">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">To represent the coordinate in Y axis.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasY_axisCoordinate represents that a coordinate vector has the value of a coordinate in a double in Y axis.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -501,7 +482,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasY_axisVector">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/AxisVectors"/>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <rdfs:comment xml:lang="en">To represent the second vector in the AxisVectors.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasY_axisVector represents that an axis-vectors has the second vector in a list.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -511,7 +492,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasZ_axisCoordinate">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">To represent the coordinate in Z axis.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasZ_axisCoordinate represents that a coordinate vector has the value of a coordinate in a double in Z axis.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -521,7 +502,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasZ_axisVector">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/AxisVectors"/>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <rdfs:comment xml:lang="en">To represent the third vector in the AxisVectors.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasX_axisVector represents that an axis-vectors has the third vector in a list.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -553,7 +534,6 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">To represent an element in the periodic table.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atom</rdfs:label>
     </owl:Class>
     
@@ -652,7 +632,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A angle triple is a vector of three angles which represent the angles among three bases in a unit cell.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A angle triple is a vector of three angles which represent the angles among three bases in a cell.</rdfs:comment>
     </owl:Class>
     
 
@@ -681,7 +661,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">An axis-vectors is the three vectors which represent the bases of primitive cell.</rdfs:comment>
+        <rdfs:comment xml:lang="en">An axis-vectors is the three vectors which represent the bases of cell.</rdfs:comment>
     </owl:Class>
     
 
@@ -722,7 +702,7 @@
     <!-- https://w3id.org/mdo/structure/Composition -->
 
     <owl:Class rdf:about="https://w3id.org/mdo/structure/Composition">
-        <rdfs:comment xml:lang="en">A composition is used to represent the composition of chemical elements of structures.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A composition is used to represent what chemical elements composing a structure and the ratio of the chemical elements.</rdfs:comment>
     </owl:Class>
     
 
@@ -813,7 +793,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A length triple consists of three bases of a unit cell.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A length triple consists of three parameters (a, b, c) that represent the lengths in three axes respectively.</rdfs:comment>
     </owl:Class>
     
 

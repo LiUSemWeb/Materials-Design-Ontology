@@ -96,7 +96,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/calculation/hasComputationalMethod">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
-        <rdfs:comment xml:lang="en">A calculation belongs to a specific Computational Method.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasComputationalMethod represents the relationship between a calculation and a computational method it uses.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -106,7 +106,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/calculation/hasParameter">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethodParameter"/>
-        <rdfs:comment xml:lang="en">To represent the parameters of a computational method.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasParameters represents the relationship between a calculation and the parameters it has.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -116,7 +116,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/calculation/hasXCFunctional">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/DensityFunctionalTheoryMethod"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
-        <rdfs:comment xml:lang="en">A density functional theory method uses a specific functional to calculate exchange correlation energy.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasXCFunctional represents the relationship between a density functional theory method and the exchange-correlation energy functionals it takes.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -137,7 +137,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/calculation/hasParameterName">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethodParameter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">To represent the name of a parameter.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasParameterName represents that a computational method parameter has the name in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -147,7 +147,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/calculation/hasParameterValue">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethodParameter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">To represent the value of a parameter</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasParameterName represents that a computational method parameter has the value in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -211,7 +211,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">The density functional theory is a computational quantum mechanical modelling method to investigate the electronic structure.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Density functional theory is a computational quantum mechanical modelling method to investigate the electronic structure.</rdfs:comment>
         <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Density_functional_theory</rdfs:seeAlso>
     </owl:Class>
     
