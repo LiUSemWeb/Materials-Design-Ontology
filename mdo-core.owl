@@ -112,7 +112,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/hasInputProperty">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/core/Property"/>
-        <rdfs:comment xml:lang="en">To represent a calculation takes a property as the input.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasInputProperty represents the relationship between a calculation and the properties it takes as input.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -122,7 +122,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/hasInputStructure">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/core/Structure"/>
-        <rdfs:comment xml:lang="en">To represent a calculation takes a structure as the input.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasInputStructure represents the relationship between a calculation and the structures it takes as input.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -130,16 +130,9 @@
     <!-- https://w3id.org/mdo/core/hasOutputCalculatedProperty -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/hasOutputCalculatedProperty">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/mdo/core/Calculation"/>
-                    <rdf:Description rdf:about="https://w3id.org/mdo/core/Structure"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/core/CalculatedProperty"/>
-        <rdfs:comment xml:lang="en">To represent a calculation outputs a calculated property after computing.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasOutputCalculatedProperty represents the relationship between a calculation and the calculated properties it outputs.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -149,7 +142,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/hasOutputStructure">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/core/Structure"/>
-        <rdfs:comment xml:lang="en">To represent a calculation outputs a structure after computing.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasOutputStructure represents the relationship between a calculation and the structures it outputs.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -159,7 +152,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/relatesToMaterial">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Structure"/>
         <rdfs:range rdf:resource="http://emmo.info/domains/emmo-material.owl#EMMO_4207e895_8b83_4318_996a_72cfb32acd94"/>
-        <rdfs:comment xml:lang="en">To represent a structure relates to a material.</rdfs:comment>
+        <rdfs:comment xml:lang="en">relatesToMaterial represents the relationship between a structure and the materials it comes from.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -169,7 +162,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/relatesToStructure">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Property"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/core/Structure"/>
-        <rdfs:comment xml:lang="en">To represent a property relates to a structure.</rdfs:comment>
+        <rdfs:comment xml:lang="en">relatesToStructure represents the relationship between a property and the structures it comes from.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -190,7 +183,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/core/hasID">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">To represent the unique ID of a calculation from a database.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasID represents a calculation has a unique ID in string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -200,7 +193,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/core/hasPropertyName">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Property"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">To represent the name of the property.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasPropertyName represents a property has a name in string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -210,7 +203,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/core/hasPropertyValue">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Property"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">To represent the numerical value of the property.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasPropertyValue represent a property has a value in double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -220,7 +213,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/core/hasUnit">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Property"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">To represent the name of the unit.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasUnit represent a property has a name of the unit in string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -249,7 +242,6 @@
     <owl:Class rdf:about="https://w3id.org/mdo/core/CalculatedProperty">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/core/Property"/>
         <owl:disjointWith rdf:resource="https://w3id.org/mdo/core/PhysicalProperty"/>
-        <rdfs:comment xml:lang="en">Properties of structures or materials that are influenced by calculations.</rdfs:comment>
     </owl:Class>
     
 
@@ -302,7 +294,6 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/core/PhysicalProperty">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/core/Property"/>
-        <rdfs:comment xml:lang="en">Properties of structures or materials that are not influenced by calculations.</rdfs:comment>
     </owl:Class>
     
 
@@ -311,7 +302,6 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/core/Property">
         <rdfs:comment xml:lang="en">A property in materials design is data pertaining to at least one material or materials system.</rdfs:comment>
-        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/List_of_materials_properties</rdfs:seeAlso>
     </owl:Class>
     
 
