@@ -19,6 +19,13 @@ Materials Design Ontology consists of 4 modules which are:
 ### MDO Concepts and Relationships
 ![entities](https://huanyu-li.github.io/figures/mdo/MDO.png "MDO concepts and relationships")
 
+
+### MDO Vision
+![entities](https://huanyu-li.github.io/figures/mdo/new-vision.png "MDO vision")
+
+### MDO Instantiation 
+![entities](https://huanyu-li.github.io/figures/mdo/instances-output.png "MDO instantiation")
+
 ### Contact
 
 * [Huanyu Li](huanyu.li@liu.se)
