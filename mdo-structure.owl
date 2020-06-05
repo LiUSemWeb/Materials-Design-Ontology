@@ -694,7 +694,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A basis can be described by basis&apos;s length vector a, b, c and the intervector angles alpha, beta and gamma.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A basis defines a spatial unit used to express fractional coordinates.</rdfs:comment>
     </owl:Class>
     
 
@@ -764,7 +764,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A lattice is a set of points abstracted from basis.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A lattice defines a peroidic arrangement of one or more atoms.</rdfs:comment>
     </owl:Class>
     
 
@@ -793,7 +793,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A length triple consists of three parameters (a, b, c) that represent the lengths in three axes respectively.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A length triple defines the three parameters (a, b, c) that represent the lengths in three axes respectively.</rdfs:comment>
     </owl:Class>
     
 

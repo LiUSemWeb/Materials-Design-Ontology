@@ -188,7 +188,7 @@
     <!-- https://w3id.org/mdo/calculation/ComputationalMethodParameter -->
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/ComputationalMethodParameter">
-        <rdfs:comment xml:lang="en">A computational method parameter is one of the parameter settings of the method used for calculation.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A computational method parameter is a parameter used in a computational method.</rdfs:comment>
     </owl:Class>
     
 
@@ -211,8 +211,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Density functional theory is a computational quantum mechanical modelling method to investigate the electronic structure.</rdfs:comment>
-        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Density_functional_theory</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">A DFT method is a computational quantum mechanical modelling method used to investigate the electronic structure based on optimization of the energy over electronic densities.</rdfs:comment>
     </owl:Class>
     
 
@@ -220,7 +219,7 @@
     <!-- https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional -->
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional">
-        <rdfs:seeAlso xml:lang="en">An ExchangeCorrelationEnergyFunctional is the function to compute Exchange Correlation Energy.</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="en">An ExchangeCorrelationEnergyFunctional is a functional to compute the exchange correlation energy.</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -229,6 +228,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/GeneralizedGradientApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
+        <rdfs:seeAlso xml:lang="en">A GeneralizedGradientApproximation is a classification of exchange correlation energy functionals that only use the local value of the electronic density and its gradient.</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -237,8 +237,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/HartreeFockMethod">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
-        <rdfs:comment xml:lang="en">HartreeFock method is a method to get the approximation of the determination of the wave functiona and the energy of system in a stationary state.</rdfs:comment>
-        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Density_functional_theory</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">A Hartree Fock method is a computational quantum mechanical modelling method used to investigate the electronic structure based on variational search over wave functions.</rdfs:comment>
     </owl:Class>
     
 
@@ -247,6 +246,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/HybridFunctional">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
+        <rdfs:comment xml:lang="en">A hybrid functional is a classification of exchange correlation energy functionals that combine exact exchange from HartreeFock theory with another exchange correlation energy approximation.</rdfs:comment>
     </owl:Class>
     
 
@@ -255,6 +255,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/HybridGeneralizedGradientApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/HybridFunctional"/>
+        <rdfs:seeAlso xml:lang="en">A hybrid generalized gradient approximation is a classification of exchange correlation energy functionals that combine exact exchange from Hartree–Fock theory with generalized gradient approximation.</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -263,6 +264,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/HybridmetaGeneralizedGradientApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/HybridFunctional"/>
+        <rdfs:seeAlso xml:lang="en">A hybrid meta generalized gradient approximation is a classification of exchange correlation energy functionals that combine exact exchange from Hartree–Fock theory with meta generalized gradient approximation.</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -271,6 +273,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/LocalDensityApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
+        <rdfs:seeAlso xml:lang="en">An LDA is a classification of exchange correlation energy functionals that only use the local value of the electronic density.</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -279,6 +282,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/metaGeneralizedGradientApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
+        <rdfs:seeAlso xml:lang="en">A metaGeneralizedGradientApproximation is a classification of exchange correlation energy functionals that only use the local value of the electronic density and its gradient and the Kohn–Sham orbital kinetic energy density.</rdfs:seeAlso>
     </owl:Class>
     
 

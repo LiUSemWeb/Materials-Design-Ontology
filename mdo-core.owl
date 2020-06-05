@@ -242,6 +242,7 @@
     <owl:Class rdf:about="https://w3id.org/mdo/core/CalculatedProperty">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/core/Property"/>
         <owl:disjointWith rdf:resource="https://w3id.org/mdo/core/PhysicalProperty"/>
+        <rdfs:comment xml:lang="en">A calculated property is a proprty that is a result from a calculation.</rdfs:comment>
     </owl:Class>
     
 
@@ -294,6 +295,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/core/PhysicalProperty">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/core/Property"/>
+        <rdfs:comment xml:lang="en">A physical property is an objective property over a physical system. (ie, a property pertains to the physical reality)</rdfs:comment>
     </owl:Class>
     
 
