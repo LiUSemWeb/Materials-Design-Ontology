@@ -28,6 +28,6 @@ Materials Design Ontology consists of 4 modules which are:
 
 ### Contact
 
-* [Huanyu Li](huanyu.li@liu.se)
-* [Patrick Lambrix](patrick.lambrix@liu.se)
-* [Rickard Armiento](rickard.armiento@liu.se)
+* [Huanyu Li](https://www.ida.liu.se/~huali50/)
+* [Patrick Lambrix](https://www.ida.liu.se/~patla00/)
+* [Rickard Armiento](https://rickard.armiento.se)
