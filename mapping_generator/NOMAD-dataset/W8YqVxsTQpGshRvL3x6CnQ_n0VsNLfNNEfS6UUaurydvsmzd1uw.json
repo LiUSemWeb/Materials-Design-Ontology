@@ -1,0 +1,1333 @@
+{
+  "section_run": {
+    "_name": "section_run",
+    "_gIndex": 0,
+    "program_name": "VASP",
+    "program_version": "5.2.11   18Jan11 complex  parallel  LinuxIFC ",
+    "program_basis_set_type": "plane waves",
+    "program_compilation_datetime": 3303.0,
+    "section_method": {
+      "_name": "section_method",
+      "_gIndex": 0,
+      "x_vasp_incar_SYSTEM": "RubyVaspy :: Na Cl Cs Bi",
+      "x_vasp_incar_PREC": "accurate",
+      "x_vasp_incar_ALGO": "FAST",
+      "x_vasp_incar_ISPIN": 2,
+      "x_vasp_incar_ICHARG": 1,
+      "x_vasp_incar_NELM": 100,
+      "x_vasp_incar_NELMIN": 3,
+      "x_vasp_incar_IBRION": 2,
+      "x_vasp_incar_NSW": 200,
+      "x_vasp_incar_ISIF": 3,
+      "x_vasp_incar_LREAL": "AUTO",
+      "x_vasp_incar_ISMEAR": -5,
+      "x_vasp_incar_LWAVE": true,
+      "x_vasp_incar_LPEAD": false,
+      "x_vasp_incar_LCALCPOL": false,
+      "x_vasp_incar_LCALCEPS": false,
+      "x_vasp_incar_LEFG": false,
+      "x_vasp_incar_METAGGA": "--",
+      "x_vasp_incar_LMAXTAU": 0,
+      "electronic_structure_method": "DFT",
+      "x_vasp_k_points_generation_method": "Monkhorst-Pack",
+      "x_vasp_incarOut_SYSTEM": "RubyVaspy :: Na Cl Cs Bi",
+      "x_vasp_incarOut_LCOMPAT": false,
+      "x_vasp_incarOut_PREC": "accura",
+      "x_vasp_incarOut_ENMAX": 520.0,
+      "x_vasp_incarOut_ENAUG": 407.933,
+      "x_vasp_incarOut_EDIFF": 0.0001,
+      "x_vasp_incarOut_IALGO": 68,
+      "x_vasp_incarOut_IWAVPR": 11,
+      "x_vasp_incarOut_NBANDS": 46,
+      "x_vasp_incarOut_NELECT": 72.0,
+      "x_vasp_incarOut_ISMEAR": -5,
+      "x_vasp_incarOut_SIGMA": 0.05,
+      "x_vasp_incarOut_KSPACING": 0.5,
+      "x_vasp_incarOut_KGAMMA": true,
+      "x_vasp_incarOut_LREAL": "T",
+      "x_vasp_incarOut_LMAXPAW": -100,
+      "x_vasp_incarOut_LMAXMIX": 2,
+      "x_vasp_incarOut_ISTART": 0,
+      "x_vasp_incarOut_ICHARG": 1,
+      "x_vasp_incarOut_INIWAV": 1,
+      "x_vasp_incarOut_ISPIN": 2,
+      "x_vasp_incarOut_LNONCOLLINEAR": false,
+      "x_vasp_incarOut_NUPDOWN": -1,
+      "x_vasp_incarOut_LSORBIT": false,
+      "x_vasp_incarOut_LSPIRAL": false,
+      "x_vasp_incarOut_LZEROZ": false,
+      "x_vasp_incarOut_LASPH": false,
+      "x_vasp_incarOut_NELM": 100,
+      "x_vasp_incarOut_NELMDL": -5,
+      "x_vasp_incarOut_NELMIN": 3,
+      "x_vasp_incarOut_ENINI": 520.0,
+      "x_vasp_incarOut_LDIAG": true,
+      "x_vasp_incarOut_LSUBROT": true,
+      "x_vasp_incarOut_WEIMIN": 0.001,
+      "x_vasp_incarOut_EBREAK": 5.4e-07,
+      "x_vasp_incarOut_DEPER": 0.3,
+      "x_vasp_incarOut_TIME": 0.4,
+      "x_vasp_incarOut_AMIX": 0.4,
+      "x_vasp_incarOut_BMIX": 1.0,
+      "x_vasp_incarOut_AMIN": 0.1,
+      "x_vasp_incarOut_AMIX_MAG": 1.6,
+      "x_vasp_incarOut_BMIX_MAG": 1.0,
+      "x_vasp_incarOut_IMIX": 4,
+      "x_vasp_incarOut_MAXMIX": -45,
+      "x_vasp_incarOut_WC": 100.0,
+      "x_vasp_incarOut_INIMIX": 1,
+      "x_vasp_incarOut_MIXPRE": 1,
+      "x_vasp_incarOut_LDIPOL": false,
+      "x_vasp_incarOut_LMONO": false,
+      "x_vasp_incarOut_IDIPOL": 0,
+      "x_vasp_incarOut_EPSILON": 1.0,
+      "x_vasp_incarOut_EFIELD": 0.0,
+      "x_vasp_incarOut_NGX": 60,
+      "x_vasp_incarOut_NGY": 60,
+      "x_vasp_incarOut_NGZ": 60,
+      "x_vasp_incarOut_NGXF": 120,
+      "x_vasp_incarOut_NGYF": 120,
+      "x_vasp_incarOut_NGZF": 120,
+      "x_vasp_incarOut_ADDGRID": false,
+      "x_vasp_incarOut_NSW": 200,
+      "x_vasp_incarOut_IBRION": 2,
+      "x_vasp_incarOut_ISIF": 3,
+      "x_vasp_incarOut_PSTRESS": 0.0,
+      "x_vasp_incarOut_EDIFFG": 0.001,
+      "x_vasp_incarOut_NFREE": 1,
+      "x_vasp_incarOut_POTIM": 0.5,
+      "x_vasp_incarOut_SMASS": -3.0,
+      "x_vasp_incarOut_TEBEG": 0.0001,
+      "x_vasp_incarOut_TEEND": 0.0001,
+      "x_vasp_incarOut_NBLOCK": 1,
+      "x_vasp_incarOut_KBLOCK": 200,
+      "x_vasp_incarOut_NPACO": 256,
+      "x_vasp_incarOut_APACO": 16.0,
+      "x_vasp_incarOut_ISYM": 2,
+      "x_vasp_incarOut_SYMPREC": 1e-05,
+      "x_vasp_incarOut_LORBIT": "F",
+      "x_vasp_incarOut_NEDOS": 301,
+      "x_vasp_incarOut_EMIN": 10.0,
+      "x_vasp_incarOut_EMAX": -10.0,
+      "x_vasp_incarOut_NWRITE": 2,
+      "x_vasp_incarOut_LWAVE": true,
+      "x_vasp_incarOut_LCHARG": true,
+      "x_vasp_incarOut_LPARD": false,
+      "x_vasp_incarOut_LVTOT": false,
+      "x_vasp_incarOut_LVHAR": false,
+      "x_vasp_incarOut_LELF": false,
+      "x_vasp_incarOut_LOPTICS": false,
+      "x_vasp_incarOut_NPAR": 1,
+      "x_vasp_incarOut_NSIM": 4,
+      "x_vasp_incarOut_NBLK": -1,
+      "x_vasp_incarOut_LPLANE": true,
+      "x_vasp_incarOut_LSCALAPACK": true,
+      "x_vasp_incarOut_LSCAAWARE": false,
+      "x_vasp_incarOut_LSCALU": false,
+      "x_vasp_incarOut_LASYNC": false,
+      "x_vasp_incarOut_LCORR": true,
+      "x_vasp_incarOut_GGA_COMPAT": true,
+      "x_vasp_incarOut_LBERRY": false,
+      "x_vasp_incarOut_ICORELEVEL": 0,
+      "x_vasp_incarOut_LDAU": false,
+      "x_vasp_incarOut_I_CONSTRAINED_M": 0,
+      "x_vasp_incarOut_GGA": "--",
+      "x_vasp_incarOut_VOSKOWN": 0,
+      "x_vasp_incarOut_LHFCALC": false,
+      "x_vasp_incarOut_PRECFOCK": "",
+      "x_vasp_incarOut_LTHOMAS": false,
+      "x_vasp_incarOut_AEXX": 0.0,
+      "x_vasp_incarOut_AGGAX": 1.0,
+      "x_vasp_incarOut_ALDAC": 1.0,
+      "x_vasp_incarOut_AGGAC": 1.0,
+      "x_vasp_incarOut_NKREDX": 1,
+      "x_vasp_incarOut_NKREDY": 1,
+      "x_vasp_incarOut_NKREDZ": 1,
+      "x_vasp_incarOut_ODDONLY": false,
+      "x_vasp_incarOut_EVENONLY": false,
+      "x_vasp_incarOut_LMAXFOCK": 0,
+      "x_vasp_incarOut_NMAXFOCKAE": 0,
+      "x_vasp_incarOut_LFOCKAEDFT": false,
+      "x_vasp_incarOut_HFSCREEN": 0.0,
+      "x_vasp_incarOut_LEPSILON": false,
+      "x_vasp_incarOut_LRPA": true,
+      "x_vasp_incarOut_LNABLA": false,
+      "x_vasp_incarOut_CSHIFT": -0.1,
+      "x_vasp_incarOut_OMEGAMAX": -30.0,
+      "x_vasp_incarOut_LCHIMAG": false,
+      "x_vasp_incarOut_ENCUTGW": -2.0,
+      "x_vasp_incarOut_ENCUTGWSOFT": -2.0,
+      "x_vasp_incarOut_NOMEGA": 0,
+      "x_vasp_incarOut_NOMEGAR": 0,
+      "x_vasp_incarOut_NBANDSGW": -1,
+      "x_vasp_incarOut_NBANDSO": -1,
+      "x_vasp_incarOut_NBANDSV": -1,
+      "x_vasp_incarOut_ANTIRES": 0,
+      "x_vasp_incarOut_OMEGATL": -200.0,
+      "x_vasp_incarOut_LSPECTRAL": false,
+      "x_vasp_incarOut_ODDONLYGW": false,
+      "x_vasp_incarOut_EVENONLYGW": false,
+      "x_vasp_incarOut_MAXMEM": 1800,
+      "x_vasp_incar_MAGMOM": [],
+      "x_vasp_incar_EFIELD_PEAD": [],
+      "k_mesh_points": [
+        [
+          0.08333333, 
+          0.08333333, 
+          0.08333333
+        ], 
+        [
+          0.25, 
+          0.08333333, 
+          0.08333333
+        ], 
+        [
+          0.41666667, 
+          0.08333333, 
+          0.08333333
+        ], 
+        [
+          -0.41666667, 
+          0.08333333, 
+          0.08333333
+        ], 
+        [
+          -0.25, 
+          0.08333333, 
+          0.08333333
+        ], 
+        [
+          -0.08333333, 
+          0.08333333, 
+          0.08333333
+        ], 
+        [
+          0.25, 
+          0.25, 
+          0.08333333
+        ], 
+        [
+          0.41666667, 
+          0.25, 
+          0.08333333
+        ], 
+        [
+          -0.41666667, 
+          0.25, 
+          0.08333333
+        ], 
+        [
+          -0.25, 
+          0.25, 
+          0.08333333
+        ], 
+        [
+          -0.08333333, 
+          0.25, 
+          0.08333333
+        ], 
+        [
+          0.41666667, 
+          0.41666667, 
+          0.08333333
+        ], 
+        [
+          -0.41666667, 
+          0.41666667, 
+          0.08333333
+        ], 
+        [
+          -0.25, 
+          0.41666667, 
+          0.08333333
+        ], 
+        [
+          -0.08333333, 
+          0.41666667, 
+          0.08333333
+        ], 
+        [
+          -0.41666667, 
+          -0.41666667, 
+          0.08333333
+        ], 
+        [
+          -0.25, 
+          -0.41666667, 
+          0.08333333
+        ], 
+        [
+          -0.25, 
+          -0.25, 
+          0.08333333
+        ], 
+        [
+          0.25, 
+          0.25, 
+          0.25
+        ], 
+        [
+          0.41666667, 
+          0.25, 
+          0.25
+        ], 
+        [
+          -0.41666667, 
+          0.25, 
+          0.25
+        ], 
+        [
+          -0.25, 
+          0.25, 
+          0.25
+        ], 
+        [
+          0.41666667, 
+          0.41666667, 
+          0.25
+        ], 
+        [
+          -0.41666667, 
+          0.41666667, 
+          0.25
+        ], 
+        [
+          -0.25, 
+          0.41666667, 
+          0.25
+        ], 
+        [
+          -0.41666667, 
+          -0.41666667, 
+          0.25
+        ], 
+        [
+          0.41666667, 
+          0.41666667, 
+          0.41666667
+        ], 
+        [
+          -0.41666667, 
+          0.41666667, 
+          0.41666667
+        ]
+      ],
+      "k_mesh_weights": [
+        0.00925926, 
+        0.02777778, 
+        0.02777778, 
+        0.02777778, 
+        0.02777778, 
+        0.02777778, 
+        0.02777778, 
+        0.05555556, 
+        0.05555556, 
+        0.05555556, 
+        0.05555556, 
+        0.02777778, 
+        0.05555556, 
+        0.05555556, 
+        0.05555556, 
+        0.02777778, 
+        0.05555556, 
+        0.02777778, 
+        0.00925926, 
+        0.02777778, 
+        0.02777778, 
+        0.02777778, 
+        0.02777778, 
+        0.05555556, 
+        0.05555556, 
+        0.02777778, 
+        0.00925926, 
+        0.02777778
+      ],
+      "x_vasp_atom_kind_refs": [
+        0, 
+        1, 
+        1, 
+        1, 
+        1, 
+        1, 
+        1, 
+        2, 
+        2, 
+        3
+      ],
+      "section_XC_functionals": [
+        {
+          "_name": "section_XC_functionals",
+          "_gIndex": 0,
+          "XC_functional_name": "GGA_X_PBE"
+        },
+        {
+          "_name": "section_XC_functionals",
+          "_gIndex": 1,
+          "XC_functional_name": "GGA_C_PBE"
+        }
+      ],
+      "section_method_basis_set": {
+        "_name": "section_method_basis_set",
+        "_gIndex": 0,
+        "mapping_section_method_basis_set_cell_associated": 0
+      },
+      "section_method_atom_kind": [
+        {
+          "_name": "section_method_atom_kind",
+          "_gIndex": 0,
+          "method_atom_kind_atom_number": 11,
+          "method_atom_kind_label": "Na",
+          "method_atom_kind_mass": 22.99,
+          "method_atom_kind_explicit_electrons": 7.0,
+          "method_atom_kind_pseudopotential_name": "  PAW_PBE Na_pv 05Jan2001               "
+        },
+        {
+          "_name": "section_method_atom_kind",
+          "_gIndex": 1,
+          "method_atom_kind_atom_number": 17,
+          "method_atom_kind_label": "Cl",
+          "method_atom_kind_mass": 35.453,
+          "method_atom_kind_explicit_electrons": 7.0,
+          "method_atom_kind_pseudopotential_name": "  PAW_PBE Cl 17Jan2003                  "
+        },
+        {
+          "_name": "section_method_atom_kind",
+          "_gIndex": 2,
+          "method_atom_kind_atom_number": 55,
+          "method_atom_kind_label": "Cs",
+          "method_atom_kind_mass": 132.9,
+          "method_atom_kind_explicit_electrons": 9.0,
+          "method_atom_kind_pseudopotential_name": " PAW_PBE Cs_sv 08Apr2002                "
+        },
+        {
+          "_name": "section_method_atom_kind",
+          "_gIndex": 3,
+          "method_atom_kind_atom_number": 83,
+          "method_atom_kind_label": "Bi",
+          "method_atom_kind_mass": 208.98,
+          "method_atom_kind_explicit_electrons": 5.0,
+          "method_atom_kind_pseudopotential_name": " PAW_PBE Bi 08Apr2002                   "
+        }
+      ]
+    },
+    "section_basis_set_cell_dependent": {
+      "_name": "section_basis_set_cell_dependent",
+      "_gIndex": 0,
+      "basis_set_planewave_cutoff": 1.0830713342800001e-16
+    },
+    "section_system": {
+      "_name": "section_system",
+      "_gIndex": 0,
+      "is_representative": true,
+      "chemical_composition": "NaClClClClClClCsCsBi",
+      "chemical_composition_reduced": "NaCl6Cs2Bi",
+      "chemical_composition_bulk_reduced": "BiCl6Cs2Na",
+      "lattice_vectors": [
+        [
+          6.63750483e-10, 
+          0.0, 
+          3.8321652e-10
+        ], 
+        [
+          2.21250161e-10, 
+          6.257899570000001e-10, 
+          3.8321652e-10
+        ], 
+        [
+          0.0, 
+          0.0, 
+          7.6643304e-10
+        ]
+      ],
+      "configuration_raw_gid": "iAviLhsC4bqbub_VjfeAmqjueo1m",
+      "system_type": "bulk",
+      "simulation_cell": [
+        [
+          6.63750483e-10, 
+          0.0, 
+          3.8321652e-10
+        ], 
+        [
+          2.21250161e-10, 
+          6.257899570000001e-10, 
+          3.8321652e-10
+        ], 
+        [
+          0.0, 
+          0.0, 
+          7.6643304e-10
+        ]
+      ],
+      "configuration_periodic_dimensions": [
+        true, 
+        true, 
+        true
+      ],
+      "atom_positions": [
+        [
+          4.42500322e-10, 
+          3.1289497850000003e-10, 
+          7.6643304e-10
+        ], 
+        [
+          5.54895403788e-10, 
+          1.5394432942200002e-10, 
+          9.6110703216e-10
+        ], 
+        [
+          3.30105240212e-10, 
+          4.71845627578e-10, 
+          9.6110703216e-10
+        ], 
+        [
+          3.30105240212e-10, 
+          4.71845627578e-10, 
+          5.7175904784e-10
+        ], 
+        [
+          5.54895403788e-10, 
+          1.5394432942200002e-10, 
+          5.7175904784e-10
+        ], 
+        [
+          6.67290485576e-10, 
+          4.71845627578e-10, 
+          7.6643304e-10
+        ], 
+        [
+          2.17710158424e-10, 
+          1.5394432942200002e-10, 
+          7.6643304e-10
+        ], 
+        [
+          2.21250161e-10, 
+          1.5644748925000002e-10, 
+          3.8321652e-10
+        ], 
+        [
+          6.63750483e-10, 
+          4.693424677500001e-10, 
+          1.14964956e-09
+        ], 
+        [
+          0.0, 
+          0.0, 
+          0.0
+        ]
+      ],
+      "atom_labels": [
+        "Na", 
+        "Cl", 
+        "Cl", 
+        "Cl", 
+        "Cl", 
+        "Cl", 
+        "Cl", 
+        "Cs", 
+        "Cs", 
+        "Bi"
+      ],
+      "atom_species": [
+        11,
+        17,
+        17,
+        17,
+        17,
+        17,
+        17,
+        55,
+        55,
+        83
+      ],
+      "section_symmetry": {
+        "_name": "section_symmetry",
+        "_gIndex": 0,
+        "symmetry_method": "Matid (spg)",
+        "space_group_number": 225,
+        "hall_number": 523,
+        "hall_symbol": "-F 4 2 3",
+        "international_short_symbol": "Fm-3m",
+        "point_group": "m-3m",
+        "crystal_system": "cubic",
+        "bravais_lattice": "cF",
+        "origin_shift": [
+          5.551115123125783e-17, 
+          -2.7755575615628914e-17, 
+          -5.551115123125783e-17
+        ],
+        "transformation_matrix": [
+          [
+            0.5, 
+            0.5, 
+            0.0
+          ], 
+          [
+            -0.49999999999999994, 
+            -5.551115123125783e-17, 
+            -0.5
+          ], 
+          [
+            -5.551115123125783e-17, 
+            0.4999999999999999, 
+            0.5
+          ]
+        ],
+        "section_std_system": {
+          "_name": "section_std_system",
+          "_gIndex": 0,
+          "lattice_vectors_std": [
+            [
+              10.839000000421457, 
+              0.0, 
+              0.0
+            ], 
+            [
+              0.0, 
+              10.839000000421457, 
+              0.0
+            ], 
+            [
+              0.0, 
+              0.0, 
+              10.839000000421457
+            ]
+          ],
+          "atom_positions_std": [
+            [
+              0.5, 
+              0.5, 
+              0.0
+            ], 
+            [
+              0.5, 
+              0.7459999999999999, 
+              0.5
+            ], 
+            [
+              0.5, 
+              0.5, 
+              0.2540000000000001
+            ], 
+            [
+              0.5, 
+              0.7540000000000001, 
+              0.0
+            ], 
+            [
+              0.5, 
+              0.5, 
+              0.7459999999999999
+            ], 
+            [
+              0.7540000000000001, 
+              0.5, 
+              0.0
+            ], 
+            [
+              0.24599999999999986, 
+              0.5, 
+              0.0
+            ], 
+            [
+              0.25, 
+              0.75, 
+              0.75
+            ], 
+            [
+              0.75, 
+              0.75, 
+              0.75
+            ], 
+            [
+              0.5, 
+              0.5, 
+              0.5
+            ], 
+            [
+              0.5, 
+              0.0, 
+              0.5
+            ], 
+            [
+              0.5, 
+              0.24599999999999986, 
+              0.0
+            ], 
+            [
+              0.5, 
+              0.0, 
+              0.7539999999999999
+            ], 
+            [
+              0.5, 
+              0.2540000000000001, 
+              0.5
+            ], 
+            [
+              0.5, 
+              0.0, 
+              0.24599999999999986
+            ], 
+            [
+              0.7540000000000001, 
+              0.0, 
+              0.5
+            ], 
+            [
+              0.24599999999999986, 
+              0.0, 
+              0.5
+            ], 
+            [
+              0.25, 
+              0.25, 
+              0.25
+            ], 
+            [
+              0.75, 
+              0.25, 
+              0.25
+            ], 
+            [
+              0.5, 
+              0.0, 
+              0.0
+            ], 
+            [
+              0.0, 
+              0.5, 
+              0.5
+            ], 
+            [
+              0.0, 
+              0.7459999999999999, 
+              0.0
+            ], 
+            [
+              0.0, 
+              0.5, 
+              0.7539999999999999
+            ], 
+            [
+              0.0, 
+              0.7540000000000001, 
+              0.5
+            ], 
+            [
+              0.0, 
+              0.5, 
+              0.24599999999999986
+            ], 
+            [
+              0.2540000000000001, 
+              0.5, 
+              0.5
+            ], 
+            [
+              0.746, 
+              0.5, 
+              0.5
+            ], 
+            [
+              0.75, 
+              0.75, 
+              0.25
+            ], 
+            [
+              0.25, 
+              0.75, 
+              0.25
+            ], 
+            [
+              0.0, 
+              0.5, 
+              0.0
+            ], 
+            [
+              0.0, 
+              0.0, 
+              0.0
+            ], 
+            [
+              0.0, 
+              0.24599999999999986, 
+              0.5
+            ], 
+            [
+              0.0, 
+              0.0, 
+              0.2540000000000001
+            ], 
+            [
+              0.0, 
+              0.2540000000000001, 
+              0.0
+            ], 
+            [
+              0.0, 
+              0.0, 
+              0.7459999999999999
+            ], 
+            [
+              0.2540000000000001, 
+              0.0, 
+              0.0
+            ], 
+            [
+              0.746, 
+              0.0, 
+              0.0
+            ], 
+            [
+              0.75, 
+              0.25, 
+              0.75
+            ], 
+            [
+              0.25, 
+              0.25, 
+              0.75
+            ], 
+            [
+              0.0, 
+              0.0, 
+              0.5
+            ]
+          ],
+          "atomic_numbers_std": [
+            11, 
+            17, 
+            17, 
+            17, 
+            17, 
+            17, 
+            17, 
+            55, 
+            55, 
+            83, 
+            11, 
+            17, 
+            17, 
+            17, 
+            17, 
+            17, 
+            17, 
+            55, 
+            55, 
+            83, 
+            11, 
+            17, 
+            17, 
+            17, 
+            17, 
+            17, 
+            17, 
+            55, 
+            55, 
+            83, 
+            11, 
+            17, 
+            17, 
+            17, 
+            17, 
+            17, 
+            17, 
+            55, 
+            55, 
+            83
+          ],
+          "wyckoff_letters_std": [
+            "a", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "c", 
+            "c", 
+            "b", 
+            "a", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "c", 
+            "c", 
+            "b", 
+            "a", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "c", 
+            "c", 
+            "b", 
+            "a", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "c", 
+            "c", 
+            "b"
+          ],
+          "equivalent_atoms_std": [
+            0, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            7, 
+            7, 
+            9, 
+            0, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            7, 
+            7, 
+            9, 
+            0, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            7, 
+            7, 
+            9, 
+            0, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            7, 
+            7, 
+            9
+          ]
+        },
+        "section_primitive_system": {
+          "_name": "section_primitive_system",
+          "_gIndex": 0,
+          "lattice_vectors_primitive": [
+            [
+              0.0, 
+              5.4195000002107285, 
+              5.4195000002107285
+            ], 
+            [
+              5.4195000002107285, 
+              0.0, 
+              5.4195000002107285
+            ], 
+            [
+              5.4195000002107285, 
+              5.4195000002107285, 
+              0.0
+            ]
+          ],
+          "atom_positions_primitive": [
+            [
+              0.0, 
+              0.0, 
+              5.838672220806777e-17
+            ], 
+            [
+              0.746, 
+              0.2539999999999999, 
+              0.7459999999999997
+            ], 
+            [
+              0.25400000000000006, 
+              0.25400000000000006, 
+              0.7459999999999999
+            ], 
+            [
+              0.2540000000000002, 
+              0.746, 
+              0.25400000000000006
+            ], 
+            [
+              0.7459999999999999, 
+              0.7459999999999999, 
+              0.25400000000000006
+            ], 
+            [
+              0.746, 
+              0.2540000000000005, 
+              0.25399999999999967
+            ], 
+            [
+              0.25400000000000006, 
+              0.7459999999999999, 
+              0.7459999999999999
+            ], 
+            [
+              0.25000000000000006, 
+              0.25000000000000006, 
+              0.24999999999999994
+            ], 
+            [
+              0.75, 
+              0.7500000000000003, 
+              0.7499999999999997
+            ], 
+            [
+              0.4999999999999999, 
+              0.4999999999999999, 
+              0.4999999999999999
+            ]
+          ],
+          "atomic_numbers_primitive": [
+            11, 
+            17, 
+            17, 
+            17, 
+            17, 
+            17, 
+            17, 
+            55, 
+            55, 
+            83
+          ],
+          "wyckoff_letters_primitive": [
+            "a", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "c", 
+            "c", 
+            "b"
+          ],
+          "equivalent_atoms_primitive": [
+            0, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            7, 
+            7, 
+            9
+          ]
+        },
+        "section_original_system": {
+          "_name": "section_original_system",
+          "_gIndex": 0,
+          "wyckoff_letters_original": [
+            "a", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "e", 
+            "c", 
+            "c", 
+            "b"
+          ],
+          "equivalent_atoms_original": [
+            0, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            7, 
+            7, 
+            9
+          ]
+        }
+      },
+      "section_springer_material": [
+        {
+          "_name": "section_springer_material",
+          "_gIndex": 0,
+          "springer_id": "sd_0548713",
+          "springer_alphabetical_formula": "BiCl6Cs2Na",
+          "springer_url": "http://materials.springer.com/isp/crystallographic/docs/sd_0548713",
+          "springer_compound_class": [
+            "chloride"
+          ],
+          "springer_classification": [
+            "\u2013"
+          ]
+        },
+        {
+          "_name": "section_springer_material",
+          "_gIndex": 1,
+          "springer_id": "sd_1401646",
+          "springer_alphabetical_formula": "BiCl6Cs2Na",
+          "springer_url": "http://materials.springer.com/isp/crystallographic/docs/sd_1401646",
+          "springer_compound_class": [
+            "chloride"
+          ],
+          "springer_classification": [
+            "\u2013"
+          ]
+        },
+        {
+          "_name": "section_springer_material",
+          "_gIndex": 2,
+          "springer_id": "sd_1802235",
+          "springer_alphabetical_formula": "BiCl6Cs2Na",
+          "springer_url": "http://materials.springer.com/isp/crystallographic/docs/sd_1802235",
+          "springer_compound_class": [
+            "chloride"
+          ],
+          "springer_classification": [
+            "\u2013"
+          ]
+        }
+      ]
+    },
+    "section_single_configuration_calculation": {
+      "_name": "section_single_configuration_calculation",
+      "_gIndex": 0
+    }
+  },
+  "section_entry_info": {
+    "_name": "section_entry_info",
+    "_gIndex": 0,
+    "upload_id": "W8YqVxsTQpGshRvL3x6CnQ",
+    "calc_id": "n0VsNLfNNEfS6UUaurydvsmzd1uw",
+    "calc_hash": "jFbVVRm8aYxEe0W6pZ0gGNKVNUmQ",
+    "mainfile": "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/vasprun.xml",
+    "parser_name": "parsers/vasp",
+    "number_of_files": 26,
+    "filepaths": [
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/vasprun.xml",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/CHG",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/CONTCAR",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/DOSCAR",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/EIGENVAL",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/IBZKPT",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/INCAR",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/INCAR.orig",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/KPOINTS",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/KPOINTS.orig",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/LOCK",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/OSZICAR",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/OUTCAR",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/PCDAT",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/POSCAR",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/POSCAR.orig",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/POTCAR",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/POTCAR.stripped",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/XDATCAR",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/aflow.tmp",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/engine.json",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/slurm-298201.error",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/slurm-298201.out",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/submit.pbs",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/submitted_at",
+      "block_2011-09-27-20-49-58-937390/runs_2011-09-29-09-27-19/2011-09-29-18-59-15_23088_19278/vasp.out"
+    ],
+    "entry_uploader_name": "Patrick, Huck",
+    "entry_uploader_id": "ab0305be-b3bb-41e6-a000-b004b49e475a",
+    "entry_upload_time": 1502471904,
+    "section_archive_processing_info": [
+      {
+        "_name": "section_archive_processing_info",
+        "_gIndex": 0,
+        "archive_processor_name": "parsers/vasp",
+        "archive_processor_status": "WithWarnings",
+        "number_of_archive_processor_warnings": 3,
+        "archive_processor_warnings": [
+          "Unknown INCAR parameter (not registered in the meta data): i {'type': 'logical', 'name': 'LRHFATM'} ' F  '",
+          "Unknown array tetrahedronlist in kpoints",
+          "Unknown tag i in kpoints"
+        ]
+      },
+      {
+        "_name": "section_archive_processing_info",
+        "_gIndex": 1,
+        "archive_processor_name": "SystemNormalizer",
+        "archive_processor_status": "Success"
+      },
+      {
+        "_name": "section_archive_processing_info",
+        "_gIndex": 2,
+        "archive_processor_name": "OptimadeNormalizer",
+        "archive_processor_status": "Success"
+      },
+      {
+        "_name": "section_archive_processing_info",
+        "_gIndex": 3,
+        "archive_processor_name": "FhiAimsBaseNormalizer",
+        "archive_processor_status": "Success"
+      },
+      {
+        "_name": "section_archive_processing_info",
+        "_gIndex": 4,
+        "archive_processor_name": "DosNormalizer",
+        "archive_processor_status": "Success"
+      }
+    ]
+  },
+  "OptimadeEntry": {
+    "elements": [
+      "Bi", 
+      "Cl", 
+      "Cs", 
+      "Na"
+    ], 
+    "nelements": 4, 
+    "elements_ratios": [
+      0.1, 
+      0.6, 
+      0.2, 
+      0.1
+    ], 
+    "chemical_formula_descriptive": "BiCl6Cs2Na", 
+    "chemical_formula_reduced": "NaCl6Cs2Bi", 
+    "chemical_formula_hill": "BiCl6Cs2Na", 
+    "chemical_formula_anonymous": "AB6C2D", 
+    "dimension_types": [
+      1, 
+      1, 
+      1
+    ], 
+    "lattice_vectors": [
+      [
+        6.63750483, 
+        0.0, 
+        3.8321652
+      ], 
+      [
+        2.21250161, 
+        6.257899570000001, 
+        3.8321652
+      ], 
+      [
+        0.0, 
+        0.0, 
+        7.6643304
+      ]
+    ], 
+    "cartesian_site_positions": [
+      [
+        4.42500322, 
+        3.1289497850000005, 
+        7.6643304
+      ], 
+      [
+        5.54895403788, 
+        1.5394432942200003, 
+        9.6110703216
+      ], 
+      [
+        3.30105240212, 
+        4.71845627578, 
+        9.6110703216
+      ], 
+      [
+        3.30105240212, 
+        4.71845627578, 
+        5.7175904784
+      ], 
+      [
+        5.54895403788, 
+        1.5394432942200003, 
+        5.7175904784
+      ], 
+      [
+        6.67290485576, 
+        4.71845627578, 
+        7.6643304
+      ], 
+      [
+        2.17710158424, 
+        1.5394432942200003, 
+        7.6643304
+      ], 
+      [
+        2.21250161, 
+        1.5644748925000003, 
+        3.8321652
+      ], 
+      [
+        6.63750483, 
+        4.6934246775, 
+        11.4964956
+      ], 
+      [
+        0.0, 
+        0.0, 
+        0.0
+      ]
+    ], 
+    "nsites": 10, 
+    "species_at_sites": [
+      "Na", 
+      "Cl", 
+      "Cl", 
+      "Cl", 
+      "Cl", 
+      "Cl", 
+      "Cl", 
+      "Cs", 
+      "Cs", 
+      "Bi"
+    ], 
+    "structure_features": [], 
+    "species": [
+      {
+        "name": "Cs", 
+        "chemical_symbols": [
+          "Cs"
+        ], 
+        "concentration": [
+          1.0
+        ]
+      }, 
+      {
+        "name": "Na", 
+        "chemical_symbols": [
+          "Na"
+        ], 
+        "concentration": [
+          1.0
+        ]
+      }, 
+      {
+        "name": "Bi", 
+        "chemical_symbols": [
+          "Bi"
+        ], 
+        "concentration": [
+          1.0
+        ]
+      }, 
+      {
+        "name": "Cl", 
+        "chemical_symbols": [
+          "Cl"
+        ], 
+        "concentration": [
+          1.0
+        ]
+      }
+    ]
+  }
+}
