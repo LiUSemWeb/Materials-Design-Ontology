@@ -17,7 +17,7 @@ or multiple databases:
 python rdf-generator.py MP AFLOW NOMAD OPTIMADE
 ```
 
-To merge multiple turtle files for single database:
+To merge multiple turtle files for single database (download Apache-Jena-3.14.0 and unzip under current folder):
 ```
 python merge.py MP
 ```
