@@ -1,1 +1,1 @@
-# This is the folder where you should put the json data you want to map
+# This folder is the default folder that SPARQL-Generate will access to retrive the data during running. The data from materials project will be copied to this folder for running period after running rdf-generator.py.

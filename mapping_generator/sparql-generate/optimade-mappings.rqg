@@ -131,7 +131,7 @@ GENERATE {
 	  		}.
 	}.
 }
-SOURCE <http://example.com/1000000-1.json> AS ?source
+SOURCE <http://example.com/intermediate.json> AS ?source
 WHERE {
   BIND(fun:JSONPath(?source, "$.meta.last_id") AS ?TASK_ID)
   BIND(fun:JSONPath(?source, "$.data[0].attributes") AS ?attributes)

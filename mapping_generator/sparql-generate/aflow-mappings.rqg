@@ -165,7 +165,7 @@ GENERATE {
 	  		}.
 	}.
 }
-SOURCE <http://example.com/aflow-49e3a27afb7b0542.json> AS ?source
+SOURCE <http://example.com/intermediate.json> AS ?source
 WHERE {
   BIND(fun:JSONPath(?source, "$.auid") AS ?TASK_ID)
   BIND(<{?TASK_ID}_material> as ?material)
