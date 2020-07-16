@@ -115,26 +115,13 @@
 
     <!-- http://www.w3.org/ns/prov#wasAssociatedWith -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith">
-        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
-        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith"/>
     
 
 
     <!-- http://www.w3.org/ns/prov#wasAttributedTo -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAttributedTo">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/mdo/core/Property"/>
-                    <rdf:Description rdf:about="https://w3id.org/mdo/core/Structure"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAttributedTo"/>
     
 
 
