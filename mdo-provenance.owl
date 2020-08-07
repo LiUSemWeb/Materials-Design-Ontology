@@ -136,72 +136,72 @@
     
 
 
-    <!-- https://w3id.org/mdo/provenance/hasAuthorName -->
+    <!-- https://w3id.org/mdo/provenance/AuthorName -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasAuthorName">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/AuthorName">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasAuthorName represents that a reference agent has the author&apos;s name in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">AuthorName represents that a reference agent has the author&apos;s name in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/provenance/hasDOI -->
+    <!-- https://w3id.org/mdo/provenance/DOI -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasDOI">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/DOI">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasDOI represents that a reference agent has the DOI in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">DOI represents that a reference agent has the DOI in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/provenance/hasDatabaseName -->
+    <!-- https://w3id.org/mdo/provenance/DatabaseName -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasDatabaseName">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/DatabaseName">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasDatabaseName represents that a reference agent has the database&apos;s name in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">DatabaseName represents that a reference agent has the database&apos;s name in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/provenance/hasPublicationDateTime -->
+    <!-- https://w3id.org/mdo/provenance/PublicationDateTime -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasPublicationDateTime">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/PublicationDateTime">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment xml:lang="en">hasPublicationDateTime represents that a reference agent has the date time in a dateTime.</rdfs:comment>
+        <rdfs:comment xml:lang="en">PublicationDateTime represents that a reference agent has the date time in a dateTime.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/provenance/hasPublicationTitle -->
+    <!-- https://w3id.org/mdo/provenance/PublicationTitle -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasPublicationTitle">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/PublicationTitle">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasPublicationTitle represents that a reference agent has the publication&apos;s title in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">PublicationTitle represents that a reference agent has the publication&apos;s title in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/provenance/hasSoftwareName -->
+    <!-- https://w3id.org/mdo/provenance/SoftwareName -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasSoftwareName">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/SoftwareName">
         <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasSoftwareName represents that a software agent has the name in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SoftwareName represents that a software agent has the name in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/provenance/hasURL -->
+    <!-- https://w3id.org/mdo/provenance/URL -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/hasURL">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/provenance/URL">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/provenance/ReferenceAgent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasURL represents that a reference agent has the URL in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">URL represents that a reference agent has the URL in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -229,7 +229,7 @@
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/provenance/hasSoftwareName"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/provenance/SoftwareName"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>

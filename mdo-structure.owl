@@ -287,222 +287,222 @@
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasAngle_alpha -->
+    <!-- https://w3id.org/mdo/structure/Angle_alpha -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasAngle_alpha">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/Angle_alpha">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/AngleTriple"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">hasAngle_alpha represents that an angle triple has the alpha angle&apos;s value in a double.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Angle_alpha represents that an angle triple has the alpha angle&apos;s value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasAngle_beta -->
+    <!-- https://w3id.org/mdo/structure/Angle_beta -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasAngle_beta">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/Angle_beta">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/AngleTriple"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">hasAngle_beta represents that an angle triple has the beta angle&apos;s value in a double.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Angle_beta represents that an angle triple has the beta angle&apos;s value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasAngle_gamma -->
+    <!-- https://w3id.org/mdo/structure/Angle_gamma -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasAngle_gamma">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/Angle_gamma">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/AngleTriple"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">hasAngle_gamma represents that an angle triple has the gamma angle&apos;s value in a double.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Angle_gamma represents that an angle triple has the gamma angle&apos;s value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasAnonymousFormula -->
+    <!-- https://w3id.org/mdo/structure/AnonymousFormula -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasAnonymousFormula">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/AnonymousFormula">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Composition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasAnonymousFormula represents that a composition has the anonymous formula in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">AnonymousFormula represents that a composition has the anonymous formula in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasDescriptiveFormula -->
+    <!-- https://w3id.org/mdo/structure/DescriptiveFormula -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasDescriptiveFormula">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/DescriptiveFormula">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Composition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasDescriptiveFormula represents that a composition has the descriptive formula in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">DescriptiveFormula represents that a composition has the descriptive formula in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasElementRatio -->
+    <!-- https://w3id.org/mdo/structure/ElementRatio -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasElementRatio">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/ElementRatio">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Species"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">hasElementRatio represents that a species has the ratio in a double.</rdfs:comment>
+        <rdfs:comment xml:lang="en">ElementRatio represents that a species has the ratio in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasHillFormula -->
+    <!-- https://w3id.org/mdo/structure/HillFormula -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasHillFormula">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/HillFormula">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Composition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasHillFormula represents that a composition has the hill formula in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">HillFormula represents that a composition has the hill formula in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasLatticeType -->
+    <!-- https://w3id.org/mdo/structure/LatticeType -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasLatticeType">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/LatticeType">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Lattice"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasLatticeType represents that a lattice has the type in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">LatticeType represents that a lattice has the type in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasLatticeVolume -->
+    <!-- https://w3id.org/mdo/structure/LatticeVolume -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasLatticeVolume">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/LatticeVolume">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Lattice"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">hasLatticeVolume represents that a lattice has the volume in a double.</rdfs:comment>
+        <rdfs:comment xml:lang="en">LatticeVolume represents that a lattice has the volume in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasLength_a -->
+    <!-- https://w3id.org/mdo/structure/Length_a -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasLength_a">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/Length_a">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/LengthTriple"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">hasLength_a represents that a length triple has the &apos;a&apos; value in a double.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Length_a represents that a length triple has the &apos;a&apos; value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasLength_b -->
+    <!-- https://w3id.org/mdo/structure/Length_b -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasLength_b">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/Length_b">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/LengthTriple"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">hasLength_b represents that a length triple has the &apos;b&apos; value in a double.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Length_b represents that a length triple has the &apos;b&apos; value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasLength_c -->
+    <!-- https://w3id.org/mdo/structure/Length_c -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasLength_c">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/Length_c">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/LengthTriple"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">hasLength_c represents that a length triple has the &apos;c&apos; value in a double.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Length_c represents that a length triple has the &apos;c&apos; value in a double.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasPointGroupHMName -->
+    <!-- https://w3id.org/mdo/structure/PointGroupHMName -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasPointGroupHMName">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/PointGroupHMName">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/PointGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasPointGroupHMName represents that a point group has the Hermann-Mauguin in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">PointGroupHMName represents that a point group has the Hermann-Mauguin in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasReducedFormula -->
+    <!-- https://w3id.org/mdo/structure/ReducedFormula -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasReducedFormula">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/ReducedFormula">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/Composition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasReducedFormula represents that a composition has the reduced formula in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">ReducedFormula represents that a composition has the reduced formula in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasSpaceGroupID -->
+    <!-- https://w3id.org/mdo/structure/SpaceGroupID -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasSpaceGroupID">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/SpaceGroupID">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/SpaceGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">hasSpaceGroupID represents that a space group has the unique ID in an integer.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SpaceGroupID represents that a space group has the unique ID in an integer.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasSpaceGroupSymbol -->
+    <!-- https://w3id.org/mdo/structure/SpaceGroupSymbol -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasSpaceGroupSymbol">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/SpaceGroupSymbol">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/SpaceGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">hasSpaceGroupSymbol represents that a space group has the symbol in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SpaceGroupSymbol represents that a space group has the symbol in a string.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasX_axisCoordinate -->
+    <!-- https://w3id.org/mdo/structure/X_axisCoordinate -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasX_axisCoordinate">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/X_axisCoordinate">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">hasX_axisCoordinate represents that a coordinate vector has the value of a coordinate in a double in X axis.</rdfs:comment>
+        <rdfs:comment xml:lang="en">X_axisCoordinate represents that a coordinate vector has the value of a coordinate in a double in X axis.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasX_axisVector -->
+    <!-- https://w3id.org/mdo/structure/X_axisVector -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasX_axisVector">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/X_axisVector">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/AxisVectors"/>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <rdfs:comment xml:lang="en">hasX_axisVector represents that an axis-vectors has the first vector in a list.</rdfs:comment>
+        <rdfs:comment xml:lang="en">X_axisVector represents that an axis-vectors has the first vector in a list.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasY_axisCoordinate -->
+    <!-- https://w3id.org/mdo/structure/Y_axisCoordinate -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasY_axisCoordinate">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/Y_axisCoordinate">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">hasY_axisCoordinate represents that a coordinate vector has the value of a coordinate in a double in Y axis.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Y_axisCoordinate represents that a coordinate vector has the value of a coordinate in a double in Y axis.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasY_axisVector -->
+    <!-- https://w3id.org/mdo/structure/Y_axisVector -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasY_axisVector">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/Y_axisVector">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/AxisVectors"/>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <rdfs:comment xml:lang="en">hasY_axisVector represents that an axis-vectors has the second vector in a list.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Y_axisVector represents that an axis-vectors has the second vector in a list.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasZ_axisCoordinate -->
+    <!-- https://w3id.org/mdo/structure/Z_axisCoordinate -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasZ_axisCoordinate">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/Z_axisCoordinate">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/CoordinateVector"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="en">hasZ_axisCoordinate represents that a coordinate vector has the value of a coordinate in a double in Z axis.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Z_axisCoordinate represents that a coordinate vector has the value of a coordinate in a double in Z axis.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/mdo/structure/hasZ_axisVector -->
+    <!-- https://w3id.org/mdo/structure/Z_axisVector -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/hasZ_axisVector">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/structure/Z_axisVector">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/structure/AxisVectors"/>
         <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <rdfs:comment xml:lang="en">hasX_axisVector represents that an axis-vectors has the third vector in a list.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Z_axisVector represents that an axis-vectors has the third vector in a list.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -613,21 +613,21 @@
     <owl:Class rdf:about="https://w3id.org/mdo/structure/AngleTriple">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasAngle_alpha"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/Angle_alpha"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasAngle_beta"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/Angle_beta"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasAngle_gamma"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/Angle_gamma"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
@@ -642,21 +642,21 @@
     <owl:Class rdf:about="https://w3id.org/mdo/structure/AxisVectors">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasX_axisVector"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/X_axisVector"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasY_axisVector"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/Y_axisVector"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasZ_axisVector"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/Z_axisVector"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
             </owl:Restriction>
@@ -712,21 +712,21 @@
     <owl:Class rdf:about="https://w3id.org/mdo/structure/CoordinateVector">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasX_axisCoordinate"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/X_axisCoordinate"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasY_axisCoordinate"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/Y_axisCoordinate"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasZ_axisCoordinate"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/Z_axisCoordinate"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
@@ -774,21 +774,21 @@
     <owl:Class rdf:about="https://w3id.org/mdo/structure/LengthTriple">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasLength_a"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/Length_a"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasLength_b"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/Length_b"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasLength_c"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/Length_c"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
             </owl:Restriction>
@@ -839,7 +839,7 @@
     <owl:Class rdf:about="https://w3id.org/mdo/structure/PointGroup">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasPointGroupHMName"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/PointGroupHMName"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
@@ -907,14 +907,14 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasSpaceGroupID"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/SpaceGroupID"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/hasSpaceGroupSymbol"/>
+                <owl:onProperty rdf:resource="https://w3id.org/mdo/structure/SpaceGroupSymbol"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
