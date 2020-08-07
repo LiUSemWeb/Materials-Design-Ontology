@@ -17,14 +17,14 @@ Materials Design Ontology consists of 4 modules which are:
 * A full MDO importing all the above modules is avaliable at [MDO Full](https://w3id.org/mdo/full/1.0).
 
 ### MDO Concepts and Relationships
-![entities](https://huanyu-li.github.io/figures/mdo/MDO.png "MDO concepts and relationships")
+![entities](https://huanyu-li.github.io/figures/mdo/MDO1.png "MDO concepts and relationships")
 
 
 ### MDO Vision
 ![entities](https://huanyu-li.github.io/figures/mdo/new-vision.png "MDO vision")
 
 ### MDO Instantiation 
-![entities](https://huanyu-li.github.io/figures/mdo/instances-output.png "MDO instantiation")
+![entities](https://huanyu-li.github.io/figures/mdo/instances-output1.png "MDO instantiation")
 
 ### Contact
 
