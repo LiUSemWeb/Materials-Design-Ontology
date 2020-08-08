@@ -12,6 +12,8 @@ PREFIX emmo: <http://emmo.info/domains/emmo-material.owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX CHEBI-atom: <http://purl.obolibrary.org/obo/CHEBI_33250>
 PREFIX CHEBI-formula: <http://purl.obolibrary.org/obo/chebi/formula>
+PREFIX QUDT-Unit: <http://qudt.org/vocab/unit/>
+PREFIX QUDT: <http://qudt.org/schema/qudt/>
 
 
 GENERATE {
@@ -136,43 +138,63 @@ GENERATE {
 	  	}.
 	GENERATE{
 		?NODE_band_gap a core:CalculatedProperty;
-		core:hasPropertyValue ?band_gap;
 		core:hasPropertyName "band_gap";
-		core:hasUnit "eV";
 		prov:wasAttributedTo ?reference;
-		core:relatedToStructure ?output_structure
+		core:relatedToStructure ?output_structure ;
+		core:hasQuantityValue ?NODE_band_gap_quantity_value
+		}.
+	GENERATE{
+		?NODE_band_gap_quantity_value a QUDT:QuantityValue;
+		QUDT:unit QUDT-Unit:EV;
+		QUDT:numericValue ?band_gap
 		}.
 	GENERATE{
 		?NODE_final_energy a core:CalculatedProperty;
-		core:hasPropertyValue ?final_energy;
 		core:hasPropertyName "final_energy";
-		core:hasUnit "eV"; 
 		prov:wasAttributedTo ?reference;
-		core:relatedToStructure ?output_structure
+		core:relatedToStructure ?output_structure;
+		core:hasQuantityValue ?NODE_final_energy_quantity_value
+		}.
+	GENERATE{
+		?NODE_final_energy_quantity_value a QUDT:QuantityValue;
+		QUDT:unit QUDT-Unit:EV;
+		QUDT:numericValue ?final_energy
 		}.
 	GENERATE{
 		?NODE_final_energy_per_atom a core:CalculatedProperty;
-		core:hasPropertyValue ?final_energy_per_atom;
 		core:hasPropertyName "final_energy_per_atom";
-		core:hasUnit "eV"; 
 		prov:wasAttributedTo ?reference;
-		core:relatedToStructure ?output_structure
+		core:relatedToStructure ?output_structure;
+		core:hasQuantityValue ?NODE_final_energy_per_atom_quantity_value
+		}.
+	GENERATE{
+		?NODE_final_energy_per_atom_quantity_value a QUDT:QuantityValue;
+		QUDT:unit QUDT-Unit:EV;
+		QUDT:numericValue ?final_energy_per_atom
 		}.
 	GENERATE{
 		?NODE_formation_energy_per_atom a core:CalculatedProperty;
-		core:hasPropertyValue ?formation_energy_per_atom;
 		core:hasPropertyName "formation_energy_per_atom";
-		core:hasUnit "eV"; 
 		prov:wasAttributedTo ?reference;
-		core:relatedToStructure ?output_structure
+		core:relatedToStructure ?output_structure;
+		core:hasQuantityValue ?NODE_formation_energy_per_atom_quantity_value
+		}.
+	GENERATE{
+		?NODE_formation_energy_per_atom_quantity_value a QUDT:QuantityValue;
+		QUDT:unit QUDT-Unit:EV;
+		QUDT:numericValue ?formation_energy_per_atom
 		}.
 	GENERATE{
 		?NODE_density a core:CalculatedProperty;
-		core:hasPropertyValue ?density;
 		core:hasPropertyName "density";
-		core:hasUnit "g/cc"; 
 		prov:wasAttributedTo ?reference;
-		core:relatedToStructure ?output_structure
+		core:relatedToStructure ?output_structure;
+		core:hasQuantityValue ?NODE_density_quantity_value
+		}.
+	GENERATE{
+		?NODE_density_quantity_value a QUDT:QuantityValue;
+		QUDT:unit QUDT-Unit:GM-PER-CentiM3;
+		QUDT:numericValue ?density
 		}.
 
 
@@ -296,10 +318,15 @@ WHERE {
   BIND(fun:JSONPath(?source,"$.formation_energy_per_atom") AS ?formation_energy_per_atom)
   BIND(fun:JSONPath(?source,"$.density") AS ?density)
   BIND(<{?TASK_ID}_band_gap> AS ?NODE_band_gap)
+  BIND(BNODE() AS ?NODE_band_gap_quantity_value)
   BIND(<{?TASK_ID}_final_energy> AS ?NODE_final_energy)
+  BIND(BNODE() AS ?NODE_final_energy_quantity_value)
   BIND(<{?TASK_ID}_final_energy_per_atom> AS ?NODE_final_energy_per_atom)
+  BIND(BNODE() AS ?NODE_final_energy_per_atom_quantity_value)
   BIND(<{?TASK_ID}_formation_energy_per_atom> AS ?NODE_formation_energy_per_atom)
+  BIND(BNODE() AS ?NODE_formation_energy_per_atom_quantity_value)
   BIND(<{?TASK_ID}_density> AS ?NODE_density)
+  BIND(BNODE() AS ?NODE_density_quantity_value)
   BIND(<{?TASK_ID}_composition> AS ?NODE_composition)
   BIND(fun:JSONPath(?source,"$.full_formula") AS ?full_formula)
   BIND(fun:JSONPath(?source,"$.anonymous_formula") AS ?anonymous_formula)

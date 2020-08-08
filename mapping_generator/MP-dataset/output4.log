@@ -1,0 +1,42 @@
+54:07,471 ForkJoinPool-1-worker-7 TRACE fr.emse.ci.sparqlext.engine.GenerateTriplesPlan:104 - Output triples
+position 0:
+  32351411-542a-449d-9f84-8c5b9acb6fb6 @rdf:type http://purl.obolibrary.org/obo/CHEBI_33250
+  32351411-542a-449d-9f84-8c5b9acb6fb6 @http://purl.obolibrary.org/obo/chebi/formula "Cs"
+position 1:
+  89e975f5-2674-42b3-8205-b8f13490b57c @rdf:type http://purl.obolibrary.org/obo/CHEBI_33250
+  89e975f5-2674-42b3-8205-b8f13490b57c @http://purl.obolibrary.org/obo/chebi/formula "As"
+position 2:
+  c71b1616-b7f1-48cc-ba18-2191c57af597 @rdf:type http://purl.obolibrary.org/obo/CHEBI_33250
+  c71b1616-b7f1-48cc-ba18-2191c57af597 @http://purl.obolibrary.org/obo/chebi/formula "Br"
+position 3:
+  bce70e41-f8a4-48a3-a220-341abd51e1b8 @rdf:type http://purl.obolibrary.org/obo/CHEBI_33250
+  bce70e41-f8a4-48a3-a220-341abd51e1b8 @http://purl.obolibrary.org/obo/chebi/formula "Cl"
+position 4:
+  3031a58a-3f54-4c6b-82da-b6684695dcee @rdf:type http://purl.obolibrary.org/obo/CHEBI_33250
+  3031a58a-3f54-4c6b-82da-b6684695dcee @http://purl.obolibrary.org/obo/chebi/formula "Cl"
+position 5:
+  de44c2af-f106-4a27-9da4-c036d2d8a53b @rdf:type http://purl.obolibrary.org/obo/CHEBI_33250
+  de44c2af-f106-4a27-9da4-c036d2d8a53b @http://purl.obolibrary.org/obo/chebi/formula "Cl"
+position 6:
+  79a2013c-6ecd-439b-b7f1-3a47ba81267e @rdf:type http://purl.obolibrary.org/obo/CHEBI_33250
+  79a2013c-6ecd-439b-b7f1-3a47ba81267e @http://purl.obolibrary.org/obo/chebi/formula "Cl"
+position 7:
+  305daaca-5830-4a11-9e9f-d678de956e24 @rdf:type http://purl.obolibrary.org/obo/CHEBI_33250
+  305daaca-5830-4a11-9e9f-d678de956e24 @http://purl.obolibrary.org/obo/chebi/formula "Cl"
+position 8:
+  03f52c9d-904f-4b99-8db2-815be315d46a @rdf:type http://purl.obolibrary.org/obo/CHEBI_33250
+  03f52c9d-904f-4b99-8db2-815be315d46a @http://purl.obolibrary.org/obo/chebi/formula "Cl"
+position 9:
+  15d83e20-7146-4043-a5d0-99a4b433b897 @rdf:type http://purl.obolibrary.org/obo/CHEBI_33250
+  15d83e20-7146-4043-a5d0-99a4b433b897 @http://purl.obolibrary.org/obo/chebi/formula "Cs"
+54:07,471 ForkJoinPool-1-worker-7 TRACE fr.emse.ci.sparqlext.engine.RootPlanImpl:332 - Finished all generatePlan 1
+54:07,471 ForkJoinPool-1-worker-7 TRACE fr.emse.ci.sparqlext.engine.RootPlanImpl:332 - Finished all generatePlan 1
+54:07,471 ForkJoinPool-1-worker-7 DEBUG fr.emse.ci.sparqlext.engine.RootPlanImpl:283 - Finished iterator plan ITERATOR http://w3id.org/sparql-generate/iter/JSONPath [?species, "$[*]"] AS [?elements]
+54:07,471 ForkJoinPool-1-worker-7 TRACE fr.emse.ci.sparqlext.engine.RootPlanImpl:332 - Finished all generatePlan 1
+54:07,474 ForkJoinPool-1-worker-7 DEBUG fr.emse.ci.sparqlext.engine.RootPlanImpl:283 - Finished iterator plan ITERATOR http://w3id.org/sparql-generate/iter/JSONPath [?output_sites, "$[*]"] AS [?site]
+54:07,474 ForkJoinPool-1-worker-7 TRACE fr.emse.ci.sparqlext.engine.RootPlanImpl:332 - Finished all generatePlan 1
+54:07,474 ForkJoinPool-1-worker-7 TRACE fr.emse.ci.sparqlext.engine.RootPlanImpl:332 - Finished all generatePlan 1
+54:07,474 ForkJoinPool-1-worker-7 DEBUG fr.emse.ci.sparqlext.engine.RootPlanImpl:272 - Finished source or bind plan SOURCE http://example.com/intermediate.json AS ?source
+54:07,474 ForkJoinPool-1-worker-7 INFO  fr.emse.ci.sparqlext.SPARQLExt:521 - Closing context
+54:07,475 ForkJoinPool-1-worker-7 INFO  fr.emse.ci.sparqlext.engine.RootPlanImpl:226 - End of transformation
+54:07,500 main INFO  fr.emse.ci.sparqlext.cli.SPARQLExtCli:167 - Program finished in 0 min, 0.975 sec

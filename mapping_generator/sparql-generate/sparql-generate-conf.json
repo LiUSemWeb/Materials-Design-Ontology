@@ -1,14 +1,1 @@
-{
-  "documentset": [
-    {
-      "mediatype": "application/json",
-      "path": "documentset/intermediate.json",
-      "uri": "http://example.com/intermediate.json"
-    }
-  ],
-  "query": "mp-mappings.rqg",
-  "namedqueries": [],
-  "graph": "dataset/default.ttl",
-  "namedgraphs": [],
-  "loglevel": 5
-}
+{"documentset": [{"mediatype": "application/json", "path": "documentset/intermediate.json", "uri": "http://example.com/intermediate.json"}], "query": "mp-mappings.rqg", "namedqueries": [], "graph": "dataset/default.ttl", "namedgraphs": [], "loglevel": 5}

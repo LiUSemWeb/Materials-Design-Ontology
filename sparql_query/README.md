@@ -88,17 +88,18 @@ CQ6:
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX core: <https://w3id.org/mdo/core/>
 PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
 
-SELECT ?descriptiveformula ?value WHERE {
+SELECT ?formula ?value WHERE {
   ?calculation rdf:type core:Calculation;
-   	       core:hasOutputCalculatedProperty ?Property;
-   	       core:hasOutputStructure ?OutputStructure.
-  ?Property core:hasPropertyValue ?value;
-   	    core:hasPropertyName ?name.
-  ?OutputStructure structure:hasComposition ?Composition.
-  ?Composition structure:hasDescriptiveFormula 
-               ?descriptiveformula.
+   	       core:hasOutputCalculatedProperty ?property;
+   	       core:hasOutputStructure ?output_structure.
+  ?property core:hasQuantityValue ?quantity_value;
+   	        core:hasPropertyName ?name.
+  ?quantity_value rdf:type qudt:QuantityValue;
+                  qudt:numericValue ?value.
+  ?output_structure structure:hasComposition ?composition.
+  ?composition structure:hasDescriptiveFormula ?formula.
   FILTER (?value>5 && ?name="band_gap")
 } 
 ```
