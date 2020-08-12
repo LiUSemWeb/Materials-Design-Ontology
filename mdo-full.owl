@@ -9,6 +9,7 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:structure="https://w3id.org/mdo/structure/"
+     xmlns:provenance="https://w3id.org/mdo/provenance/"
      xmlns:calculation="https://w3id.org/mdo/calculation/">
     <owl:Ontology rdf:about="https://w3id.org/mdo/full/">
         <owl:versionIRI rdf:resource="https://w3id.org/mdo/full/1.0"/>
