@@ -32,10 +32,22 @@
         structure:hasSpaceGroup   <https://w3id.org/mdo/data/1.0/mp-989543_output_sg> .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_input_lattice_axisvector>
-        a                          structure:AxisVectors ;
-        structure:hasX_axisVector  "[0.0,5.23275,5.23275]" ;
-        structure:hasY_axisVector  "[5.23275,0.0,5.23275]" ;
-        structure:hasZ_axisVector  "[5.23275,5.23275,0.0]" .
+        a                           structure:AxisVectors ;
+        structure:has_a_axisVector  [ a                              structure:CoordinateVector ;
+                                      structure:hasX_axisCoordinate  0.0e0 ;
+                                      structure:hasY_axisCoordinate  5.23275e0 ;
+                                      structure:hasZ_axisCoordinate  5.23275e0
+                                    ] ;
+        structure:has_b_axisVector  [ a                              structure:CoordinateVector ;
+                                      structure:hasX_axisCoordinate  5.23275e0 ;
+                                      structure:hasY_axisCoordinate  0.0e0 ;
+                                      structure:hasZ_axisCoordinate  5.23275e0
+                                    ] ;
+        structure:has_c_axisVector  [ a                              structure:CoordinateVector ;
+                                      structure:hasX_axisCoordinate  5.23275e0 ;
+                                      structure:hasY_axisCoordinate  5.23275e0 ;
+                                      structure:hasZ_axisCoordinate  0.0e0
+                                    ] .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_output_sg>
         a                              structure:SpaceGroup ;
@@ -52,23 +64,23 @@
         core:hasOutputStructure  <https://w3id.org/mdo/data/1.0/mp-989543_output_structure> .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_density>
-        a                        core:CalculatedProperty ;
-        prov:wasAttributedTo     <https://w3id.org/mdo/data/1.0/mp-989543_reference> ;
-        core:hasPropertyName     "density" ;
-        core:hasQuantityValue    [ a                  QUDT:QuantityValue ;
+        a                        QUDT:Quantity , core:CalculatedProperty ;
+        QUDT:quantityValue       [ a                  QUDT:QuantityValue ;
                                    QUDT:numericValue  3.3584801402893e0 ;
                                    QUDT:unit          QUDT-Unit:GM-PER-CentiM3
                                  ] ;
+        prov:wasAttributedTo     <https://w3id.org/mdo/data/1.0/mp-989543_reference> ;
+        core:hasPropertyName     "density" ;
         core:relatedToStructure  <https://w3id.org/mdo/data/1.0/mp-989543_output_structure> .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_final_energy_per_atom>
-        a                        core:CalculatedProperty ;
-        prov:wasAttributedTo     <https://w3id.org/mdo/data/1.0/mp-989543_reference> ;
-        core:hasPropertyName     "final_energy_per_atom" ;
-        core:hasQuantityValue    [ a                  QUDT:QuantityValue ;
+        a                        QUDT:Quantity , core:CalculatedProperty ;
+        QUDT:quantityValue       [ a                  QUDT:QuantityValue ;
                                    QUDT:numericValue  -2.430311197e0 ;
                                    QUDT:unit          QUDT-Unit:EV
                                  ] ;
+        prov:wasAttributedTo     <https://w3id.org/mdo/data/1.0/mp-989543_reference> ;
+        core:hasPropertyName     "final_energy_per_atom" ;
         core:relatedToStructure  <https://w3id.org/mdo/data/1.0/mp-989543_output_structure> .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_input_lattice_lengthtriple>
@@ -78,13 +90,13 @@
         structure:hasLength_c  7.400226018507814e0 .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_formation_energy_per_atom>
-        a                        core:CalculatedProperty ;
-        prov:wasAttributedTo     <https://w3id.org/mdo/data/1.0/mp-989543_reference> ;
-        core:hasPropertyName     "formation_energy_per_atom" ;
-        core:hasQuantityValue    [ a                  QUDT:QuantityValue ;
+        a                        QUDT:Quantity , core:CalculatedProperty ;
+        QUDT:quantityValue       [ a                  QUDT:QuantityValue ;
                                    QUDT:numericValue  -1.1939661088163793 ;
                                    QUDT:unit          QUDT-Unit:EV
                                  ] ;
+        prov:wasAttributedTo     <https://w3id.org/mdo/data/1.0/mp-989543_reference> ;
+        core:hasPropertyName     "formation_energy_per_atom" ;
         core:relatedToStructure  <https://w3id.org/mdo/data/1.0/mp-989543_output_structure> .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_output_lattice_lengthtriple>
@@ -95,6 +107,20 @@
 
 <https://w3id.org/mdo/data/1.0/mp-989543_output_occupancy>
         a                     structure:Occupancy ;
+        structure:hasSite     [ a       structure:Site ;
+                                structure:hasCartesianCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  7.839411675e0 ;
+                                          structure:hasY_axisCoordinate  7.839411675e0 ;
+                                          structure:hasZ_axisCoordinate  7.839411675e0
+                                        ] ;
+                                structure:hasFractionalCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  0.75e0 ;
+                                          structure:hasY_axisCoordinate  0.75e0 ;
+                                          structure:hasZ_axisCoordinate  0.75e0
+                                        ]
+                              ] ;
         structure:hasSite     [ a       structure:Site ;
                                 structure:hasCartesianCoordinates
                                         [ a                              structure:CoordinateVector ;
@@ -126,15 +152,29 @@
         structure:hasSite     [ a       structure:Site ;
                                 structure:hasCartesianCoordinates
                                         [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  2.478704066883408e0 ;
-                                          structure:hasY_axisCoordinate  5.22627445e0 ;
+                                          structure:hasX_axisCoordinate  5.22627445e0 ;
+                                          structure:hasY_axisCoordinate  2.478704066883408e0 ;
                                           structure:hasZ_axisCoordinate  5.22627445e0
                                         ] ;
                                 structure:hasFractionalCoordinates
                                         [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  0.76286128e0 ;
-                                          structure:hasY_axisCoordinate  0.23713872e0 ;
+                                          structure:hasX_axisCoordinate  0.23713872e0 ;
+                                          structure:hasY_axisCoordinate  0.76286128e0 ;
                                           structure:hasZ_axisCoordinate  0.23713872e0
+                                        ]
+                              ] ;
+        structure:hasSite     [ a       structure:Site ;
+                                structure:hasCartesianCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  2.613137225e0 ;
+                                          structure:hasY_axisCoordinate  2.613137225e0 ;
+                                          structure:hasZ_axisCoordinate  2.613137225e0
+                                        ] ;
+                                structure:hasFractionalCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  0.25e0 ;
+                                          structure:hasY_axisCoordinate  0.25e0 ;
+                                          structure:hasZ_axisCoordinate  0.25e0
                                         ]
                               ] ;
         structure:hasSite     [ a       structure:Site ;
@@ -154,6 +194,20 @@
         structure:hasSite     [ a       structure:Site ;
                                 structure:hasCartesianCoordinates
                                         [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  2.478704066883408e0 ;
+                                          structure:hasY_axisCoordinate  5.22627445e0 ;
+                                          structure:hasZ_axisCoordinate  5.22627445e0
+                                        ] ;
+                                structure:hasFractionalCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  0.76286128e0 ;
+                                          structure:hasY_axisCoordinate  0.23713872e0 ;
+                                          structure:hasZ_axisCoordinate  0.23713872e0
+                                        ]
+                              ] ;
+        structure:hasSite     [ a       structure:Site ;
+                                structure:hasCartesianCoordinates
+                                        [ a                              structure:CoordinateVector ;
                                           structure:hasX_axisCoordinate  5.22627445e0 ;
                                           structure:hasY_axisCoordinate  7.973844833116591e0 ;
                                           structure:hasZ_axisCoordinate  5.22627445e0
@@ -163,48 +217,6 @@
                                           structure:hasX_axisCoordinate  0.76286128e0 ;
                                           structure:hasY_axisCoordinate  0.23713872e0 ;
                                           structure:hasZ_axisCoordinate  0.76286128e0
-                                        ]
-                              ] ;
-        structure:hasSite     [ a       structure:Site ;
-                                structure:hasCartesianCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  5.22627445e0 ;
-                                          structure:hasY_axisCoordinate  2.478704066883408e0 ;
-                                          structure:hasZ_axisCoordinate  5.22627445e0
-                                        ] ;
-                                structure:hasFractionalCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  0.23713872e0 ;
-                                          structure:hasY_axisCoordinate  0.76286128e0 ;
-                                          structure:hasZ_axisCoordinate  0.23713872e0
-                                        ]
-                              ] ;
-        structure:hasSite     [ a       structure:Site ;
-                                structure:hasCartesianCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  7.839411675e0 ;
-                                          structure:hasY_axisCoordinate  7.839411675e0 ;
-                                          structure:hasZ_axisCoordinate  7.839411675e0
-                                        ] ;
-                                structure:hasFractionalCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  0.75e0 ;
-                                          structure:hasY_axisCoordinate  0.75e0 ;
-                                          structure:hasZ_axisCoordinate  0.75e0
-                                        ]
-                              ] ;
-        structure:hasSite     [ a       structure:Site ;
-                                structure:hasCartesianCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  2.613137225e0 ;
-                                          structure:hasY_axisCoordinate  2.613137225e0 ;
-                                          structure:hasZ_axisCoordinate  2.613137225e0
-                                        ] ;
-                                structure:hasFractionalCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  0.25e0 ;
-                                          structure:hasY_axisCoordinate  0.25e0 ;
-                                          structure:hasZ_axisCoordinate  0.25e0
                                         ]
                               ] ;
         structure:hasSite     [ a       structure:Site ;
@@ -237,31 +249,19 @@
                               ] ;
         structure:hasSpecies  [ a                          structure:species ;
                                 structure:hasElement       [ a               CHEBI-atom: ;
+                                                             CHEBI-formula:  "Cl"
+                                                           ] ;
+                                structure:hasElementRatio  1
+                              ] ;
+        structure:hasSpecies  [ a                          structure:species ;
+                                structure:hasElement       [ a               CHEBI-atom: ;
+                                                             CHEBI-formula:  "Cl"
+                                                           ] ;
+                                structure:hasElementRatio  1
+                              ] ;
+        structure:hasSpecies  [ a                          structure:species ;
+                                structure:hasElement       [ a               CHEBI-atom: ;
                                                              CHEBI-formula:  "F"
-                                                           ] ;
-                                structure:hasElementRatio  1
-                              ] ;
-        structure:hasSpecies  [ a                          structure:species ;
-                                structure:hasElement       [ a               CHEBI-atom: ;
-                                                             CHEBI-formula:  "Cl"
-                                                           ] ;
-                                structure:hasElementRatio  1
-                              ] ;
-        structure:hasSpecies  [ a                          structure:species ;
-                                structure:hasElement       [ a               CHEBI-atom: ;
-                                                             CHEBI-formula:  "Cs"
-                                                           ] ;
-                                structure:hasElementRatio  1
-                              ] ;
-        structure:hasSpecies  [ a                          structure:species ;
-                                structure:hasElement       [ a               CHEBI-atom: ;
-                                                             CHEBI-formula:  "Cl"
-                                                           ] ;
-                                structure:hasElementRatio  1
-                              ] ;
-        structure:hasSpecies  [ a                          structure:species ;
-                                structure:hasElement       [ a               CHEBI-atom: ;
-                                                             CHEBI-formula:  "Cl"
                                                            ] ;
                                 structure:hasElementRatio  1
                               ] ;
@@ -273,13 +273,7 @@
                               ] ;
         structure:hasSpecies  [ a                          structure:species ;
                                 structure:hasElement       [ a               CHEBI-atom: ;
-                                                             CHEBI-formula:  "Cl"
-                                                           ] ;
-                                structure:hasElementRatio  1
-                              ] ;
-        structure:hasSpecies  [ a                          structure:species ;
-                                structure:hasElement       [ a               CHEBI-atom: ;
-                                                             CHEBI-formula:  "Cl"
+                                                             CHEBI-formula:  "Cs"
                                                            ] ;
                                 structure:hasElementRatio  1
                               ] ;
@@ -294,6 +288,24 @@
                                                              CHEBI-formula:  "Cs"
                                                            ] ;
                                 structure:hasElementRatio  1
+                              ] ;
+        structure:hasSpecies  [ a                          structure:species ;
+                                structure:hasElement       [ a               CHEBI-atom: ;
+                                                             CHEBI-formula:  "Cl"
+                                                           ] ;
+                                structure:hasElementRatio  1
+                              ] ;
+        structure:hasSpecies  [ a                          structure:species ;
+                                structure:hasElement       [ a               CHEBI-atom: ;
+                                                             CHEBI-formula:  "Cl"
+                                                           ] ;
+                                structure:hasElementRatio  1
+                              ] ;
+        structure:hasSpecies  [ a                          structure:species ;
+                                structure:hasElement       [ a               CHEBI-atom: ;
+                                                             CHEBI-formula:  "Cl"
+                                                           ] ;
+                                structure:hasElementRatio  1
                               ] .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_output_lattice_angletriple>
@@ -303,10 +315,22 @@
         structure:hasAngle_gamma  60.00000000000001e0 .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_output_lattice_axisvector>
-        a                          structure:AxisVectors ;
-        structure:hasX_axisVector  "[0.0,5.22627445,5.22627445]" ;
-        structure:hasY_axisVector  "[5.22627445,0.0,5.22627445]" ;
-        structure:hasZ_axisVector  "[5.22627445,5.22627445,0.0]" .
+        a                           structure:AxisVectors ;
+        structure:has_a_axisVector  [ a                              structure:CoordinateVector ;
+                                      structure:hasX_axisCoordinate  0.0e0 ;
+                                      structure:hasY_axisCoordinate  5.22627445e0 ;
+                                      structure:hasZ_axisCoordinate  5.22627445e0
+                                    ] ;
+        structure:has_b_axisVector  [ a                              structure:CoordinateVector ;
+                                      structure:hasX_axisCoordinate  5.22627445e0 ;
+                                      structure:hasY_axisCoordinate  0.0e0 ;
+                                      structure:hasZ_axisCoordinate  5.22627445e0
+                                    ] ;
+        structure:has_c_axisVector  [ a                              structure:CoordinateVector ;
+                                      structure:hasX_axisCoordinate  5.22627445e0 ;
+                                      structure:hasY_axisCoordinate  5.22627445e0 ;
+                                      structure:hasZ_axisCoordinate  0.0e0
+                                    ] .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_input_lattice>
         a                           structure:Lattice ;
@@ -331,6 +355,20 @@
         structure:hasSite     [ a       structure:Site ;
                                 structure:hasCartesianCoordinates
                                         [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  2.4806793270000003e0 ;
+                                          structure:hasY_axisCoordinate  5.23275e0 ;
+                                          structure:hasZ_axisCoordinate  5.23275e0
+                                        ] ;
+                                structure:hasFractionalCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  0.762966e0 ;
+                                          structure:hasY_axisCoordinate  0.237034e0 ;
+                                          structure:hasZ_axisCoordinate  0.237034e0
+                                        ]
+                              ] ;
+        structure:hasSite     [ a       structure:Site ;
+                                structure:hasCartesianCoordinates
+                                        [ a                              structure:CoordinateVector ;
                                           structure:hasX_axisCoordinate  5.23275e0 ;
                                           structure:hasY_axisCoordinate  7.984820673000001e0 ;
                                           structure:hasZ_axisCoordinate  5.23275e0
@@ -338,6 +376,76 @@
                                 structure:hasFractionalCoordinates
                                         [ a                              structure:CoordinateVector ;
                                           structure:hasX_axisCoordinate  0.762966e0 ;
+                                          structure:hasY_axisCoordinate  0.237034e0 ;
+                                          structure:hasZ_axisCoordinate  0.762966e0
+                                        ]
+                              ] ;
+        structure:hasSite     [ a       structure:Site ;
+                                structure:hasCartesianCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  7.984820673000001e0 ;
+                                          structure:hasY_axisCoordinate  5.23275e0 ;
+                                          structure:hasZ_axisCoordinate  5.23275e0
+                                        ] ;
+                                structure:hasFractionalCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  0.237034e0 ;
+                                          structure:hasY_axisCoordinate  0.762966e0 ;
+                                          structure:hasZ_axisCoordinate  0.762966e0
+                                        ]
+                              ] ;
+        structure:hasSite     [ a       structure:Site ;
+                                structure:hasCartesianCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  5.23275e0 ;
+                                          structure:hasY_axisCoordinate  5.23275e0 ;
+                                          structure:hasZ_axisCoordinate  5.23275e0
+                                        ] ;
+                                structure:hasFractionalCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  0.5e0 ;
+                                          structure:hasY_axisCoordinate  0.5e0 ;
+                                          structure:hasZ_axisCoordinate  0.5e0
+                                        ]
+                              ] ;
+        structure:hasSite     [ a       structure:Site ;
+                                structure:hasCartesianCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  7.849125000000001e0 ;
+                                          structure:hasY_axisCoordinate  7.849125000000001e0 ;
+                                          structure:hasZ_axisCoordinate  7.849125000000001e0
+                                        ] ;
+                                structure:hasFractionalCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  0.75e0 ;
+                                          structure:hasY_axisCoordinate  0.75e0 ;
+                                          structure:hasZ_axisCoordinate  0.75e0
+                                        ]
+                              ] ;
+        structure:hasSite     [ a       structure:Site ;
+                                structure:hasCartesianCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  5.23275e0 ;
+                                          structure:hasY_axisCoordinate  5.23275e0 ;
+                                          structure:hasZ_axisCoordinate  7.984820673000001e0
+                                        ] ;
+                                structure:hasFractionalCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  0.762966e0 ;
+                                          structure:hasY_axisCoordinate  0.762966e0 ;
+                                          structure:hasZ_axisCoordinate  0.237034e0
+                                        ]
+                              ] ;
+        structure:hasSite     [ a       structure:Site ;
+                                structure:hasCartesianCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  5.23275e0 ;
+                                          structure:hasY_axisCoordinate  5.23275e0 ;
+                                          structure:hasZ_axisCoordinate  2.4806793270000003e0
+                                        ] ;
+                                structure:hasFractionalCoordinates
+                                        [ a                              structure:CoordinateVector ;
+                                          structure:hasX_axisCoordinate  0.237034e0 ;
                                           structure:hasY_axisCoordinate  0.237034e0 ;
                                           structure:hasZ_axisCoordinate  0.762966e0
                                         ]
@@ -373,76 +481,6 @@
         structure:hasSite     [ a       structure:Site ;
                                 structure:hasCartesianCoordinates
                                         [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  7.849125000000001e0 ;
-                                          structure:hasY_axisCoordinate  7.849125000000001e0 ;
-                                          structure:hasZ_axisCoordinate  7.849125000000001e0
-                                        ] ;
-                                structure:hasFractionalCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  0.75e0 ;
-                                          structure:hasY_axisCoordinate  0.75e0 ;
-                                          structure:hasZ_axisCoordinate  0.75e0
-                                        ]
-                              ] ;
-        structure:hasSite     [ a       structure:Site ;
-                                structure:hasCartesianCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  7.984820673000001e0 ;
-                                          structure:hasY_axisCoordinate  5.23275e0 ;
-                                          structure:hasZ_axisCoordinate  5.23275e0
-                                        ] ;
-                                structure:hasFractionalCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  0.237034e0 ;
-                                          structure:hasY_axisCoordinate  0.762966e0 ;
-                                          structure:hasZ_axisCoordinate  0.762966e0
-                                        ]
-                              ] ;
-        structure:hasSite     [ a       structure:Site ;
-                                structure:hasCartesianCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  5.23275e0 ;
-                                          structure:hasY_axisCoordinate  5.23275e0 ;
-                                          structure:hasZ_axisCoordinate  5.23275e0
-                                        ] ;
-                                structure:hasFractionalCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  0.5e0 ;
-                                          structure:hasY_axisCoordinate  0.5e0 ;
-                                          structure:hasZ_axisCoordinate  0.5e0
-                                        ]
-                              ] ;
-        structure:hasSite     [ a       structure:Site ;
-                                structure:hasCartesianCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  5.23275e0 ;
-                                          structure:hasY_axisCoordinate  5.23275e0 ;
-                                          structure:hasZ_axisCoordinate  7.984820673000001e0
-                                        ] ;
-                                structure:hasFractionalCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  0.762966e0 ;
-                                          structure:hasY_axisCoordinate  0.762966e0 ;
-                                          structure:hasZ_axisCoordinate  0.237034e0
-                                        ]
-                              ] ;
-        structure:hasSite     [ a       structure:Site ;
-                                structure:hasCartesianCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  5.23275e0 ;
-                                          structure:hasY_axisCoordinate  5.23275e0 ;
-                                          structure:hasZ_axisCoordinate  2.4806793270000003e0
-                                        ] ;
-                                structure:hasFractionalCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  0.237034e0 ;
-                                          structure:hasY_axisCoordinate  0.237034e0 ;
-                                          structure:hasZ_axisCoordinate  0.762966e0
-                                        ]
-                              ] ;
-        structure:hasSite     [ a       structure:Site ;
-                                structure:hasCartesianCoordinates
-                                        [ a                              structure:CoordinateVector ;
                                           structure:hasX_axisCoordinate  0.0e0 ;
                                           structure:hasY_axisCoordinate  0.0e0 ;
                                           structure:hasZ_axisCoordinate  0.0e0
@@ -454,19 +492,23 @@
                                           structure:hasZ_axisCoordinate  0.0e0
                                         ]
                               ] ;
-        structure:hasSite     [ a       structure:Site ;
-                                structure:hasCartesianCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  2.4806793270000003e0 ;
-                                          structure:hasY_axisCoordinate  5.23275e0 ;
-                                          structure:hasZ_axisCoordinate  5.23275e0
-                                        ] ;
-                                structure:hasFractionalCoordinates
-                                        [ a                              structure:CoordinateVector ;
-                                          structure:hasX_axisCoordinate  0.762966e0 ;
-                                          structure:hasY_axisCoordinate  0.237034e0 ;
-                                          structure:hasZ_axisCoordinate  0.237034e0
-                                        ]
+        structure:hasSpecies  [ a                          structure:species ;
+                                structure:hasElement       [ a               CHEBI-atom: ;
+                                                             CHEBI-formula:  "Cl"
+                                                           ] ;
+                                structure:hasElementRatio  1
+                              ] ;
+        structure:hasSpecies  [ a                          structure:species ;
+                                structure:hasElement       [ a               CHEBI-atom: ;
+                                                             CHEBI-formula:  "Cl"
+                                                           ] ;
+                                structure:hasElementRatio  1
+                              ] ;
+        structure:hasSpecies  [ a                          structure:species ;
+                                structure:hasElement       [ a               CHEBI-atom: ;
+                                                             CHEBI-formula:  "Cs"
+                                                           ] ;
+                                structure:hasElementRatio  1
                               ] ;
         structure:hasSpecies  [ a                          structure:species ;
                                 structure:hasElement       [ a               CHEBI-atom: ;
@@ -494,25 +536,7 @@
                               ] ;
         structure:hasSpecies  [ a                          structure:species ;
                                 structure:hasElement       [ a               CHEBI-atom: ;
-                                                             CHEBI-formula:  "Cl"
-                                                           ] ;
-                                structure:hasElementRatio  1
-                              ] ;
-        structure:hasSpecies  [ a                          structure:species ;
-                                structure:hasElement       [ a               CHEBI-atom: ;
-                                                             CHEBI-formula:  "Cl"
-                                                           ] ;
-                                structure:hasElementRatio  1
-                              ] ;
-        structure:hasSpecies  [ a                          structure:species ;
-                                structure:hasElement       [ a               CHEBI-atom: ;
                                                              CHEBI-formula:  "Cs"
-                                                           ] ;
-                                structure:hasElementRatio  1
-                              ] ;
-        structure:hasSpecies  [ a                          structure:species ;
-                                structure:hasElement       [ a               CHEBI-atom: ;
-                                                             CHEBI-formula:  "Cl"
                                                            ] ;
                                 structure:hasElementRatio  1
                               ] ;
@@ -524,19 +548,19 @@
                               ] ;
         structure:hasSpecies  [ a                          structure:species ;
                                 structure:hasElement       [ a               CHEBI-atom: ;
-                                                             CHEBI-formula:  "Cs"
+                                                             CHEBI-formula:  "Cl"
                                                            ] ;
                                 structure:hasElementRatio  1
                               ] .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_band_gap>
-        a                        core:CalculatedProperty ;
-        prov:wasAttributedTo     <https://w3id.org/mdo/data/1.0/mp-989543_reference> ;
-        core:hasPropertyName     "band_gap" ;
-        core:hasQuantityValue    [ a                  QUDT:QuantityValue ;
+        a                        QUDT:Quantity , core:CalculatedProperty ;
+        QUDT:quantityValue       [ a                  QUDT:QuantityValue ;
                                    QUDT:numericValue  1.0050999999999999e0 ;
                                    QUDT:unit          QUDT-Unit:EV
                                  ] ;
+        prov:wasAttributedTo     <https://w3id.org/mdo/data/1.0/mp-989543_reference> ;
+        core:hasPropertyName     "band_gap" ;
         core:relatedToStructure  <https://w3id.org/mdo/data/1.0/mp-989543_output_structure> .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_reference>
@@ -564,11 +588,11 @@
                 "Cs2Br1Cl6F1" .
 
 <https://w3id.org/mdo/data/1.0/mp-989543_final_energy>
-        a                        core:CalculatedProperty ;
-        prov:wasAttributedTo     <https://w3id.org/mdo/data/1.0/mp-989543_reference> ;
-        core:hasPropertyName     "final_energy" ;
-        core:hasQuantityValue    [ a                  QUDT:QuantityValue ;
+        a                        QUDT:Quantity , core:CalculatedProperty ;
+        QUDT:quantityValue       [ a                  QUDT:QuantityValue ;
                                    QUDT:numericValue  -24.30311197e0 ;
                                    QUDT:unit          QUDT-Unit:EV
                                  ] ;
+        prov:wasAttributedTo     <https://w3id.org/mdo/data/1.0/mp-989543_reference> ;
+        core:hasPropertyName     "final_energy" ;
         core:relatedToStructure  <https://w3id.org/mdo/data/1.0/mp-989543_output_structure> .

@@ -49,9 +49,27 @@ GENERATE {
 	  		structure:hasLengthTriple ?NODE_inputlattice_lengthtriple
 	  		GENERATE{
 	  			?NODE_inputlattice_axisvector a structure:AxisVectors;
-	  			structure:hasX_axisVector ?input_lattice_x_axisvector;
-	  			structure:hasY_axisVector ?input_lattice_y_axisvector;
-	  			structure:hasZ_axisVector ?input_lattice_z_axisvector
+	  			structure:has_a_axisVector ?NODE_input_a_axis_coordinateVector;
+	  			structure:has_b_axisVector ?NODE_input_b_axis_coordinateVector;
+	  			structure:has_c_axisVector ?NODE_input_c_axis_coordinateVector;
+	  			GENERATE{
+	  				?NODE_input_a_axis_coordinateVector a structure:CoordinateVector;
+	  				structure:hasX_axisCoordinate ?input_lattice_a_x_coordinate;
+	  				structure:hasY_axisCoordinate ?input_lattice_a_y_coordinate;
+	  				structure:hasZ_axisCoordinate ?input_lattice_a_z_coordinate;
+	  				}.
+	  			GENERATE{
+	  				?NODE_input_b_axis_coordinateVector a structure:CoordinateVector;
+	  				structure:hasX_axisCoordinate ?input_lattice_b_x_coordinate;
+	  				structure:hasY_axisCoordinate ?input_lattice_b_y_coordinate;
+	  				structure:hasZ_axisCoordinate ?input_lattice_b_z_coordinate;
+	  				}.
+	  			GENERATE{
+	  				?NODE_input_c_axis_coordinateVector a structure:CoordinateVector;
+	  				structure:hasX_axisCoordinate ?input_lattice_c_x_coordinate;
+	  				structure:hasY_axisCoordinate ?input_lattice_c_y_coordinate;
+	  				structure:hasZ_axisCoordinate ?input_lattice_c_z_coordinate;
+	  				}.
 	  		} .
 	  		GENERATE{
 	  			?NODE_inputlattice_angletriple a structure:AngleTriple;
@@ -138,22 +156,25 @@ GENERATE {
 	  	}.
 	GENERATE{
 		?NODE_band_gap a core:CalculatedProperty;
+		a QUDT:Quantity;
 		core:hasPropertyName "band_gap";
 		prov:wasAttributedTo ?reference;
 		core:relatedToStructure ?output_structure ;
-		core:hasQuantityValue ?NODE_band_gap_quantity_value
+		QUDT:quantityValue ?NODE_band_gap_quantity_value
+		GENERATE{
+			?NODE_band_gap_quantity_value a QUDT:QuantityValue;
+			QUDT:unit QUDT-Unit:EV;
+			QUDT:numericValue ?band_gap
 		}.
-	GENERATE{
-		?NODE_band_gap_quantity_value a QUDT:QuantityValue;
-		QUDT:unit QUDT-Unit:EV;
-		QUDT:numericValue ?band_gap
-		}.
+	}.
+	
 	GENERATE{
 		?NODE_final_energy a core:CalculatedProperty;
+		a QUDT:Quantity;
 		core:hasPropertyName "final_energy";
 		prov:wasAttributedTo ?reference;
 		core:relatedToStructure ?output_structure;
-		core:hasQuantityValue ?NODE_final_energy_quantity_value
+		QUDT:quantityValue ?NODE_final_energy_quantity_value
 		}.
 	GENERATE{
 		?NODE_final_energy_quantity_value a QUDT:QuantityValue;
@@ -162,10 +183,11 @@ GENERATE {
 		}.
 	GENERATE{
 		?NODE_final_energy_per_atom a core:CalculatedProperty;
+		a QUDT:Quantity;
 		core:hasPropertyName "final_energy_per_atom";
 		prov:wasAttributedTo ?reference;
 		core:relatedToStructure ?output_structure;
-		core:hasQuantityValue ?NODE_final_energy_per_atom_quantity_value
+		QUDT:quantityValue ?NODE_final_energy_per_atom_quantity_value
 		}.
 	GENERATE{
 		?NODE_final_energy_per_atom_quantity_value a QUDT:QuantityValue;
@@ -174,10 +196,11 @@ GENERATE {
 		}.
 	GENERATE{
 		?NODE_formation_energy_per_atom a core:CalculatedProperty;
+		a QUDT:Quantity;
 		core:hasPropertyName "formation_energy_per_atom";
 		prov:wasAttributedTo ?reference;
 		core:relatedToStructure ?output_structure;
-		core:hasQuantityValue ?NODE_formation_energy_per_atom_quantity_value
+		QUDT:quantityValue ?NODE_formation_energy_per_atom_quantity_value
 		}.
 	GENERATE{
 		?NODE_formation_energy_per_atom_quantity_value a QUDT:QuantityValue;
@@ -186,10 +209,11 @@ GENERATE {
 		}.
 	GENERATE{
 		?NODE_density a core:CalculatedProperty;
+		a QUDT:Quantity;
 		core:hasPropertyName "density";
 		prov:wasAttributedTo ?reference;
 		core:relatedToStructure ?output_structure;
-		core:hasQuantityValue ?NODE_density_quantity_value
+		QUDT:quantityValue ?NODE_density_quantity_value
 		}.
 	GENERATE{
 		?NODE_density_quantity_value a QUDT:QuantityValue;
@@ -232,9 +256,27 @@ GENERATE {
 	  		structure:hasLengthTriple ?NODE_outputlattice_lengthTriple;
 	  		GENERATE{
 	  			?NODE_outputlattice_axisvector a structure:AxisVectors;
-	  			structure:hasX_axisVector ?output_lattice_x_axisvector;
-	  			structure:hasY_axisVector ?output_lattice_y_axisvector;
-	  			structure:hasZ_axisVector ?output_lattice_z_axisvector
+	  			structure:has_a_axisVector ?NODE_output_a_axis_coordinateVector;
+	  			structure:has_b_axisVector ?NODE_output_b_axis_coordinateVector;
+	  			structure:has_c_axisVector ?NODE_output_c_axis_coordinateVector;
+	  			GENERATE{
+	  				?NODE_output_a_axis_coordinateVector a structure:CoordinateVector;
+	  				structure:hasX_axisCoordinate ?output_lattice_a_x_coordinate;
+	  				structure:hasY_axisCoordinate ?output_lattice_a_y_coordinate;
+	  				structure:hasZ_axisCoordinate ?output_lattice_a_z_coordinate;
+	  				}.
+	  			GENERATE{
+	  				?NODE_output_b_axis_coordinateVector a structure:CoordinateVector;
+	  				structure:hasX_axisCoordinate ?output_lattice_b_x_coordinate;
+	  				structure:hasY_axisCoordinate ?output_lattice_b_y_coordinate;
+	  				structure:hasZ_axisCoordinate ?output_lattice_b_z_coordinate;
+	  				}.
+	  			GENERATE{
+	  				?NODE_output_c_axis_coordinateVector a structure:CoordinateVector;
+	  				structure:hasX_axisCoordinate ?output_lattice_c_x_coordinate;
+	  				structure:hasY_axisCoordinate ?output_lattice_c_y_coordinate;
+	  				structure:hasZ_axisCoordinate ?output_lattice_c_z_coordinate;
+	  				}.
 	  		} .
 	  		GENERATE{
 	  			?NODE_outputlattice_angletriple a structure:AngleTriple;
@@ -346,9 +388,15 @@ WHERE {
   BIND(<{?TASK_ID}_input_lattice_axisvector>  AS ?NODE_inputlattice_axisvector)
   BIND(<{?TASK_ID}_input_lattice_angletriple> AS ?NODE_inputlattice_angletriple)
   BIND(<{?TASK_ID}_input_lattice_lengthtriple> AS ?NODE_inputlattice_lengthtriple)
-  BIND(fun:JSONPath(?input_lattice, "$.matrix[0]") AS ?input_lattice_x_axisvector)
-  BIND(fun:JSONPath(?input_lattice, "$.matrix[1]") AS ?input_lattice_y_axisvector)
-  BIND(fun:JSONPath(?input_lattice, "$.matrix[2]") AS ?input_lattice_z_axisvector)
+  BIND(fun:JSONPath(?input_lattice, "$.matrix[0][0]") AS ?input_lattice_a_x_coordinate)
+  BIND(fun:JSONPath(?input_lattice, "$.matrix[0][1]") AS ?input_lattice_a_y_coordinate)
+  BIND(fun:JSONPath(?input_lattice, "$.matrix[0][2]") AS ?input_lattice_a_z_coordinate)
+  BIND(fun:JSONPath(?input_lattice, "$.matrix[1][0]") AS ?input_lattice_b_x_coordinate)
+  BIND(fun:JSONPath(?input_lattice, "$.matrix[1][1]") AS ?input_lattice_b_y_coordinate)
+  BIND(fun:JSONPath(?input_lattice, "$.matrix[1][2]") AS ?input_lattice_b_z_coordinate)
+  BIND(fun:JSONPath(?input_lattice, "$.matrix[2][0]") AS ?input_lattice_c_x_coordinate)
+  BIND(fun:JSONPath(?input_lattice, "$.matrix[2][1]") AS ?input_lattice_c_y_coordinate)
+  BIND(fun:JSONPath(?input_lattice, "$.matrix[2][2]") AS ?input_lattice_c_z_coordinate)
   BIND(fun:JSONPath(?input_lattice, "$.a") AS ?input_lattice_length_A)
   BIND(fun:JSONPath(?input_lattice, "$.b") AS ?input_lattice_length_B)
   BIND(fun:JSONPath(?input_lattice, "$.c") AS ?input_lattice_length_C)
@@ -362,10 +410,15 @@ WHERE {
   BIND(<{?TASK_ID}_output_lattice_axisvector> AS ?NODE_outputlattice_axisvector)
   BIND(<{?TASK_ID}_output_lattice_angletriple> AS ?NODE_outputlattice_angletriple)
   BIND(<{?TASK_ID}_output_lattice_lengthtriple> AS ?NODE_outputlattice_lengthtriple)
-  BIND(fun:JSONPath(?output_lattice, "$.matrix") AS ?output_matrix)
-  BIND(fun:JSONPath(?output_lattice, "$.matrix[0]") AS ?output_lattice_x_axisvector)
-  BIND(fun:JSONPath(?output_lattice, "$.matrix[1]") AS ?output_lattice_y_axisvector)
-  BIND(fun:JSONPath(?output_lattice, "$.matrix[2]") AS ?output_lattice_z_axisvector)
+  BIND(fun:JSONPath(?output_lattice, "$.matrix[0][0]") AS ?output_lattice_a_x_coordinate)
+  BIND(fun:JSONPath(?output_lattice, "$.matrix[0][1]") AS ?output_lattice_a_y_coordinate)
+  BIND(fun:JSONPath(?output_lattice, "$.matrix[0][2]") AS ?output_lattice_a_z_coordinate)
+  BIND(fun:JSONPath(?output_lattice, "$.matrix[1][0]") AS ?output_lattice_b_x_coordinate)
+  BIND(fun:JSONPath(?output_lattice, "$.matrix[1][1]") AS ?output_lattice_b_y_coordinate)
+  BIND(fun:JSONPath(?output_lattice, "$.matrix[1][2]") AS ?output_lattice_b_z_coordinate)
+  BIND(fun:JSONPath(?output_lattice, "$.matrix[2][0]") AS ?output_lattice_c_x_coordinate)
+  BIND(fun:JSONPath(?output_lattice, "$.matrix[2][1]") AS ?output_lattice_c_y_coordinate)
+  BIND(fun:JSONPath(?output_lattice, "$.matrix[2][2]") AS ?output_lattice_c_z_coordinate)
   BIND(fun:JSONPath(?output_lattice, "$.a") AS ?output_lattice_length_A)
   BIND(fun:JSONPath(?output_lattice, "$.b") AS ?output_lattice_length_B)
   BIND(fun:JSONPath(?output_lattice, "$.c") AS ?output_lattice_length_C)
@@ -381,5 +434,11 @@ WHERE {
   BIND(fun:JSONPath(?output_sg, "$.number") AS ?output_sg_id)
   BIND(fun:JSONPath(?output_sg, "$.point_group") AS ?output_pg_name)
   BIND(fun:JSONPath(?output_sg, "$.crystal_system") AS ?output_lattice_type)
+  BIND(BNODE() AS ?NODE_output_a_axis_coordinateVector)
+  BIND(BNODE() AS ?NODE_output_b_axis_coordinateVector)
+  BIND(BNODE() AS ?NODE_output_c_axis_coordinateVector)
+  BIND(BNODE() AS ?NODE_input_a_axis_coordinateVector)
+  BIND(BNODE() AS ?NODE_input_b_axis_coordinateVector)
+  BIND(BNODE() AS ?NODE_input_c_axis_coordinateVector)
   
 }
