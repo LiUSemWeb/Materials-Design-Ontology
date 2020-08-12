@@ -97,6 +97,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Calculation"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
         <rdfs:comment xml:lang="en">hasComputationalMethod represents the relationship between a calculation and a computational method it uses.</rdfs:comment>
+        <rdfs:label xml:lang="en">has computational method</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -106,7 +107,8 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/calculation/hasParameter">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethodParameter"/>
-        <rdfs:comment xml:lang="en">hasParameters represents the relationship between a calculation and the parameters it has.</rdfs:comment>
+        <rdfs:comment xml:lang="en">hasParameter represents the relationship between a calculation and the parameters it has.</rdfs:comment>
+        <rdfs:label xml:lang="en">has parameter</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -117,6 +119,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/DensityFunctionalTheoryMethod"/>
         <rdfs:range rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
         <rdfs:comment xml:lang="en">hasXCFunctional represents the relationship between a density functional theory method and the exchange-correlation energy functionals it takes.</rdfs:comment>
+        <rdfs:label xml:lang="en">has XC functional</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -138,6 +141,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethodParameter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">ParameterName represents that a computational method parameter has the name in a string.</rdfs:comment>
+        <rdfs:label xml:lang="en">parameter name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -147,7 +151,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/mdo/calculation/ParameterValue">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethodParameter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">ParameterName represents that a computational method parameter has the value in a string.</rdfs:comment>
+        <rdfs:comment xml:lang="en">ParameterValue represents that a computational method parameter has the value in a string.</rdfs:comment>
+        <rdfs:label xml:lang="en">parameter value</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -181,6 +186,7 @@
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A computational method is a way to process structures and/or properties into output structures and/or calculated properties.</rdfs:comment>
+        <rdfs:label xml:lang="en">Computational Method</rdfs:label>
     </owl:Class>
     
 
@@ -189,6 +195,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/ComputationalMethodParameter">
         <rdfs:comment xml:lang="en">A computational method parameter is a parameter used in a computational method.</rdfs:comment>
+        <rdfs:label xml:lang="en">Computational Method Parameter</rdfs:label>
     </owl:Class>
     
 
@@ -212,6 +219,7 @@
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A DFT method is a computational quantum mechanical modelling method used to investigate the electronic structure based on optimization of the energy over electronic densities.</rdfs:comment>
+        <rdfs:label xml:lang="en">Density Functional Theory Method</rdfs:label>
     </owl:Class>
     
 
@@ -220,6 +228,7 @@
 
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional">
         <rdfs:comment xml:lang="en">An ExchangeCorrelationEnergyFunctional is a functional to compute the exchange correlation energy.</rdfs:comment>
+        <rdfs:label xml:lang="en">Exchange Correlation Energy Functional</rdfs:label>
     </owl:Class>
     
 
@@ -229,6 +238,7 @@
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/GeneralizedGradientApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
         <rdfs:comment xml:lang="en">A GeneralizedGradientApproximation is a classification of exchange correlation energy functionals that only use the local value of the electronic density and its gradient.</rdfs:comment>
+        <rdfs:label xml:lang="en">Generalized Gradient Approximation</rdfs:label>
     </owl:Class>
     
 
@@ -238,6 +248,7 @@
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/HartreeFockMethod">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ComputationalMethod"/>
         <rdfs:comment xml:lang="en">A Hartree Fock method is a computational quantum mechanical modelling method used to investigate the electronic structure based on variational search over wave functions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hartree Fock Method</rdfs:label>
     </owl:Class>
     
 
@@ -247,6 +258,7 @@
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/HybridFunctional">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
         <rdfs:comment xml:lang="en">A hybrid functional is a classification of exchange correlation energy functionals that combine exact exchange from HartreeFock theory with another exchange correlation energy approximation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hybrid Functional</rdfs:label>
     </owl:Class>
     
 
@@ -256,6 +268,7 @@
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/HybridGeneralizedGradientApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/HybridFunctional"/>
         <rdfs:comment xml:lang="en">A hybrid generalized gradient approximation is a classification of exchange correlation energy functionals that combine exact exchange from Hartree–Fock theory with generalized gradient approximation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hybrid Generalized Gradient Approximation</rdfs:label>
     </owl:Class>
     
 
@@ -265,6 +278,7 @@
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/HybridmetaGeneralizedGradientApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/HybridFunctional"/>
         <rdfs:comment xml:lang="en">A hybrid meta generalized gradient approximation is a classification of exchange correlation energy functionals that combine exact exchange from Hartree–Fock theory with meta generalized gradient approximation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hybrid meta Generalized Gradient Approximation</rdfs:label>
     </owl:Class>
     
 
@@ -274,6 +288,7 @@
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/LocalDensityApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
         <rdfs:comment xml:lang="en">An LDA is a classification of exchange correlation energy functionals that only use the local value of the electronic density.</rdfs:comment>
+        <rdfs:label xml:lang="en">Local Density Approximation</rdfs:label>
     </owl:Class>
     
 
@@ -283,6 +298,7 @@
     <owl:Class rdf:about="https://w3id.org/mdo/calculation/metaGeneralizedGradientApproximation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/calculation/ExchangeCorrelationEnergyFunctional"/>
         <rdfs:comment xml:lang="en">A metaGeneralizedGradientApproximation is a classification of exchange correlation energy functionals that only use the local value of the electronic density and its gradient and the Kohn–Sham orbital kinetic energy density.</rdfs:comment>
+        <rdfs:label xml:lang="en">meta Generalized Gradient Approximation</rdfs:label>
     </owl:Class>
     
 
