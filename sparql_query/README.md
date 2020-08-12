@@ -94,7 +94,7 @@ SELECT ?formula ?value WHERE {
   ?calculation rdf:type core:Calculation;
    	       core:hasOutputCalculatedProperty ?property;
    	       core:hasOutputStructure ?output_structure.
-  ?property core:hasQuantityValue ?quantity_value;
+  ?property qudt:quantityValue ?quantity_value;
    	        core:hasPropertyName ?name.
   ?quantity_value rdf:type qudt:QuantityValue;
                   qudt:numericValue ?value.
