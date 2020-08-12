@@ -221,7 +221,9 @@
 
     <!-- http://qudt.org/schema/qudt/numericalValue -->
 
-    <owl:DatatypeProperty rdf:about="http://qudt.org/schema/qudt/numericalValue"/>
+    <owl:DatatypeProperty rdf:about="http://qudt.org/schema/qudt/numericalValue">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
     
 
 
