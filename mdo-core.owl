@@ -12,7 +12,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:qudt-unit="http://qudt.org/vocab/unit/">
     <owl:Ontology rdf:about="https://w3id.org/mdo/core/">
-        <owl:versionIRI rdf:resource="https://w3id.org/mdo/core/1.0"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/mdo/core/1.0/"/>
         <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patrick Lambrix</dcterms:contributor>
         <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rickard Armiento</dcterms:contributor>
         <dcterms:created>2019-11-07</dcterms:created>
@@ -20,7 +20,7 @@
         <dcterms:license>https://github.com/huanyu-li/Materials-Design-Ontology/blob/master/LICENSE</dcterms:license>
         <dcterms:title xml:lang="en">Materials Design Ontology - Core Module</dcterms:title>
         <vann:preferredNamespacePrefix>core</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri>https://w3id.org/mdo/core/1.0</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri>https://w3id.org/mdo/core/1.0/</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the core module in Materials Design Ontology.</rdfs:comment>
         <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>

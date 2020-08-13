@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://w3id.org/mdo/calculation/1.0/" uri="mdo-calculation.owl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/mdo/provenance/1.0/" uri="mdo-provenance.owl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/mdo/structure/1.0/" uri="mdo-structure.owl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/mdo/core/1.0/" uri="mdo-core.owl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/mdo/core/1.0" uri="https://w3id.org/mdo/core"/>
     <uri id="Imports Wizard Entry" name="https://w3id.org/mdo/provenance/1.0" uri="./mdo-provenance.owl"/>
     <uri id="Imports Wizard Entry" name="https://w3id.org/mdo/calculation/1.0" uri="./mdo-calculation.owl"/>
     <uri id="Imports Wizard Entry" name="https://w3id.org/mdo/structure/1.0" uri="./mdo-structure.owl"/>
