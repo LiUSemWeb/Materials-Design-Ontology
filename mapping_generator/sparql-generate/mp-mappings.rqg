@@ -156,7 +156,6 @@ GENERATE {
 	  	}.
 	GENERATE{
 		?NODE_band_gap a core:CalculatedProperty;
-		a QUDT:Quantity;
 		core:hasPropertyName "band_gap";
 		prov:wasAttributedTo ?reference;
 		core:relatedToStructure ?output_structure ;
@@ -170,7 +169,6 @@ GENERATE {
 	
 	GENERATE{
 		?NODE_final_energy a core:CalculatedProperty;
-		a QUDT:Quantity;
 		core:hasPropertyName "final_energy";
 		prov:wasAttributedTo ?reference;
 		core:relatedToStructure ?output_structure;
@@ -183,7 +181,6 @@ GENERATE {
 		}.
 	GENERATE{
 		?NODE_final_energy_per_atom a core:CalculatedProperty;
-		a QUDT:Quantity;
 		core:hasPropertyName "final_energy_per_atom";
 		prov:wasAttributedTo ?reference;
 		core:relatedToStructure ?output_structure;
@@ -196,7 +193,6 @@ GENERATE {
 		}.
 	GENERATE{
 		?NODE_formation_energy_per_atom a core:CalculatedProperty;
-		a QUDT:Quantity;
 		core:hasPropertyName "formation_energy_per_atom";
 		prov:wasAttributedTo ?reference;
 		core:relatedToStructure ?output_structure;
@@ -209,7 +205,6 @@ GENERATE {
 		}.
 	GENERATE{
 		?NODE_density a core:CalculatedProperty;
-		a QUDT:Quantity;
 		core:hasPropertyName "density";
 		prov:wasAttributedTo ?reference;
 		core:relatedToStructure ?output_structure;
