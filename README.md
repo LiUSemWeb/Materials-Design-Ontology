@@ -26,8 +26,8 @@ Materials Design Ontology consists of 4 modules which are:
 ### MDO Instantiation 
 ![entities](https://huanyu-li.github.io/figures/mdo/instances-output.png "MDO instantiation")
 
-### A Preprint of the Paper 
-Li H, Armiento R, Lambrix P, "An Ontology for the Materials Design Domain", [arXiv:2006.07712](https://arxiv.org/abs/2006.07712) (accepted at ISWC 2020)
+### Publication 
+Li H, Armiento R, Lambrix P, "An Ontology for the Materials Design Domain", [published version](https://link.springer.com/chapter/10.1007/978-3-030-62466-8_14) (accepted at ISWC 2020)
 
 ### Contact
 
