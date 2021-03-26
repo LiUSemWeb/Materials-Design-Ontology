@@ -29,6 +29,11 @@ Materials Design Ontology consists of 4 modules which are:
 ### Publication 
 Li H, Armiento R, Lambrix P, "An Ontology for the Materials Design Domain", [published version](https://link.springer.com/chapter/10.1007/978-3-030-62466-8_14) (accepted at ISWC 2020)
 
+### Talk
+* [Poster](https://huanyu-li.github.io/posters/mdo-poster-paper276.pdf)
+* [Presentation of the poster](https://www.youtube.com/watch?v=ObgKOwwlzbU)
+* [Presentation at ISWC 2020](https://www.ida.liu.se/~patla00/talks/ISWC2020presentation720.mp4)
+
 ### Contact
 
 * [Huanyu Li](https://www.ida.liu.se/~huali50/)
