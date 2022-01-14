@@ -16,12 +16,12 @@
         <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rickard Armiento</dcterms:contributor>
         <dcterms:created>2019-11-07</dcterms:created>
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:creator>
-        <dcterms:license>https://github.com/huanyu-li/Materials-Design-Ontology/blob/master/LICENSE</dcterms:license>
+        <dcterms:license>https://github.com/LiUSemWeb/Materials-Design-Ontology/blob/master/LICENSE</dcterms:license>
         <dcterms:title xml:lang="en">Materials Design Ontology - Calculation Module</dcterms:title>
         <vann:preferredNamespacePrefix>calculation</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://w3id.org/mdo/calculation/1.0/</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the calculation module of Materials Design Ontology.</rdfs:comment>
-        <rdfs:seeAlso>https://github.com/huanyu-li/Materials-Design-Ontology</rdfs:seeAlso>
+        <rdfs:seeAlso>https://github.com/LiUSemWeb/Materials-Design-Ontology</rdfs:seeAlso>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
     </owl:Ontology>
     
