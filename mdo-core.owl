@@ -128,7 +128,7 @@
     <!-- http://qudt.org/schema/qudt/unit -->
 
     <owl:ObjectProperty rdf:about="http://qudt.org/schema/qudt/unit">
-        <rdfs:range rdf:resource="http://qudt.org/vocab/unit/Unit"/>
+        <rdfs:range rdf:resource="http://qudt.org/schema/qudt/Unit"/>
     </owl:ObjectProperty>
     
 
@@ -286,9 +286,9 @@
     
 
 
-    <!-- http://qudt.org/vocab/unit/Unit -->
+    <!-- http://qudt.org/schema/qudt/Unit -->
 
-    <owl:Class rdf:about="http://qudt.org/vocab/unit/Unit"/>
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/Unit"/>
     
 
 
@@ -405,7 +405,7 @@
     <!-- http://qudt.org/vocab/unit/EV -->
 
     <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit/EV">
-        <rdf:type rdf:resource="http://qudt.org/vocab/unit/Unit"/>
+        <rdf:type rdf:resource="http://qudt.org/schema/qudt/Unit"/>
     </owl:NamedIndividual>
     
 
@@ -413,7 +413,7 @@
     <!-- http://qudt.org/vocab/unit/GM-PER-CentiM3 -->
 
     <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit/GM-PER-CentiM3">
-        <rdf:type rdf:resource="http://qudt.org/vocab/unit/Unit"/>
+        <rdf:type rdf:resource="http://qudt.org/schema/qudt/Unit"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
