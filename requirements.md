@@ -5,7 +5,7 @@
 * [UC1] MDO will be used for representing knowledge in basic materials sciencesuch as solid-state physics and condensed matter theory.
 * [UC2] MDO will be used for representing materials calculation and standardizing the publication of the materials calculation data.
 * [UC3] MDO will be used as a standard to improve the interoperability among heterogeneous databases in the materials design domain.
-* [UC4] MDO will be mapped to OPTIMADE’s schema to improve OPTI-MADE’s search functionality.
+* [UC4] MDO will be mapped to OPTIMADE’s schema to improve OPTIMADE’s search functionality.
 
 ## Competency Questions
 
