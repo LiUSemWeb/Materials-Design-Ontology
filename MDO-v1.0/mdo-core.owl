@@ -12,18 +12,18 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:qudt-unit="http://qudt.org/vocab/unit/">
     <owl:Ontology rdf:about="https://w3id.org/mdo/core/">
-        <owl:versionIRI rdf:resource="https://w3id.org/mdo/core/1.1/"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/mdo/core/1.0/"/>
         <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patrick Lambrix</dcterms:contributor>
         <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rickard Armiento</dcterms:contributor>
-        <dcterms:created>2022-08-02</dcterms:created>
+        <dcterms:created>2019-11-07</dcterms:created>
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huanyu Li</dcterms:creator>
         <dcterms:license>https://github.com/LiUSemWeb/Materials-Design-Ontology/blob/master/LICENSE</dcterms:license>
         <dcterms:title xml:lang="en">Materials Design Ontology - Core Module</dcterms:title>
         <vann:preferredNamespacePrefix>core</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/mdo/core/1.1/</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri>https://w3id.org/mdo/core/1.0/</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the core module in Materials Design Ontology.</rdfs:comment>
         <rdfs:seeAlso>https://github.com/LiUSemWeb/Materials-Design-Ontology</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.1</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -190,7 +190,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/mdo/core/relatesToMaterial">
         <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Structure"/>
-        <rdfs:range rdf:resource="https://w3id.org/mdo/core/Material"/>
+        <rdfs:range rdf:resource="http://emmo.info/domains/emmo-material.owl#EMMO_4207e895_8b83_4318_996a_72cfb32acd94"/>
         <rdfs:comment xml:lang="en">relatesToMaterial represents the relationship between a structure and the materials it comes from.</rdfs:comment>
         <rdfs:label xml:lang="en">relates to material</rdfs:label>
     </owl:ObjectProperty>
@@ -257,6 +257,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://emmo.info/domains/emmo-material.owl#EMMO_4207e895_8b83_4318_996a_72cfb32acd94 -->
+
+    <owl:Class rdf:about="http://emmo.info/domains/emmo-material.owl#EMMO_4207e895_8b83_4318_996a_72cfb32acd94">
+        <rdfs:label xml:lang="en">Material</rdfs:label>
+    </owl:Class>
     
 
 
@@ -340,21 +348,11 @@
     
 
 
-    <!-- https://w3id.org/mdo/core/Material -->
-
-    <owl:Class rdf:about="https://w3id.org/mdo/core/Material">
-        <rdfs:label xml:lang="en">Material</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/mdo/core/PhysicalProperty -->
 
     <owl:Class rdf:about="https://w3id.org/mdo/core/PhysicalProperty">
         <rdfs:subClassOf rdf:resource="https://w3id.org/mdo/core/Property"/>
-        <rdfs:comment xml:lang="en">A physical property is an objective property over a physical system (i.e., something that at least in principle can be measured in an experiment). Note that PhysicalProperty does not represent the outcome of such a measurement, only the abstract notion of the property. 
-For example, let OpticalBandGap be a sub-concept of PhysicalProperty to represent the physically measurable threshold for photons absorbed by a 
-material. Next, consider a calculation based on the DensityFunctionalTheoryMethod in the Calculation module using the  HybridGeneralizedGradientApproximation Heyd-Scuseria-Ernzerhof (HSE). To represent the outcome of this calculation, HSEKohn-ShamBandGap can be introduced as a sub-concept of CalculatedProperty. This concept arguably  is an approximation of OpticalBandGap (but they are not equivalent concepts)</rdfs:comment>
+        <rdfs:comment xml:lang="en">A physical property is an objective property over a physical system. (ie, a property pertains to the physical reality)</rdfs:comment>
         <rdfs:label xml:lang="en">Physical Property</rdfs:label>
     </owl:Class>
     
@@ -364,7 +362,7 @@ material. Next, consider a calculation based on the DensityFunctionalTheoryMetho
 
     <owl:Class rdf:about="https://w3id.org/mdo/core/Property">
         <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/Quantity"/>
-        <rdfs:comment xml:lang="en">A property in materials design is data pertaining to at least one material or materials system, representing a quantifiable aspect of one material or materials system. It is specialized into the disjoint concepts CalculatedProperty and PhysicalProperty</rdfs:comment>
+        <rdfs:comment xml:lang="en">A property in materials design is data pertaining to at least one material or materials system.</rdfs:comment>
         <rdfs:label xml:lang="en">Property</rdfs:label>
     </owl:Class>
     
@@ -378,11 +376,11 @@ material. Next, consider a calculation based on the DensityFunctionalTheoryMetho
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://w3id.org/mdo/core/relatesToMaterial"/>
-                        <owl:someValuesFrom rdf:resource="https://w3id.org/mdo/core/Material"/>
+                        <owl:someValuesFrom rdf:resource="http://emmo.info/domains/emmo-material.owl#EMMO_4207e895_8b83_4318_996a_72cfb32acd94"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="https://w3id.org/mdo/core/relatesToMaterial"/>
-                        <owl:allValuesFrom rdf:resource="https://w3id.org/mdo/core/Material"/>
+                        <owl:allValuesFrom rdf:resource="http://emmo.info/domains/emmo-material.owl#EMMO_4207e895_8b83_4318_996a_72cfb32acd94"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>

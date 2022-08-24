@@ -10,8 +10,8 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/mdo/calculation/">
-        <owl:versionIRI rdf:resource="https://w3id.org/mdo/calculation/1.1/"/>
-        <owl:imports rdf:resource="https://w3id.org/mdo/core/1.1/"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/mdo/calculation/1.0/"/>
+        <owl:imports rdf:resource="https://w3id.org/mdo/core/1.0/"/>
         <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patrick Lambrix</dcterms:contributor>
         <dcterms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rickard Armiento</dcterms:contributor>
         <dcterms:created>2019-11-07</dcterms:created>
@@ -19,10 +19,10 @@
         <dcterms:license>https://github.com/LiUSemWeb/Materials-Design-Ontology/blob/master/LICENSE</dcterms:license>
         <dcterms:title xml:lang="en">Materials Design Ontology - Calculation Module</dcterms:title>
         <vann:preferredNamespacePrefix>calculation</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/mdo/calculation/1.1/</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri>https://w3id.org/mdo/calculation/1.0/</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the calculation module of Materials Design Ontology.</rdfs:comment>
         <rdfs:seeAlso>https://github.com/LiUSemWeb/Materials-Design-Ontology</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.1</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
     </owl:Ontology>
     
 

@@ -12,10 +12,11 @@
      xmlns:provenance="https://w3id.org/mdo/provenance/"
      xmlns:calculation="https://w3id.org/mdo/calculation/">
     <owl:Ontology rdf:about="https://w3id.org/mdo/full/">
-        <owl:versionIRI rdf:resource="https://w3id.org/mdo/full/1.1/"/>
-        <owl:imports rdf:resource="https://w3id.org/mdo/calculation/1.1/"/>
-        <owl:imports rdf:resource="https://w3id.org/mdo/provenance/1.1/"/>
-        <owl:imports rdf:resource="https://w3id.org/mdo/structure/1.1/"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/mdo/full/1.0/"/>
+        <owl:imports rdf:resource="https://w3id.org/mdo/calculation/1.0/"/>
+        <owl:imports rdf:resource="https://w3id.org/mdo/core/1.0/"/>
+        <owl:imports rdf:resource="https://w3id.org/mdo/provenance/1.0/"/>
+        <owl:imports rdf:resource="https://w3id.org/mdo/structure/1.0/"/>
         <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patrick Lambrix</terms:contributor>
         <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rickard Armiento</terms:contributor>
         <terms:created>2019-11-07</terms:created>
@@ -26,7 +27,7 @@
         <vann:preferredNamespaceUri>https://w3id.org/mdo/full/1.0/</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the Materials Design Ontology.</rdfs:comment>
         <rdfs:seeAlso>https://github.com/LiUSemWeb/Materials-Design-Ontology</rdfs:seeAlso>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.1</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
     </owl:Ontology>
     
 

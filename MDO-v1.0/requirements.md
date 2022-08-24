@@ -21,7 +21,8 @@
 * [CQ10] What is the value for a specific parameter (e.g., cutoff energy) of the method used for the calculation?
 * [CQ11] Which software produced the result of a calculation?
 * [CQ12] Who are the authors of the calculation?
-* [CQ13] When was the calculation data published to the database?
+* [CQ13] Which software or code does the calculation run with?
+* [CQ14] When was the calculation data published to the database?
 
 
 ## Additional Restrictions
@@ -31,6 +32,7 @@
 * [AR3] A structure corresponds to one specific space group.
 * [AR4] A calculation is performed by some software programs or codes.
 * [AR5] A structure is a part of some materials.
-* [AR6] A structure and a property can be published by references which could be databases or publications.
-* [AR7] A calculation can take some structures as input.
-* [AR8] A calculation can take some properties as input.
+* [AR6] A calculation is achieved by a specific computational method.
+* [AR7] A structure and a property can be published by references which could be databases or publications.
+* [AR8] A calculation can take some structures as input.
+* [AR9] A calculation can take some properties as input.
