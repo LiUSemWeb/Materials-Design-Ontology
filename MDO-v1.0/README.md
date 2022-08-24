@@ -1,252 +1,41 @@
-### SPARQL Query examples to answer Competency Questions
+### Materials Design Ontology (MDO-v1.0)
 
-[SPARQL Documentation](https://www.w3.org/TR/rdf-sparql-query/).
+MDO is an ontology for materials design field, representing the domain knowledge specifically related to solid-state physics and computational materials science.
 
-CQ1:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
+### What does Materials Design Ontology consist of?
 
-SELECT ?calculation ?Property ?value WHERE {
-  ?calculation rdf:type core:Calculation;
-   	       core:hasOutputCalculatedProperty ?Property;
-   	       core:hasOutputStructure ?OutputStructure.
-  ?Property core:hasPropertyValue ?value.
-} 
-```
+Materials Design Ontology consists of 4 modules which are:
 
-CQ2:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
+* [Core](https://w3id.org/mdo/core/1.0): This module consists of the top-level concepts and relationships of the materials design ontology, which are also reused in other modules.
 
-SELECT ?calculation ?input_structure ?output_structure WHERE {
-  ?calculation rdf:type core:Calculation;
-   	       core:hasInputStructure ?input_structure;
-   	       core:hasOutputStructure ?output_structure.
-} 
-```
+* [Structure](https://w3id.org/mdo/structure/1.0): The structure module is intended to represent the structural information of materials. Such structural information is also the basis of materials calculations.
 
-CQ3:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
+* [Calculation](https://w3id.org/mdo/calculation/1.0): This module is intended to represent the classification of different computational methods.
 
-SELECT ?calculation ?output_structure ?symbol WHERE {
-  ?calculation rdf:type core:Calculation;
-   	       core:hasOutputStructure ?output_structure.
-  ?output_structure rdf:type core:Structure;
-                    structure:hasSpaceGroup ?spacegroup.
-  ?spacegroup rdf:type structure:SpaceGroup;
-           structure:hasSpaceGroupSymbol ?symbol.
-} 
+* [Provenance](https://w3id.org/mdo/provenance/1.0): This module is intended to represent the provenance information of materials data and calculation.
 
-```
+* A full MDO importing all the above modules is avaliable at [MDO Full](https://w3id.org/mdo/full/1.0).
 
-CQ4:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
-
-SELECT ?calculation ?output_structure ?type WHERE {
-  ?calculation rdf:type core:Calculation;
-   	       core:hasOutputStructure ?output_structure.
-  ?output_structure rdf:type core:Structure;
-                    structure:hasLattice ?lattice.
-  ?lattice rdf:type structure:Lattice;
-           structure:hasLatticeType ?type.
-} 
-
-```
-
-CQ5:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
-
-SELECT ?calculation ?OutputStructure ?descriptiveformula WHERE {
-  ?calculation rdf:type core:Calculation;
-   	       core:hasOutputStructure ?OutputStructure.
-  ?OutputStructure structure:hasComposition ?Composition.
-  ?Composition structure:hasDescriptiveFormula 
-               ?descriptiveformula.
-} 
-```
-
-CQ6:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX qudt: <http://qudt.org/schema/qudt/>
-
-SELECT ?formula ?value WHERE {
-  ?calculation rdf:type core:Calculation;
-   	       core:hasOutputCalculatedProperty ?property;
-   	       core:hasOutputStructure ?output_structure.
-  ?property qudt:quantityValue ?quantity_value;
-   	        core:hasPropertyName ?name.
-  ?quantity_value rdf:type qudt:QuantityValue;
-                  qudt:numericValue ?value.
-  ?output_structure structure:hasComposition ?composition.
-  ?composition structure:hasDescriptiveFormula ?formula.
-  FILTER (?value>5 && ?name="band_gap")
-} 
-```
-
-CQ7:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
-
-SELECT ?OutputStructure ?value ?type WHERE {
-  ?calculation rdf:type core:Calculation;
-   	       core:hasOutputCalculatedProperty ?Property;
-   	       core:hasOutputStructure ?OutputStructure.
-  ?Property core:hasPropertyValue ?value;
-   	    core:hasPropertyName ?name.
-  ?OutputStructure structure:hasLattice ?lattice.
-  ?lattice structure:hasLatticeType 
-               ?type.
-  FILTER (?value>5 && ?name="band_gap")
-} 
-```
-
-CQ8:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
-
-SELECT ?OutputStructure ?value ?type WHERE {
-  ?calculation rdf:type core:Calculation;
-   	       core:hasOutputCalculatedProperty ?Property;
-   	       core:hasOutputStructure ?OutputStructure.
-  ?Property core:hasPropertyValue ?value;
-   	    core:hasPropertyName ?name.
-  ?OutputStructure structure:hasLattice ?lattice.
-  ?lattice structure:hasLatticeType 
-               ?type.
-  FILTER (?name="band_gap" && ?type="cubic")
-} 
-```
-
-CQ9:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
-PREFIX provenance: <https://w3id.org/mdo/provenance/>
+### MDO Concepts and Relationships
+![entities](../figures/MDO.png "MDO concepts and relationships")
 
 
-SELECT ?calculation ?method WHERE {
-	?calculation rdf:type core:Calculation;
-	calculation:hascomputationalMethod ?method .
-}
-```
+### MDO Vision
+![entities](../figures/new-vision.png "MDO vision")
 
-CQ10:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
-PREFIX provenance: <https://w3id.org/mdo/provenance/>
+### MDO Instantiation 
+![entities](../figures/instances-output.png "MDO instantiation")
 
+### Publication 
+Li H, Armiento R, Lambrix P, "An Ontology for the Materials Design Domain", [published version](https://link.springer.com/chapter/10.1007/978-3-030-62466-8_14) (accepted at ISWC 2020)
 
-SELECT ?calculation ?method ?name ?value WHERE {
-	?calculation rdf:type core:Calculation;
-                 calculation:hascomputationalMethod ?method .
-  	?method calculation:hasParameter ?parameter;
-            calculation:hasParameterValue ?value;
-            calculation:hasParameterName ?name .
-  FILTER (?name="cutoff_energy")
-            
-}
-```
+### Talk based on MDO-v1.0
+* [Poster](https://huanyu-li.github.io/posters/mdo-poster-paper276.pdf)
+* [Presentation of the poster](https://www.youtube.com/watch?v=ObgKOwwlzbU)
+* [Presentation at ISWC 2020](https://www.ida.liu.se/~patla00/talks/ISWC2020presentation720.mp4)
 
-CQ11:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
-PREFIX provenance: <https://w3id.org/mdo/provenance/>
-PREFIX prov: <http://www.w3.org/ns/prov#>
+### Contact
 
-
-SELECT ?calculation ?software WHERE {
-	?calculation rdf:type core:Calculation;
-	prov:wasAssociatedWith ?software .
-}
-```
-
-CQ12:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
-PREFIX provenance: <https://w3id.org/mdo/provenance/>
-PREFIX prov: <http://www.w3.org/ns/prov#>
-
-
-SELECT ?calculation ?author_name WHERE {
-  ?calculation rdf:type core:Calculation ;
-               core:hasOutputStructure ?output_structure .
-  ?output_structure rdf:type core:Structure ;
-                    prov:wasAttributedTo ?reference .
-  ?reference rdf:type provenance:ReferenceAgent ;
-             provenance:hasAuthorName ?author_name .       
-}
-```
-
-CQ13:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
-PREFIX provenance: <https://w3id.org/mdo/provenance/>
-PREFIX prov: <http://www.w3.org/ns/prov#>
-
-
-SELECT ?calculation ?software WHERE {
-	?calculation rdf:type core:Calculation;
-	prov:wasAssociatedWith ?software .
-}
-```
-
-CQ14:
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX core: <https://w3id.org/mdo/core/>
-PREFIX structure: <https://w3id.org/mdo/structure/>
-PREFIX calculation: <https://w3id.org/mdo/calculation/>
-PREFIX provenance: <https://w3id.org/mdo/provenance/>
-PREFIX prov: <http://www.w3.org/ns/prov#>
-
-
-SELECT ?calculation ?date WHERE {
-  ?calculation rdf:type core:Calculation ;
-               core:hasOutputStructure ?output_structure .
-  ?output_structure rdf:type core:Structure ;
-                    prov:wasAttributedTo ?reference .
-  ?reference rdf:type provenance:ReferenceAgent ;
-             provenance:hasPublicationDateTime ?datetime .
-}
-```
+* [Huanyu Li](https://www.ida.liu.se/~huali50/)
+* [Patrick Lambrix](https://www.ida.liu.se/~patla00/)
+* [Rickard Armiento](https://rickard.armiento.se)
