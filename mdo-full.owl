@@ -23,7 +23,7 @@
         <terms:license>https://github.com/LiUSemWeb/Materials-Design-Ontology/blob/master/LICENSE</terms:license>
         <terms:title xml:lang="en">Materials Design Ontology - Full</terms:title>
         <vann:preferredNamespacePrefix>mdo</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri>https://w3id.org/mdo/full/1.0/</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri>https://w3id.org/mdo/full/1.1/</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This is the Materials Design Ontology.</rdfs:comment>
         <rdfs:seeAlso>https://github.com/LiUSemWeb/Materials-Design-Ontology</rdfs:seeAlso>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.1</owl:versionInfo>
