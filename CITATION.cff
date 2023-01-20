@@ -1,4 +1,22 @@
 cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Li"
+  given-names: "Huanyu"
+  orcid: "https://orcid.org/0000-0003-1881-3969"
+- family-names: "Hartig"
+  given-names: "Olaf"
+  orcid: "https://orcid.org/0000-0002-1741-2090"
+- family-names: "Armiento"
+  given-names: "Rickard"
+  orcid: "https://orcid.org/0000-0002-5571-0814"
+- family-names: "Lambrix"
+  given-names: "Patrick"
+  orcid: "https://orcid.org/0000-0002-9084-0470"
+title: "Ontology-Based GraphQL Server Generation for Data Access and Data Integration"
+version: 1.0.0
+date-released: 2022-12-16
+url: "https://github.com/LiUSemWeb/OBG-gen"
 preferred-citation:
   type: article
   authors:
@@ -11,12 +29,12 @@ preferred-citation:
   - family-names: "Lambrix"
   given-names: "Patrick"
   orcid: "https://orcid.org/0000-0002-9084-0470"
-  publisher: Springer
-  booktitle: "The Semantic Web - {ISWC} 2020 - 19th International Semantic Web Conference, Athens, Greece, November 2-6, 2020, Proceedings, Part {II}"
-  series: "Lecture Notes in Computer Science"
-  doi: "10.1007/978-3-030-62466-8_14"
-  start: 212
-  end: 227
-  title: "An Ontology for the Materials Design Domain"
-  volume: 12507
-  year: 2020
+  doi: "10.0000/00000"
+  journal: "Journal Title"
+  month: 9
+  start: 1 # First page number
+  end: 10 # Last page number
+  title: "My awesome research software"
+  issue: 1
+  volume: 1
+  year: 2021
