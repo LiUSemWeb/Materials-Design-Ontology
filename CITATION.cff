@@ -13,7 +13,7 @@ authors:
 title: "Materials Design Ontology"
 url: "https://github.com/LiUSemWeb/Materials-Design-Ontology"
 preferred-citation:
-  type: article
+  type: proceedings
   authors:
   - family-names: "Li"
     given-names: "Huanyu"
@@ -24,12 +24,10 @@ preferred-citation:
   - family-names: "Lambrix"
     given-names: "Patrick"
     orcid: "https://orcid.org/0000-0002-9084-0470"
-  doi: "10.0000/00000"
+  doi: "10.1007/978-3-030-62466-8_14"
   journal: "Journal Title"
-  month: 9
-  start: 1 # First page number
-  end: 10 # Last page number
-  title: "My awesome research software"
-  issue: 1
-  volume: 1
-  year: 2021
+  start: 212 # First page number
+  end: 227 # Last page number
+  title: "An Ontology for the Materials Design Domain"
+  volume: 12507
+  year: 2020
