@@ -25,12 +25,9 @@ preferred-citation:
     given-names: "Patrick"
     orcid: "https://orcid.org/0000-0002-9084-0470"
   doi: "10.1007/978-3-030-62466-8_14"
-  collection-title: "Proceedings"
+  collection-title: "The Semantic Web - {ISWC} 2020 - 19th International Semantic Web Conference, Athens, Greece, November 2-6, 2020, Proceedings, Part {II}"
   start: 212 # First page number
   end: 227 # Last page number
   title: "An Ontology for the Materials Design Domain"
   volume: 12507
   year: 2020
-  conference:
-    - name: ISWC
-    - location: qq
