@@ -4,19 +4,14 @@ authors:
 - family-names: "Li"
   given-names: "Huanyu"
   orcid: "https://orcid.org/0000-0003-1881-3969"
-- family-names: "Hartig"
-  given-names: "Olaf"
-  orcid: "https://orcid.org/0000-0002-1741-2090"
 - family-names: "Armiento"
   given-names: "Rickard"
   orcid: "https://orcid.org/0000-0002-5571-0814"
 - family-names: "Lambrix"
   given-names: "Patrick"
   orcid: "https://orcid.org/0000-0002-9084-0470"
-title: "Ontology-Based GraphQL Server Generation for Data Access and Data Integration"
-version: 1.0.0
-date-released: 2022-12-16
-url: "https://github.com/LiUSemWeb/OBG-gen"
+title: "Materials Design Ontology"
+url: "https://github.com/LiUSemWeb/Materials-Design-Ontology"
 preferred-citation:
   type: article
   authors:
