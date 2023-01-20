@@ -15,12 +15,15 @@ url: "https://github.com/LiUSemWeb/Materials-Design-Ontology"
 preferred-citation:
   type: article
   authors:
-  - family-names: "Lisa"
-    given-names: "Mona"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
-  - family-names: "Bot"
-    given-names: "Hew"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Li"
+    given-names: "Huanyu"
+    orcid: "https://orcid.org/0000-0003-1881-3969"
+  - family-names: "Armiento"
+    given-names: "Rickard"
+    orcid: "https://orcid.org/0000-0002-5571-0814"
+  - family-names: "Lambrix"
+    given-names: "Patrick"
+    orcid: "https://orcid.org/0000-0002-9084-0470"
   doi: "10.0000/00000"
   journal: "Journal Title"
   month: 9
