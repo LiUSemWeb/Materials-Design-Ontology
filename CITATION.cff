@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Li"
+    given-names: "Huanyu"
+    orcid: "https://orcid.org/0000-0003-1881-3969"
+ - family-names: "Armiento"
+  given-names: "Rickard"
+  orcid: "https://orcid.org/0000-0002-5571-0814"
+  - family-names: "Lambrix"
+  given-names: "Patrick"
+  orcid: "https://orcid.org/0000-0002-9084-0470"
+ doi: "10.1007/978-3-030-62466-8_14"
+ title: "An Ontology for the Materials Design Domain"
+ year: 2020
+ publisher: Springer
+ booktitle: "The Semantic Web - {ISWC} 2020 - 19th International Semantic Web Conference, Athens, Greece, November 2-6, 2020, Proceedings, Part {II}"
+ series: "Lecture Notes in Computer Science"
+ volume: 12507
