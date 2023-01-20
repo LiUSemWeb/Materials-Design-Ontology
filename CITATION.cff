@@ -13,7 +13,7 @@ authors:
 title: "Materials Design Ontology"
 url: "https://github.com/LiUSemWeb/Materials-Design-Ontology"
 preferred-citation:
-  type: proceedings
+  type: conference-paper
   authors:
   - family-names: "Li"
     given-names: "Huanyu"
@@ -25,9 +25,12 @@ preferred-citation:
     given-names: "Patrick"
     orcid: "https://orcid.org/0000-0002-9084-0470"
   doi: "10.1007/978-3-030-62466-8_14"
-  journal: "Journal Title"
+  collection-title: "Proceedings"
   start: 212 # First page number
   end: 227 # Last page number
   title: "An Ontology for the Materials Design Domain"
   volume: 12507
   year: 2020
+  conference:
+    - name: ISWC
+    - location: qq
