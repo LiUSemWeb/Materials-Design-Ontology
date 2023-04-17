@@ -1,0 +1,335 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/mdo/optimade/"
+     xml:base="https://w3id.org/mdo/optimade/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://schemas.optimade.org/mdo-optimade">
+        <owl:versionIRI rdf:resource="https://schemas.optimade.org/mdo-optimade/1.0/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#complexType -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#complexType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/assemblies -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/assemblies">
+        <rdfs:domain rdf:resource="https://w3id.org/mdo/core/Structure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/cartesian_site_positions -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/cartesian_site_positions">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/chemical_formula_anonymous -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/chemical_formula_anonymous">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/chemical_formula_descriptive -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/chemical_formula_descriptive">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/chemical_formula_hill -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/chemical_formula_hill">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/chemical_formula_reduced -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/chemical_formula_reduced">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/dimension_types -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/dimension_types">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/elements -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/elements">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/elements_ratios -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/elements_ratios">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/lattice_vectors -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/lattice_vectors">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/nelements -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/nelements">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/nperiodic_dimensions -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/nperiodic_dimensions">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/nsites -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/nsites">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/space_group_hall -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/space_group_hall">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/space_group_it_number -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/space_group_it_number">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/species -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/species">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/species_at_sites -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/species_at_sites">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schemas.optimade.org/mdo-optimade/structure_features -->
+
+    <owl:DatatypeProperty rdf:about="https://schemas.optimade.org/mdo-optimade/structure_features">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/mdo/core/Structure -->
+
+    <owl:Class rdf:about="https://w3id.org/mdo/core/Structure">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/assemblies"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/cartesian_site_positions"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/chemical_formula_anonymous"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/chemical_formula_descriptive"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/chemical_formula_hill"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/chemical_formula_reduced"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/dimension_types"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/elements"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/elements_ratios"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/lattice_vectors"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/nelements"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/nperiodic_dimensions"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/nsites"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/space_group_hall"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/space_group_it_number"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/species"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/species_at_sites"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://schemas.optimade.org/mdo-optimade/structure_features"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#complexType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
